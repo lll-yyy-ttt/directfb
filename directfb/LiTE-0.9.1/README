@@ -1,0 +1,56 @@
+LiTE is a Toolkit Engine
+
+== Versioning Tags ==
+
+The versioning tags in the CVS depot are defined this way:
+VERSION_<major>_<minor>
+
+Example:
+    VERSION_0_2
+
+
+== Code Formatting ==
+* five spaces
+* K&R formatting style:
+     if (test) {
+          /* do stuff */
+     }
+    
+* Use lite_function_name() convention for exported LiTE functions.
+* Use normal_function() convention for static functions.
+* Use prvlite_internal() for internal LiTE functions.
+* All functions return DFBResult. If a handle is passed in,
+  it is marked with a ret_ prefix and placed at the end of
+  the function:
+     DFBResult lite_get_resource(DFBRectangle *rect,
+                                   LiteResource **ret_resource);
+* All LiTE constants start with lite, as in
+     const unsigned int lite_constant;
+* All LiTE defines start with LITE:
+     #define LITE_MACRO(x) (x)
+  ...even if inlined functions are the preferred style.
+* typedef values start with Lite, as in:
+     typedef enum LiteEnum {
+          LITE_CONSTANT         = 0x00000001;           
+     } LiteEnum;
+
+  typedef struct _LiteStruct {
+  } LiteStruct; 
+
+  If possible hide as many structures in the implementation files
+  as possible. 
+* Enum values should have all constants in UPPER case, and 
+  the value defined.
+* LiTE callback prototypes have the Prefix Lite:
+    typedef DFBResult (*LiteCallback)(int x);
+  and they all return DFBResult.
+* Functions and implementations should use DFB structures
+  such as DFBRectangles, DFBPoint and so on.
+* All globals have a _global postfix.
+* All public APIs should have Doxygen documentation.
+* When in doubt, look how DirectFB code is done.
+
+
+
+== Thanks To ==
+* Keith Mok (ek9852 - gmail)

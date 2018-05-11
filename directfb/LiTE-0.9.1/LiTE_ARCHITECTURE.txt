@@ -1,0 +1,170 @@
+LiTE Architecture
+
+LiTE stands for Lightweight Toolkit Enabler. Its role is to facilitate
+the functions of DirectFB so that a toolbox could be written on top of
+DirectFB with less effort. As such LiTE has abstractions for the
+underlying graphics and event systems.
+
+
+LiteBox and Graphics Surfaces
+
+An important abstraction is the LiteBox. It is a low-level view that is
+tied to a so called sub-surface of a DFBSurface. When LiTE initializes
+the DirectFB environment, as part of that process a main window is
+created. The main window will have a DFBSurface. Any subsequent LiteBox
+created will use this main surface and create sub-surfaces. Subsurfaces
+are basically an array of bytes into the main surface, so they are very
+fast and use an existing allocated buffer. This means that the LiteBox
+will abstract out the actual sub-surface --- using LiteBox entries will
+make it much easier to cut out various parts of the main window for
+various purposes.
+
+Two examples where LiteBox could be used are window decoration and
+placing views such as widgets into the main window. The current theme
+system in LiTE is cutting out the top/bottom, left and right parts of a
+window into separate LiteBox entries, and these could be manipulated,
+such as placing a texture into these areas, adding strings to the top
+part (as in window titles), or a possible close icon in the top-right
+corner.
+
+In the widget creation, a LiteBox derived widget will occupy a special
+section of the surface. These areas could be encapsulated, for example
+LiteWindow has a basic LiteBox that is the base of the actual window,
+and any subsequent widgets are placed into this base box. The LiteBox
+entries can’t overlap, the biggest problem is hit testing of events
+inside the box itself (which one should accept the mouse click…?).
+
+
+LiteBox and Events
+
+LiteBox entries are serviced events via a main event Buffer. This is
+done by starting the LiTE event loop from the LiteWindow APIs. Inside
+this event loop, the event is parsed. In the case of DFBWindow events,
+the right LiteBox is triggered by finding out which box is the innermost
+in a hierarchy of boxes installed inside each other. Based on that the
+right box will be called, and special callbacks for various events will
+trigger.
+
+Examples of such callbacks are OnMouseEnter and OnMouseLeave. When the
+mouse entered or is leaving this box area, then one or the other of the
+callbacks are triggered. By default most of these callbacks are not
+doing anything, they are mostly used for derived widgets.
+
+
+LiteBox Child/Parent Relationships
+
+LiteBox has a notion of parent/child inheritance. When a LiteBox is
+created, its parent is defined, and the parent will store this new child
+in its child array. When the LiteBox is deleted (lite_destroy_box()),
+then the parent array is updated and the entry is removed. Also, as part
+of deleting this box, it will also call all its child LiteBox entries
+and call their lite_destroy_box() calls, ensuring that each level is
+properly deleted.
+
+
+LiteBox Inheritance
+
+A higher-level widget is usually created by having as its first entry in
+the data structure a LiteBox. This makes it possible to cast it into a
+LiteBox and use the LiTE APIs related to the LiteBox.
+
+
+Callback Methods
+
+LiteBox has a set of function callbacks that could be overwritten by
+accessing these public slots (box.h has LiteBox the structure exported).
+Examples of such callbacks are: OnKeyUp, OnKeyDown, Draw, Destroy, and
+so on.
+
+If a compound widget or another part wants to override the default style
+(of which most do nothing), they access the function pointer, call their
+own function, and possible call the original function before or after
+their function has been triggered. This makes it possible to make
+adornment to the actual widget, or even implement a new behavior. Think
+of this as very similar to member functions in C++.
+
+
+Compound Widgets
+
+The LiteBox base widgets are very primitive, each one is doing one
+specific job, such as LiteLabel will display a text label, and
+LiteButton will use a set of bitmaps to show button states and activate
+the states.
+
+Any more complex widgets are built by creating a compound widget that
+contains such lower-level widgets. As an example, a checkbox could be
+built by including a LiteLabel that has four states related to what the
+checkbox icon should look like in various states, and a LiteLabel that
+draws a text string next to the LiteButton showing the checkbox icon.
+Both of these two primitives are inside a parent LiteBox that
+encompasses are specific area in the surface. Any control of this API is
+done via a specific API that controls this compound structure.
+
+
+LiteWindow
+
+LiteWindow takes care of events and global functions. A lot of the
+underlying event state is recorded in this structure. Examples of such
+state are: opacity level, the underlying IDirectFBSurface and the
+IDirectFBWindow, window ID… See the window.h for more information.
+
+A LiteWindow is initialized and then its event loop is started. If there
+are multiple windows, they all share the initial window’s event buffer.
+However, just an initial lite_window_event_loop() is triggered.
+
+
+Lite Base Widgets
+
+LiTE has a set of basic widgets that could be used standalone, or for
+building more complex widgets.
+
+One of the more versatile widgets is the LiteButton widget. It knows of
+four discrete states:
+
+    * Normal - normal drawing of the button
+    * Pressed - the button is pressed
+    * Hilite - the button is hilited (moving over with a mouse)
+    * Disabled - the button is disabled 
+
+You could provide four specific images for each of the state, and the
+LiTE framework will issue the right one to be drawn based on the
+incoming mouse events, or by setting the LiteButton into a specific
+state.
+
+LiteLabel is used for drawing test in a known location. It handled UTF-8
+Unicode and arbitrary fonts.
+
+LiteImage is a quick way to load images into a location. However, for
+button purposes LiteButton should be used, even if with the magic of
+LiteBox callbacks button behavior could be introduced.
+
+LiteSlider could be used for building slider-like widgets.
+
+LiteAnimation is a primitive widget for building a sequence of images
+that are triggered.
+
+LiteTextLine is a single line text editing field.
+
+
+Lite Initialization
+
+The code that is called when LiTE is initialized is in lite.c. lite_open
+will initialize DirectFB, and get access to the DFB display layer, after
+this the default font and cursor is initialized. You could always get
+access to the IDirectFB interface via lite_get_dfb_interface().
+
+Most of the interesting window initialization is happening inside
+lite_init_window. This is where access to the surface is done, setting
+up the window with various DirectFB flags, and so on...
+
+
+Lite Window Updating
+
+The window content updating is done by issuing a DirectFB Flip() call
+from from lite_draw_box(). This LiTE call is triggered whenever there's
+a need to update the box contents. There's a dirty flag set that will
+issue an update of the box as part of the event loop.
+
+lite_draw_box() will go through its box and its children and make sure
+each one is drawn, recursively. 
+

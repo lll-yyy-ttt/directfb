@@ -1,0 +1,11 @@
+prefix=/usr/core/dfb-core
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: ++DFB
+Description: C++ binding for DirectFB
+Version: 1.7.7
+Requires: directfb
+Libs: -L${libdir} -l++dfb
+Cflags: -I${prefix}/include/++dfb

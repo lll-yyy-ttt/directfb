@@ -1,0 +1,4015 @@
+commit 286410e2e31d4ba42a6ba1382561f6d9bed7bc81
+Author: Denis Oliver Kropp <dok@cyto.(none)>
+Date:   Fri Sep 19 03:43:42 2008 +0200
+
+    [listtest] Create window without theme and without alpha if screen is smaller, make window fit.
+
+commit 2c10867c658692d27e9715149f6c4451304f2779
+Author: Denis Oliver Kropp <dok@cyto.(none)>
+Date:   Fri Sep 19 03:43:06 2008 +0200
+
+    [lite] Added lite_get_layer_size() for convenience.
+
+commit 724b3a1cc57d0957b57b89b073b641b20795caaf
+Author: Denis Oliver Kropp <dok@cyto.(none)>
+Date:   Fri Sep 19 03:29:48 2008 +0200
+
+    [window] Use DWOP_OPAQUE_REGION by default.
+
+commit f54cfbc90c376fc5a9e4261270bbce4e3cd86e74
+Author: Denis Oliver Kropp <dok@cyto.(none)>
+Date:   Fri Sep 19 03:26:15 2008 +0200
+
+    [window] Don't use DWOP_SHAPED by default.
+
+commit 371d8b60d07beae6a42435844472a8ffea705e87
+Merge: 2bcb156... 11697af...
+Author: Denis Oliver Kropp <dok@cyto.(none)>
+Date:   Fri Sep 19 03:24:10 2008 +0200
+
+    Merge branch 'master' of git+ssh://git.directfb.org/git/directfb/libs/LiTE
+
+commit 2bcb156b7e23a8923796838d0725ff711c5bc2c1
+Author: Denis Oliver Kropp <dok@cyto.(none)>
+Date:   Fri Sep 19 03:23:21 2008 +0200
+
+    [window] Set DSRO_NONE before StretchBlit() of frame parts.
+
+commit 11697afab143bce1194a45148d4832cd44806983
+Author: Denis Oliver Kropp <dok@cyto.(none)>
+Date:   Tue Sep 16 18:39:19 2008 +0200
+
+    [image] Use SRC_OVER for reflection generation to accelerate on Davinci.
+
+commit c639280c25a5f426b49a98ec815371682b9032bb
+Author: Niels Roest <niels@directfb.org>
+Date:   Tue Sep 16 12:38:30 2008 +0200
+
+    [LiTE] image: no alpha blending for clearing, so app must clip bottom half away.
+
+commit 7a655828a270042a9101da0bb5ccb4501e9ab831
+Author: Niels Roest <niels@directfb.org>
+Date:   Tue Sep 16 12:22:43 2008 +0200
+
+    [Leck] image: make alpha gradient more smoothly
+
+commit da3cf82cf51f6f3ede9657c5f685d9496552120d
+Author: Niels Roest <niels@directfb.org>
+Date:   Tue Sep 16 12:02:02 2008 +0200
+
+    [LiTE] Avoid StretchBlit when using reflection
+
+commit 7e2ec4cd0499b53bafabfa18fe936ef732f63d95
+Merge: 1a69e7a... adb9fd9...
+Author: Niels Roest <niels@directfb.org>
+Date:   Tue Sep 16 11:06:48 2008 +0200
+
+    Merge branch 'master' of git+ssh://git.directfb.org/git/directfb/libs/LiTE
+
+commit 1a69e7aa364792937021a6339a4057c0b1894343
+Author: Niels Roest <niels@directfb.org>
+Date:   Tue Sep 16 11:04:05 2008 +0200
+
+    [LiTE] add reflection function to image widget
+
+commit adb9fd9f89390a61b85748513ae0ebd96817ce34
+Author: Denis Oliver Kropp <dok@cyto.(none)>
+Date:   Tue Sep 16 10:10:28 2008 +0200
+
+    [box] Added lite_set_box_visible().
+
+commit f0c75d162563858c1a391141d2f9681042427103
+Author: Denis Oliver Kropp <dok@cyto.(none)>
+Date:   Tue Sep 16 09:52:43 2008 +0200
+
+    [box] Added DrawAfter() for painting after children did. Allow init without parent for later adding.
+
+commit 85c379231193eaaa4bf01bcd959c58380aa0e989
+Author: Denis Oliver Kropp <dok@cyto.(none)>
+Date:   Sun Sep 14 16:25:07 2008 +0200
+
+    [frame] Rewrote hardcoded loading/handling of frame images for the window theme
+    
+    and made it easily reusable as a convenient utility for such appliances.
+
+commit 0bac5233fed9888928fdd0122e123b6dafeb2a6f
+Author: Denis Oliver Kropp <dok@cyto.(none)>
+Date:   Fri Sep 12 23:35:22 2008 +0200
+
+    [box] Use MakeSubSurface() instead of GetSubSurface() and lots of other calls with DirectFB >= 1.2.1
+    
+    Replaces GetSubSurface(), GetFont(), SetFont(), Release(), Release() !
+    
+    lite_bench resizing went from 768ms to 230ms (for 6000x resize)!
+
+commit 4da33fd50ed833e52702a7686debf0a6be12a193
+Author: Denis Oliver Kropp <dok@cyto.(none)>
+Date:   Tue Sep 9 17:21:53 2008 +0200
+
+    [configure] Bumped version to 0.8.10.
+
+commit 4d628e43fb7f545a8cfb0f5e36fec1e390a665ba
+Author: Niels Roest <niels@directfb.org>
+Date:   Sun Aug 24 18:53:30 2008 +0200
+
+    [leck] conversion to unsigned int by virtue of size_t goes astray for negative numbers
+
+commit 2427dd6219c3b2df822a668209d9ab02c8889c76
+Author: Denis Oliver Kropp <dok@cyto.(none)>
+Date:   Mon Jul 21 10:49:36 2008 +0200
+
+    [image] Thanks to Keith Mok for fixing leaking the previous image when loading another.
+
+commit 86d21f6d328d7f04c8136614a611c44199440939
+Author: Denis Oliver Kropp <dok@cyto.(none)>
+Date:   Tue Jul 1 19:00:29 2008 +0200
+
+    missed one change
+
+commit 830b82b6f27b79d620725784a8565b4d93b95875
+Merge: e7c39c2... 8cbf5ce...
+Author: Denis Oliver Kropp <dok@cyto.(none)>
+Date:   Tue Jul 1 18:59:55 2008 +0200
+
+    Merge branch 'master' of git+ssh://git.directfb.org/git/directfb/libs/LiTE
+
+commit e7c39c2756e3b54d0d8ea261fb9785d5adfca376
+Author: Denis Oliver Kropp <dok@cyto.(none)>
+Date:   Tue Jul 1 18:59:11 2008 +0200
+
+    0.8.9
+
+commit d3773bb69aef20f49dc33c2f08009ccf8d71224d
+Author: Denis Oliver Kropp <dok@cyto.(none)>
+Date:   Tue Jul 1 18:42:35 2008 +0200
+
+    [textline] Added lite_get_textline_text() returning a copy of the text.
+    
+    Needs to be freed using D_FREE().
+
+commit 276eb153cfd72bfcd39f075773a63e2340467b41
+Author: Denis Oliver Kropp <dok@cyto.(none)>
+Date:   Tue Jul 1 18:39:22 2008 +0200
+
+    [box] Set clipping region and clear if requested before Draw() callback is done.
+    
+    Added DFBColor pointer to LiteBox which if non-NULL causes the LiteBox to be cleared
+    before the Draw() callback is done.
+
+commit d71a7238af24ddaec82615948c7b9cbf8ca0dc0d
+Author: Denis Oliver Kropp <dok@cyto.(none)>
+Date:   Tue Jul 1 10:09:08 2008 +0200
+
+    [examples] Added missing scrollbar.png to EXTRA_DIST.
+
+commit 8cbf5ce5ec8ff54826d7ac802ffd94953132cb28
+Author: Denis Oliver Kropp <dok@cyto.(none)>
+Date:   Sat Jun 21 14:35:50 2008 +0200
+
+    [benchmark] Initialize label height, cleaned up code a bit.
+
+commit a985865b60c4d70abf7908378f2e253bde0bd6af
+Author: Denis Oliver Kropp <dok@cyto.(none)>
+Date:   Sat Jun 21 01:41:24 2008 +0200
+
+    ignore
+
+commit 8bf7a7466695765081913600930c882a678be1f9
+Author: Denis Oliver Kropp <dok@cyto.(none)>
+Date:   Sat Jun 21 01:36:59 2008 +0200
+
+    updated
+
+commit e937ef7ddbdc14f4b0f9e19b8cec8b2c25682862
+Author: Denis Oliver Kropp <dok@cyto.(none)>
+Date:   Sat Jun 21 01:32:31 2008 +0200
+
+    Big restructuring! Keep LiTE lightweight and move actual widgets
+    into new library called "LeCK" - LiTE's extended Component Kit.
+    
+    Renaming still to be done...
+
+commit 2e182c2afd3c72bccde2841336f9f71657db96bd
+Author: Denis Oliver Kropp <dok@cyto.(none)>
+Date:   Fri Jun 20 23:24:36 2008 +0200
+
+    Install examples and data with lite_ prefix for executable, cleanups, 0.8.8
+
+commit 2bbea44d5a42aa3c15ef174be218ea7d1bbc1f24
+Author: Denis Oliver Kropp <dok@cyto.(none)>
+Date:   Mon Jun 9 03:09:59 2008 +0200
+
+    [fonts] Removed gulim font.
+
+commit 5f9a1aa41b22cf362f4282e5b3f702aafd9a402f
+Author: Denis Oliver Kropp <dok@cyto.(none)>
+Date:   Mon Jun 9 03:08:20 2008 +0200
+
+    0.8.7
+
+commit 406aa4c0785b2f23e24a83a4cf3fa1a2f2834467
+Author: Denis Oliver Kropp <dok@cyto.(none)>
+Date:   Mon Jun 9 01:25:32 2008 +0200
+
+    [progressbar] Fixed typo in liteDefaultProgressBarTheme.
+
+commit 06dc4554154145eb94fab131c87b55d3422243b8
+Author: Denis Oliver Kropp <dok@cyto.(none)>
+Date:   Fri May 30 22:37:41 2008 +0200
+
+    [textline] Removed printf 8-|
+
+commit a1f7defa1bcafa168809fbd13b7e3dee392042e5
+Author: Daniel Mack <daniel@caiaq.de>
+Date:   Wed May 7 17:28:03 2008 +0200
+
+    auto-update image in set_clipping() function
+
+commit db4613c7eb7c93a6542fafdbff5c406ac20d87e8
+Author: Daniel Mack <daniel@caiaq.de>
+Date:   Wed May 7 17:14:10 2008 +0200
+
+    added lite_set_image_clipping()
+
+commit ff5e8e79170dbc1d1d736fb1c6967ddf6d809b11
+Author: Daniel Mack <daniel@caiaq.de>
+Date:   Wed May 7 14:07:46 2008 +0200
+
+    copy'n paste typo fixed
+
+commit a4ebb2c271d8a45915bad1c6a99f9813d808ce5e
+Merge: 8a9d176... f6a06f6...
+Author: Daniel Mack <daniel@caiaq.de>
+Date:   Mon May 5 19:05:11 2008 +0200
+
+    Merge branch 'master' of git://git.directfb.org/git/directfb/libs/LiTE
+
+commit f6a06f6a59af20bbac6495d0e3efedbb1e6549b2
+Author: Denis Oliver Kropp <dok@cyto.(none)>
+Date:   Mon May 5 18:59:32 2008 +0200
+
+    ignore
+
+commit 780bc4f6a0df2306aac2a1a76514ba097e763c93
+Author: Denis Oliver Kropp <dok@cyto.(none)>
+Date:   Mon May 5 18:58:52 2008 +0200
+
+    Great thanks to "Ahn, Sung Ho" and other people from ETRI for this work on LiTE! :-D
+
+commit d60d46267179ac9740f2b82b2f9de984ae7dfa23
+Author: Denis Oliver Kropp <dok@cyto.(none)>
+Date:   Mon May 5 17:51:15 2008 +0200
+
+    updated ignored files
+
+commit 8a9d17699d378f119f484fc4a43f2ca90c2da6b4
+Author: Daniel Mack <daniel@caiaq.de>
+Date:   Mon May 5 13:06:48 2008 +0200
+
+    use box->rect rather than region to determine the actual size of the
+    progressbar.
+
+commit 5b4abddd685d85cb29f311e62d7e1de1caa4cc55
+Author: Daniel Mack <daniel@caiaq.de>
+Date:   Sat May 3 19:49:13 2008 +0200
+
+    off-by-one fixed
+
+commit d1da8572acf4d777321b6afcd81a462d302922bf
+Author: daniel <daniel@localhost.localdomain>
+Date:   Sat May 3 18:34:28 2008 +0200
+
+    added progressbar implementation and an example of how to use it
+
+commit 2e9eb1d1031c8af6007889f706fc534c988dd265
+Author: daniel <daniel@localhost.localdomain>
+Date:   Sat May 3 17:01:51 2008 +0200
+
+    added .gitignore file
+
+commit 7769a4bc5ae2630941cacd418faaa3a12eeac2a3
+Author: daniel <daniel@localhost.localdomain>
+Date:   Sat May 3 17:00:01 2008 +0200
+
+    make textline scroll
+
+commit 33ab17763a83fb866333a92edfb04e7ef3adada3
+Author: daniel <daniel@localhost.localdomain>
+Date:   Sat May 3 00:36:06 2008 +0200
+
+    button ex
+
+commit 51ca00f3a366018a9af17e7a8439d634d7360f8d
+Author: daniel <daniel@localhost.localdomain>
+Date:   Sat May 3 00:29:38 2008 +0200
+
+    button class
+
+commit 55c7bcaa683c106b9fc79a2fcba4c559e0ae935a
+Author: Denis Oliver Kropp <dok@shizo.directfb.home>
+Date:   Fri Dec 21 13:12:20 2007 +0100
+
+    0.8.6
+
+commit 954c8c3fe91bf5be64e4187f54024671f65c4746
+Author: Denis Oliver Kropp <dok@shizo.directfb.home>
+Date:   Fri Dec 21 13:07:07 2007 +0100
+
+    BENCH: Disable alpha channel and window theme.
+
+commit 6dccb25f9594203c7ea338478aa5cad3cdb3e025
+Author: Denis Oliver Kropp <dok@shizo.directfb.home>
+Date:   Fri Dec 21 13:02:33 2007 +0100
+
+    CURSOR: Don't load default cursor if LITE_NO_CURSOR is exported.
+
+commit a586329636c63a483c095f8cb92b835b71040b07
+Author: Denis Oliver Kropp <dok@shizo.directfb.home>
+Date:   Fri Dec 21 12:21:33 2007 +0100
+
+    UTIL: Fixed bug in image loading routine for non-ARGB images and no explicit format passed.
+    
+    Show errors in image loading routine.
+
+commit 343dd17a7311b4cd23c27b81b7d0e3b4f37ade35
+Author: Denis Oliver Kropp <dok@shizo.directfb.home>
+Date:   Fri Dec 14 22:30:04 2007 +0100
+
+    Argh, missed the actual lib version change, only changed comment.
+
+commit af1fa6b2af3861823c1dd18dddb538947f025dfc
+Author: Denis Oliver Kropp <dok@shizo.directfb.home>
+Date:   Fri Dec 14 22:23:51 2007 +0100
+
+    LiTE 0.8.5
+
+commit b879f54e7c79461fdac4825e91011515fe1e8b62
+Merge: c72fecf... 2a05e4b...
+Author: Denis Oliver Kropp <dok@shizo.directfb.home>
+Date:   Sat Nov 17 19:50:42 2007 +0100
+
+    Merge branch 'master' of git+ssh://git.directfb.org/git/directfb/libs/LiTE
+
+commit 2a05e4b6421c48421ca15e590f44aaf1d8a2bca0
+Author: Denis Oliver Kropp <dok@shizo.zion.home>
+Date:   Sat Oct 13 01:19:18 2007 +0200
+
+    Added missing call to prvlite_wakeup_event_loop() in lite_update_window().
+
+commit 9d5518b944bbf18a1d529c5b1e35a7bd6c6be93e
+Author: Denis Oliver Kropp <dok@shizo.zion.home>
+Date:   Sat Oct 13 01:18:42 2007 +0200
+
+    Check for event_buffer != NULL in prvlite_wakeup_event_loop().
+
+commit c72fecfea813f589dfdf047aab34b0b55ea1353a
+Author: Denis Oliver Kropp <dok@shizo.(none)>
+Date:   Fri Sep 7 13:19:48 2007 +0200
+
+    Fixed width/height mixup in lite_get_window_size().
+    Fixed signed/unsigned types and warnings.
+
+commit 5a6bd5622227f171a81aa476aea89de5bf851d6a
+Author: Ben Combee <bcombee@www.directfb.org>
+Date:   Thu May 17 08:39:42 2007 +0200
+
+    release a LiteBox's drag_box when containing window is left.  Since mouse is grabbed during drag, this only happens when other parts of the system adjust the window hierarchy
+    
+    
+    via git-CVS emulator
+
+commit df32eae2d188f11f2434f1f601b5b89d69099839
+Author: Ben Combee <bcombee@www.directfb.org>
+Date:   Thu May 17 08:36:58 2007 +0200
+
+    correctly generate enter/leave events when the LiteBox hierarchy changes
+    
+    
+    via git-CVS emulator
+
+commit e7a54810b157d1c4f4e4a84f52aad47a5f1c7310
+Author: Ben Combee <bcombee@www.directfb.org>
+Date:   Thu May 17 08:28:37 2007 +0200
+
+    Fix bounds checking for LiteButtons to correctly handle negative
+    coordinates, like those generated when you move to the left or obove
+    the button
+    
+    
+    via git-CVS emulator
+
+commit e5c5816440c541c75e5ad4372d1525707990a554
+Author: Claudio Ciccani <klan@directfb.org>
+Date:   Tue May 15 18:40:38 2007 +0200
+
+    Reverted previous commit (premultiplied surfaces).
+
+commit a1f1672a47a1acf3e1795f59b70f968954f0d9a6
+Author: Claudio Ciccani <klan@directfb.org>
+Date:   Sat May 12 21:05:52 2007 +0200
+
+    Use premultiplied surfaces (avoids trasparent text within the window).
+
+commit 67cb81431c246b189cb0e0a31a6148f17ba974c8
+Author: Ben Combee <bcombee@directfb.org>
+Date:   Thu Mar 1 18:05:32 2007 +0000
+
+    0.8.4 (March 1, 2007)
+    -----
+    
+    - Fixed issue with timing of window update and window resizing leading
+      to graphics glitches
+    - Reworked window destruction again to make sure that windows aren't
+      completely destroyed until they are no longer used by the event loop
+      mechanism
+    - fixes to ensure that a window's drag box won't be incorrectly set
+    - change order of event loop so window refresh during event queue
+      processing occurs without also triggering timeouts
+    - validation checks added to some LiteCursor calls on debug build
+    - window validation added to many LiteWindow calls on debug build
+
+commit 9ba1e3802bc5015ca38facb64cda44ecab966b48
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Fri Feb 2 22:19:45 2007 +0000
+
+    distfix
+
+commit 99fc0d3e84e0ef6fb1285706a222e9566dc3e99d
+Author: Ville Syrjala <syrjala@directfb.org>
+Date:   Wed Jan 24 23:14:43 2007 +0000
+
+    Fix version check for automake-1.10.
+
+commit e64086bba38d6c639fe00cdf5a1efd0b57654a13
+Author: Ville Syrjala <syrjala@directfb.org>
+Date:   Wed Jan 24 20:49:18 2007 +0000
+
+    direct_util_recursive_pthread_mutex_init() needs direct/util.h.
+
+commit 9c49be2f3d491acda7680e7ddbd4f657a4757541
+Author: Ben Combee <bcombee@directfb.org>
+Date:   Wed Dec 13 19:37:54 2006 +0000
+
+    Update NEWS and configure.in for 0.8.3 release
+
+commit 2b53207dd58870473d3f208f4ed450b4cc98e173
+Author: Ben Combee <bcombee@directfb.org>
+Date:   Wed Dec 13 19:33:57 2006 +0000
+
+    Updates for version 0.8.3
+    
+    0.8.3 (December 13, 2006)
+    -----
+    
+    - New API: lite_destroy_all_windows - calls lite_destroy_window
+      on all windows in system from newest to oldest
+    
+    - New API: lite_rebase_window_timeouts - used to adjust all window
+      timeouts when the system time changes
+    
+    - New API: lite_window_event_available - returns true if any
+      events are queued up or any timeouts are ready.
+    
+    - New API: lite_set_window_bounds - used to move and resize a
+      window in one on-screen operation
+    
+    - Const correctness parameter changes for lite_get_font_filename(),
+      lite_set_window_background()
+    
+    - lite_update_box() and internal find_child() rewritten to be
+      non-recursive for speed purposes
+    
+    - more fixes around window destruction and properly releasing
+      interfaces and freeing memory
+    
+    - lite_init_box now disallows boxes with negative height or width
+    
+    - modified update code to use memmove instead of memcpy to fix overlap
+      problem
+    
+    - lite_window_event_loop will force an update at least once every 200
+      milliseconds if one is needed and hasn't happened yet
+
+commit eaea9d805bb822c4c13f02465fd5a0650ab637e4
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Mon Oct 16 13:28:45 2006 +0000
+
+    Fix types.
+
+commit 587bb2ef93ad7fa785036fc90ce675ff62f8a3b0
+Author: Ben Combee <bcombee@directfb.org>
+Date:   Mon Oct 16 04:18:55 2006 +0000
+
+    Fix font.c to not leak IDirectFBFont refs when returning the font attached to a surface
+
+commit 0a28ab800dcd5ced1189dc981213f0586ba6f5a6
+Author: Ben Combee <bcombee@directfb.org>
+Date:   Sat Oct 14 06:24:42 2006 +0000
+
+    Updates for version 0.8.2
+    
+    0.8.2 (October 14, 2006)
+    -----
+    
+    - expanded the LiteBoxType enumeration to have different items for
+      each LiteBox and LiteWindow type defined in the library, with
+      special ranges for expanding the number of types for client
+      libraries
+    - updated code to fix stdbool.h warnings (Ville Syrjala)
+    - patch to support vertical sliders (Pierre-Hugues Husson)
+    - changed window update loop to be more efficient
+    - fixed bugs with new window destruction code
+    - fixed bug with routing of resize events to not-yet-displayed windows
+    - fixed a memory leak with freeing window memory on DWET_DESTROYED
+    - fixed a IDirectFBLayer reference leak in lite_change_cursor_opacity
+    - changed lite_enqueue_window_timeout and lite_enqueue_idle_callback
+      to never return the value 0 as the ID
+    - fixed bad return value for lite_remove_window_timeout
+
+commit 6aaec23a9b9b0192d61feb31e66d3910860484c5
+Author: Ville Syrjala <syrjala@directfb.org>
+Date:   Tue Oct 10 00:16:23 2006 +0000
+
+    Fix stdbool.h warnings.
+
+commit 537b7846bc7032ecdf3c0446694bfc4783ae97e8
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Sun Oct 1 20:43:21 2006 +0000
+
+    Added datarootdir=@datarootdir@.
+
+commit 861ee43dde94c1f10f4333a1f88e64c3e6005dc8
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Sun Oct 1 19:47:14 2006 +0000
+
+    Added AC_CHECK_HEADERS(stdbool.h).
+
+commit ea2b6ca3942fa5a7059abfdd4de9975593d95196
+Author: Ben Combee <bcombee@directfb.org>
+Date:   Tue Sep 26 00:02:17 2006 +0000
+
+    Fix bug with disabled windows not repainting when resized
+
+commit e1c0ab443c66179d75e90dd9d955b1bd7e82da31
+Author: Ben Combee <bcombee@directfb.org>
+Date:   Wed Sep 20 21:15:36 2006 +0000
+
+    checkins for LITE 0.8.1
+    - new API: lite_set_window_enabled - this function will tell a window
+      if it should handle events that are sent to it.  DESTROYED events
+      will always be handled.
+    - fix to handle_wheel to ignore wheel events for a box if it ignores
+      keyboard events
+    - optimized shared library lookup tables by using -Wl,-O1 option for gnu ld
+    - optimized lite_set_active_font call by having it avoid a cache lookup
+      just to validate that a font has been loaded
+    - reworked window destruction extensively to work correctly with DFB's
+      window destruction model.  You should use the window's box->Destroy
+      callback for cleanup code, while window->OnDestroy is just used to
+      catch the DWET_DESTROYED message that will get sent later
+    - removed the nesting level concept from window timeouts, as it led to
+      hard to fix cases.  If you want a timeout to not be called, make sure
+      to remove it before opening a new window.
+
+commit 5ee8987dde234d7ec2d30903952b0fc159ec4fd0
+Author: Ben Combee <bcombee@directfb.org>
+Date:   Fri Sep 1 18:38:08 2006 +0000
+
+    Fixed incorrect version number change that messed up libtool output name
+
+commit 5b2648b811908cdaac2faeb4b42f34d8bf7f0775
+Author: Ben Combee <bcombee@directfb.org>
+Date:   Fri Sep 1 17:52:28 2006 +0000
+
+    Updating configure.in for 0.8.0 library version and 2:0:1 so version
+
+commit d173219bc5a2155ec95c1152441c8116ca9a3242
+Author: Ben Combee <bcombee@directfb.org>
+Date:   Wed Aug 30 16:38:28 2006 +0000
+
+    Large set of updates to prepare LiTE 0.8.0 release -- see updated NEWS file for details.
+
+commit b1f6aacca1d8cb465367b3284dc661657c75cece
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Fri Aug 4 17:36:02 2006 +0000
+
+    New default font.
+
+commit 7a8878d85940f5a62780ea807a6eca2fc9dfbe20
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Fri Aug 4 16:46:35 2006 +0000
+
+    Print error if default font can't be loaded.
+
+commit cb525d76b20364cdb8fe693f4229f17b65cce919
+Author: Claudio Ciccani <klan@directfb.org>
+Date:   Fri Aug 4 09:24:14 2006 +0000
+
+    Detach event buffer from window on destroy.
+
+commit f6f6ecde4692a7c397e12135abeabc8f5867ffa3
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Tue Jul 18 04:22:02 2006 +0000
+
+    Fixed resize mechanism to not depend on the order of motion and resize events.
+    
+    Now it copes with events queued in chronological order :)
+
+commit b32407c7a1c7afb219920d2aee72d55345ed7f5e
+Author: Ben Combee <bcombee@directfb.org>
+Date:   Wed Jun 21 04:58:12 2006 +0000
+
+    Missed this commit for "catch_all_events" to set default value for new boxes
+
+commit f5445f0b8f7ca7b553dbe55d64d5744a03d3cf44
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Tue Jun 20 21:51:59 2006 +0000
+
+    Fix endless loop in update processing with nested queueing.
+
+commit dffba810e465200d83d45568e49b6bb8ffe1b144
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Tue Jun 20 21:30:31 2006 +0000
+
+    Fixed debug build.
+
+commit 0613f87b4a7c3899af1f80785ccaf5b5f6ff5fc6
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Tue Jun 20 20:38:54 2006 +0000
+
+    Allow queuing an update while processing one.
+
+commit 5d8fb285a9cc9f85f706adcda7e121f754d411cb
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Tue Jun 20 20:12:58 2006 +0000
+
+    Added lite_update_all_windows() for rendering the border & title and queuing
+    an update for each window.
+
+commit 73f1cbd34a37171a27e3c9efaf53e02d14f0a203
+Author: Ben Combee <bcombee@directfb.org>
+Date:   Tue Jun 20 19:16:42 2006 +0000
+
+    Fix lite_draw_box to use correct region instead of much larger one when NULL passed as region
+
+commit 1707298d67e6001f932c981f980925491fa43fb6
+Author: Ben Combee <bcombee@directfb.org>
+Date:   Mon Jun 19 02:18:19 2006 +0000
+
+    Add catches_all_events field to LiteBox; allows a parent box to handle events for its children
+
+commit 00dc0820417cc75d076ec145377eccfd50409b7e
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Tue Jun 13 12:17:58 2006 +0000
+
+    Added convenience function lite_init_box_at() to be used instead
+    of lite_init_box() in constructors of deriving implementations.
+    
+    This was missing for the benchmark program to build.
+
+commit b84c61412963504467372e9c30c892ab55f9d334
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Tue Jun 13 12:13:49 2006 +0000
+
+    Don't clear the window surface. Applications update the whole window
+    anyways before it is visible. If not, it's a bug in the application.
+    No way wasting this full clear just for it.
+
+commit 00139ec26b5d9ad2ac6c598736d9fce526f28b6b
+Author: Ben Combee <bcombee@directfb.org>
+Date:   Sun Jun 4 17:45:24 2006 +0000
+
+    Const correctness fix
+
+commit 3ee630443550dc329fd1f108f604187855b404c9
+Author: Ben Combee <bcombee@directfb.org>
+Date:   Sun Jun 4 17:44:35 2006 +0000
+
+    Fix for pointer use after free when removing timeouts from queue
+
+commit fae872e73d48d0ca4cc97dedcd3a9131a2f9351a
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Mon May 15 20:28:59 2006 +0000
+
+    First version of a LiTE benchmark and profiling tool.
+    
+    Writes timestamps of the initialization phase of the test GUI to a log file.
+
+commit 81be1cf1f6de4e337b833d411d859bdc3764872e
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Mon May 15 20:22:35 2006 +0000
+
+    some possible optimizations
+
+commit 720415eccd1c1d18b68e96c43f703f65fa9cada5
+Author: Ben Combee <bcombee@directfb.org>
+Date:   Wed May 3 01:23:37 2006 +0000
+
+    - updated version number to 0.7.2
+    - fix to correctly restore modal windows and to deal with windows created
+      while we're tracking a mouse event
+    - fix to not update boxes when they are invisible
+    - fix for drawing windows with correct opacity
+    - New API, lite_get_font_filename, to get the filename associated
+      with a font
+    - rewrote lite_event_loop to add support for idle callbacks and to fix
+      problems with timeout callbacks
+
+commit 416fe0f55091ea5e61db11e3e34ac3d2a4270246
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Sun Mar 26 18:56:10 2006 +0000
+
+    Fix autoconf version detection.
+
+commit 96ec4c6b5d7db926dc6e0dd7aed5372633152b2e
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Sun Feb 5 18:04:39 2006 +0000
+
+    Keep up to four non-overlapping regions before merging updates into a big one.
+    
+    This greatly improves speed on pixel rate limited systems, e.g. embedded.
+    
+    
+    Added debug domain for queuing/dequeuing/processing updates: Lite/Updates.
+    
+    
+    Added configure option "--enable-debug" which enables building with
+    all debug messages, assertions etc. compiled in
+
+commit f108f8249d0ede8726407fbd88b617c539ab6983
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Feb 3 03:38:52 2006 +0000
+
+    New LiTE version, 0.7.1, see NEWS and ChangeLog for details.
+
+commit 72d832c78d517e40d3f7173bf55f064b4dd19124
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Feb 3 03:32:33 2006 +0000
+
+    New function, lite_set_image_blitting_flags() to set the specific
+    DFBSurfaceBlittingFlags for the automatic image updates.
+
+commit ca060861de08848def423b03965fa4e2e743fb78
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Feb 3 03:25:13 2006 +0000
+
+    Avoid using a default blitting flag setting with LiteImage, save the
+    blitting flags inside the LiteImage object, default setting is
+    DSBLIT_BLEND_ALPHACHANNEL.
+
+commit abbe6f221002e3d445b28d4dff53fd8c5ed60896
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Feb 3 03:17:53 2006 +0000
+
+    Fix for drag_box state from Damian Kowalewski.
+
+commit 624607403255717c47818fede766b79a516ea561
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Feb 3 03:15:00 2006 +0000
+
+    New API, lite_on_raw_window_mouse_moved(), this will install a callback
+    that is triggered with mouse moved events before these events are processed
+    by LiTE.
+
+commit 37f0d3634b324a64ba424f821e04372fcab67e83
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon Jan 23 06:43:10 2006 +0000
+
+    New LiTE version, 0.7.0, see ChangeLog and NEWS for details.
+
+commit 99f28677b40a224ace8eadf474fdcc19c45d7716
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon Jan 23 06:33:02 2006 +0000
+
+    To be complete, the raw wheel events could be intercepted now by
+    installing a callback using the lilte_on_raw_window_wheel() API.
+
+commit 6595b52269bb28207fa3f0660af6e50b773b6aac
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon Jan 23 06:21:14 2006 +0000
+
+    Fix from Ben Combee, make sure to flush updates in the event queue in case
+    items have been updated by the timeout callbacks.
+
+commit b84b5e10859b23d8bd4b3960bae750e4b424e050
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed Jan 4 07:34:03 2006 +0000
+
+    From Andy Stewart: new feature, return from the event loop in case window
+    passed into lite_window_event_loop() is destroyed.
+
+commit 1db50bdf1ccef3fefe231de99e8b1c4464c73229
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Jan 3 05:22:09 2006 +0000
+
+    Fix from Andy Stewart: make sure that the window->drag_box is set to
+    null in case the child has been removed (and it was defined as the drag_box).
+
+commit cb6309e708e0c1ab798565042b3fae87a20002a4
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed Dec 21 01:14:18 2005 +0000
+
+    New LiTE version, 0.6.5, see NEWS and ChangeLog for details.
+
+commit f6f9bae3cea302cec1eab57b15bc386bf08f19c6
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed Dec 21 01:04:23 2005 +0000
+
+    New functionality from Ben Combee:
+    
+    New feature to add LiteTimoutFunc callbacks into the timeout queue, enqueue
+    and remove them with lite_enqueu_window_timeout() and lite_remove_window_timeout().
+    These callbacks could be used for periodically checking for events, indicate
+    if they are double-clicks, or other similar specific cases where we need additional
+    time to find out what the event really is.
+
+commit 18091639d6f90e1aabe0af55b268f373b954e4b8
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed Dec 21 00:40:47 2005 +0000
+
+    New config value for system cursors, DEFAULT_WINDOW_CURSOR_HOTSPOT_X
+    and DEFAULT_WINDOW_CURSOR_HOTSPOT_Y. Default 0,0, but change these
+    in case the default cursor hotspot is other than 0,0.
+
+commit 4eb9c2a206009e475d5333852858ebf9162e618d
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed Dec 21 00:37:42 2005 +0000
+
+    New cursor API, lite_set_cursor_hotspot(), used to define the cursor hotspot
+    for specific cursor resources.
+
+commit 72199fee2a0817650394a60974dc221c1919cd1d
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed Dec 21 00:35:01 2005 +0000
+
+    Add cursor hotspot x and y entries to LiteCursor the struct. Use these
+    when setting the cursor shape. This so we could define cursor hotspot other
+    than default 0,0.
+
+commit edea111dc11f1830f36a82afbc21637a09830e3a
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Dec 20 03:14:24 2005 +0000
+
+    Patch from Damian Kowalewski. Handle modal state outside the focused
+    modal box. In other words, when there are mouse clicks outside the
+    modal box, then accept these as clicks even if they don't belong
+    directly to the LiteWindow itself. This makes it possible to close
+    modal windows outside the LiteWindow itself.
+
+commit 178d738a489c27dd4e567523c9c7191ad859b42a
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Dec 20 03:09:14 2005 +0000
+
+    Adjust the focus in case the box has the window focus. Also make
+    sure that if the box is an entered_box, then set this to null as
+    it's removed.
+
+commit 18463ff2ba29ab7a485e4b2c1e48c1501c815932
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Dec 20 03:06:06 2005 +0000
+
+    Fix from Ben Combee, if a null region is passed as an update region, then
+    update the whole window itself. This is similar to passing NULL with LiteBox
+    regions.
+
+commit def226067fca26738d11e9c36c8c7f71cc489666
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Dec 20 03:03:03 2005 +0000
+
+    Inside lite_ref_font, lock the font muxes while updating the ref count.
+
+commit 930c249f4de6de155b339b7ba6f2d38b0263af07
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Mon Dec 19 21:39:59 2005 +0000
+
+    Defer opacity change of a window (making it visible) until it has been updated once.
+    Removed clear of the window content during creation, instead just enqueue an update.
+
+commit 0cb5df2bfadb6a817db3e6bcc997756cf1b20f1b
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Nov 19 07:20:15 2005 +0000
+
+    New LiTE version, 0.6.4, see NEWS and ChangeLog for details.
+
+commit 8154601934b055ca6184a445dac85720e062d560
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Nov 19 07:10:41 2005 +0000
+
+    Rename the other LiteWindow callback func typedefs so they also start with
+    prefix Lite.
+
+commit 105251f7c55afabd8e37a7ee2e548d197d76d6af
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Nov 19 06:59:35 2005 +0000
+
+    Start of renaming the callback functions so they start with Lite, this in
+    order to avoid linking clashes when linking against other libraries.
+    First the WindowEventFunc is renamed to LiteWindowEventFunc.
+
+commit 5b40b03ec8abef1bbf3e60a8715502f14c48920d
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Nov 19 06:54:58 2005 +0000
+
+    New LiteWindow flag, LITE_WINDOW_FIXED, when set the window can't be moved
+    or collapsed, neither pushed to background, with the mouse left and right
+    clicks. This is useful if the LiteWindow has chrome and is a fixed window that
+    should not be moved or resized.
+
+commit efeb94cee4eaf21b1c5f6097527651ce84761f66
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Nov 19 06:50:14 2005 +0000
+
+    Force an update of the area occupied by a child when removing child box entries.
+
+commit 1d34e314b4719db3259775889e5871a69fe13c08
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Nov 19 06:45:17 2005 +0000
+
+    Make the window box active by default so various callbacks and so on will
+    trigger in an empty window.
+
+commit 8bbdac6e27b2e0d7ddb3a825cc6aaa6f85e5b3e5
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Nov 8 05:49:53 2005 +0000
+
+    New LiTE version, 0.6.3, see ChangeLog and NEWS for details.
+
+commit a5ecbbda8226bd10c3d7171008276b0891b51afc
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Nov 8 05:42:14 2005 +0000
+
+    Removed warning of unused variable.
+
+commit dc09e44b3167f3f288f19a6f795dca1215ada701
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Nov 8 05:28:46 2005 +0000
+
+    Added Ben Combee to the list of authors.
+
+commit b1a626fdf833011f437a137fa4cf15b9f978c387
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon Nov 7 07:55:44 2005 +0000
+
+    Patch from Ben Combee, honor the LiteBox is_visible flag, if set to 0 (not visible),
+    then do not show any of the LiteBox children, i.e. stop at the first LiteBox hierarchy
+    that has the is_visible flag set. This makes it possible to disable visually groups
+    of LiteBoxes.
+
+commit bc693eb73008e48d00c7768e038315777782a139
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon Nov 7 07:50:01 2005 +0000
+
+    Removed too aggressive pre-conditional testing of LiteBox entries passed to
+    lite_box* APIs, this as sometimes LiteWindow() entries are passed in...
+
+commit dc12a8f0b3858acfe247da3dd9fb803292daec29
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon Nov 7 07:39:34 2005 +0000
+
+    Separated the LiTE Doxygen group from the lite.h API group itself, so
+    there's a specific instruction for Doxygen to create a LiTE group.
+
+commit da2cc64e61127dab64d9a531b14d7723e45e8e15
+Author: Claudio Ciccani <klan@directfb.org>
+Date:   Mon Oct 31 11:42:43 2005 +0000
+
+    Reset window->title to NULL after freeing it.
+
+commit 0f1a3bc1214574c301497df2697ff26a98351fcf
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Oct 29 04:41:22 2005 +0000
+
+    New LiTE version, 0.6.2, see NEWS and ChangeLog for details.
+
+commit 5319629ef52d56cf38c72bd9083f2532285bf133
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Oct 29 04:37:13 2005 +0000
+
+    Only delete the box->children array if it's non-NULL.
+
+commit ec6844b7d36d08fcc1f77d9d8433c4c55da75e0e
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Oct 29 04:13:35 2005 +0000
+
+    Intersting patch, done by, let's see, Andy Stewart and Damian Kowalevski,
+    and Chad Scates, and finally rolled in by Kent! Do not return on_button_up
+    unless the the mouse up is within the bounds of the widget.
+
+commit 552faa5c35ea14bed13cf1a8696642df9b4255ac
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Oct 29 04:06:23 2005 +0000
+
+    Cleaner D_DEBUG_AT output with lite_draw_box() and lite_update_box().
+
+commit abd9ec70a6faec26a0e269201727b0de0fc31983
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Oct 29 03:56:30 2005 +0000
+
+    Let D_DEBUG_AT tell each time a specific LiTE object is created.
+
+commit f61207bc31fa0cee3e32e83d5c3735d952035d10
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Oct 29 03:46:11 2005 +0000
+
+    Comment out the LiteThemeDomain for the time being as it's not used.
+
+commit a354e69697443d1dd0a03376b1e803d112c54e29
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Oct 29 03:44:34 2005 +0000
+
+    D_DEBUG_AT messages from slider.c internal changes.
+
+commit 8c586c0d1974da2a32d02bce25034e6292b25ce2
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Oct 29 03:42:03 2005 +0000
+
+    Use D_DEBUG_AT for textline internal changes.
+
+commit 747e422cb77339bf21830f934f7da9f6c852627a
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Oct 29 03:38:51 2005 +0000
+
+    Use D_DEBUG_AT to return state changes from lite.c.
+
+commit 3b864c1b1de0523d91a4eff7e1ca0f76cca32bb2
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Oct 29 03:33:26 2005 +0000
+
+    Use D_DEBUG_AT statements for internal LiteLabel changes.
+
+commit 6ad4dbbeaf53b74b6b5e058acde552bd25c4b19a
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Oct 29 03:27:53 2005 +0000
+
+    Use D_DEBUG_AT statements for internal image changes.
+
+commit 1658d995a91cf1b3c1cc554f9a421b886acc56b0
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Oct 29 03:25:07 2005 +0000
+
+    Fixed compiler warning.
+
+commit 826ae1fa055f407242c1fddd97d186d898fe0e7f
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Oct 29 03:22:52 2005 +0000
+
+    D_DEBUG_AT statements for various cursor changes.
+
+commit 5c48d3ac39892257dfcd3213f789a21588d4a875
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Oct 29 03:17:36 2005 +0000
+
+    D_DEBUG_AT statements for button internal changes.
+
+commit 228a77c9fcf0a289f3408360b757952caa22c2a2
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Oct 29 02:51:55 2005 +0000
+
+    From Damian (with minor tweaks by Kent): Delayed window destruction, do not
+    destroy the window immediately, instead set a flag that tells the window should be
+    destroyed at the end of an event pump cycle...
+
+commit 65b3bc57999e718697206ea9aca87e8a8105f447
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Oct 29 02:33:58 2005 +0000
+
+    From Damian, internal function destroy_window() for removing the window and its resources.
+
+commit 3201b2009abb9bc82df09fffee61038f88c5801d
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Oct 29 02:28:55 2005 +0000
+
+    Two new LiteWindowFlags, LITE_WINDOW_HANDLING_EVENTS indicating that the window
+    handles events, and LITE_WINDOW_DESTROYED to indicate the window will be destroyed/removed
+    later in the event cycle.
+
+commit fd38722f0089315092a713bb7c7e3bd20efd9a9f
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Oct 29 02:21:48 2005 +0000
+
+    More tweak and fixes in the code base so it looks prettier.
+
+commit 571e6548fa003761edb42171383e0bf91a4790f5
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Oct 29 02:21:23 2005 +0000
+
+    Removed @ingroup Doxygen instruction so lite.h @defgroup is the collecting
+    group for the module definition.
+
+commit 8a113bb04a1b156ba80ccc79d297167b562330dd
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Oct 28 20:10:56 2005 +0000
+
+    Code cleanup in event.c
+
+commit 8f55933d9749a16f24e4f67f4798c8979ddeb503
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Oct 28 20:08:02 2005 +0000
+
+    Cleaner button.c code.
+
+commit 27a94ce3a9ed3dd741d7386c2f0f4e668110e656
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Oct 28 20:02:07 2005 +0000
+
+    Restructuring of code so it'e easier to understand.
+
+commit 087c753f983ab35c57e3989c4a44e2cd62b4cb1e
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Oct 28 19:55:27 2005 +0000
+
+    Animation code cleanup.
+
+commit 78ff413953231c987a3768c3a3794ed14720af24
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Oct 28 19:49:47 2005 +0000
+
+    Better LiteWindow documentation.
+
+commit 1404bef4f940076424c8b59087f20517a2b248cf
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Oct 28 19:36:45 2005 +0000
+
+    Better util documentation.
+
+commit ed7c17474b86d6209e1db024d64b364946323967
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Fri Oct 28 19:32:29 2005 +0000
+
+    s/strdup/D_STRDUP/
+
+commit d95d4bbe3db8184df419be0f1889defa8420a0ff
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Oct 28 19:31:55 2005 +0000
+
+    Fixed Image documentation.
+
+commit b0a8183e1bc614d7493c0ecec29594f3559aaac5
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Oct 28 19:30:08 2005 +0000
+
+    Fixed typos and grammer in the font documentation.
+
+commit ed579e5fd4c6a5694a273733fd6cccd6b96298c1
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Oct 28 19:27:49 2005 +0000
+
+    Better documentation for the public LiTE event APIs.
+
+commit a30773d8fce49ac0e4984105a6087ef36095d8af
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Oct 28 19:24:09 2005 +0000
+
+    Better documentation for the LiteCursor APIs.
+
+commit 0989663e92097d3cab4f46266e16e0636792d8f3
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Oct 28 19:19:24 2005 +0000
+
+    Better LiteBox documentation, explaining the difference between lite_draw_box()
+    and lite_update_box(), what lite_clear_box() really does, and so on.
+
+commit 5d0a4a2e8b138583329b3580941dc821f2a9b0bb
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Oct 28 19:10:24 2005 +0000
+
+    Internal box functions test for NULL pointers with D_ASSERT.
+
+commit 5dfa6eb190fb13aa9f4cf6adc966c270992d849f
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Oct 28 19:03:49 2005 +0000
+
+    lite_clear_box() checks if passed in box is valid or not.
+
+commit a33f42ee2d34a9b6016014eeb6b2c6b1b59fe312
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Oct 28 18:57:48 2005 +0000
+
+    Change function name from lite_draw_box_and_children() to draw_box_and_children
+    as this API is not exported.
+
+commit 1da418a804832c3244c17b701b0e334d92c8311e
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Oct 28 18:43:20 2005 +0000
+
+    From Damian and Kent: Exported append_child and remove_child_from_parent as
+    two new public APIs: lite_add_child() and lite_remove_child(). These APIs could
+    be used to change the parent/child hiearchy in the system, removing or adding
+    children to the parent array -- for example for placing a LiteBox container around
+    an existing LiteBox for focusing purposes, or for similar hierarchy manipulations.
+
+commit 33f2c9c30e85f6ea21733b4e4d3f405bc5e1d699
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Oct 28 18:18:31 2005 +0000
+
+    Fix from Andy Stewart, when creating a box, make sure that the entered_box
+    LiteBox entry is updated with the right value by calling deenter_me_or_children.
+
+commit 88c62389e58adf3d2584cb555ec436c708bbd730
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Oct 28 18:04:08 2005 +0000
+
+    From Damian, new flag in box.h, is_active, when disabled no callbacks are
+    triggered for the specified box instance. By default all boxes are still active.
+
+commit 1327963908df07a30c9997d9794e93d289d66841
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Oct 28 17:47:38 2005 +0000
+
+    New API, lite_get_cursor_opacity() that returns the current opacity level
+    for the cursor window opacity. This is for the time being stored as a static
+    inside the cursor.c file each time the cursor opacity is set with
+    lite_change_cursor_opacity.
+
+commit 396dda16724c0282cd786e778ef5a10b4eb817d4
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Thu Oct 27 15:25:53 2005 +0000
+
+    Who's using D_FREE instead of free must also use D_STRDUP instead of strdup :)
+
+commit 8c073c5c7986841c3b54daae6bde11292e080702
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Oct 22 01:57:05 2005 +0000
+
+    Assert for NULL before using variable for casting.
+
+commit c47f0ba6951996bc47a3c27673fee83011438a1a
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Oct 22 01:55:59 2005 +0000
+
+    All public textline APIs now check for valid LiteBox* structs.
+
+commit 105d7459671b6c56aff40b0c7ea59e9b3b7d8957
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Oct 22 01:54:25 2005 +0000
+
+    Assert for NULL before using the param to cast it to a slider object.
+
+commit a326ec3fad3b32168264239540210b96187b147c
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Oct 22 01:52:46 2005 +0000
+
+    All public slider APIs now test for valid LiteBox structs.
+
+commit 97b49872990b7f95f4a18e014767f321c8a7e657
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Oct 22 01:51:09 2005 +0000
+
+    All public LiteImage APIs now test for valid Litebox structs.
+
+commit 721c53ffb6142a2e8071246ff86bd20ccfe1a7a0
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Oct 22 01:49:22 2005 +0000
+
+    Assert on box before using it to typecast to a button.
+
+commit 8ac9478ff229116127af3d07a12854c14059b896
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Oct 22 01:48:04 2005 +0000
+
+    All public LiteButton APIs now check for valid LiteBox* structs passed in.
+
+commit 46f80518bdce349cdef551e2b499058758137208
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Oct 22 01:45:18 2005 +0000
+
+    LiteAnimation public APIs now check for valid LiteBox* passed in.
+
+commit 69b68b4f0e5bb8e1d2399f27d10348f81eda4f43
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Oct 22 01:42:35 2005 +0000
+
+    LiteLabel public APIs now check for valid LiteBox* passed in.
+
+commit 50291f91b6f0052ae485733dca065f2d689670f6
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Oct 22 01:39:52 2005 +0000
+
+    Need to set box type to LITE_TYPE_BOX in lite_init_box(), otherwise it's never
+    set. Testing out the LITE_BOX_PARAMETER_CHECK() macro for labels that required
+    that the type was set.
+
+commit 5b2fcc2b7ddc0486fd701cc34f4d945a3bb7d17d
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Oct 21 22:28:04 2005 +0000
+
+    More parameter checkin inside windows.
+
+commit d2717a9791037ed494a14a334071f7de0bc6b5dd
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Oct 21 22:19:06 2005 +0000
+
+    Fixed another compiler warning.
+
+commit 27a08eb6f5858241717e30f8645bcf64bf8eb30b
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Oct 21 22:14:34 2005 +0000
+
+    lite_on_textline_enter() and lite_on_textline_abort() now return
+    DFBResult values.
+
+commit d87e2bc61c1edf4136112315c6fdced3fa436cb6
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Oct 21 22:11:21 2005 +0000
+
+    Fixed lite_on_slider_update warning by really returning a DFBResult.
+
+commit c7e29ed723df660a01352454d7f34c998713b0fe
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Oct 21 22:02:50 2005 +0000
+
+    More window APIs check for NULL pointers and valid/invalid window
+    structs passed in.
+
+commit 186c79e0ae8006b6768f4f6534729539f8388676
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Oct 21 21:51:36 2005 +0000
+
+    Use D_MALLOC, D_CALLOC, D_REALLOC_ and D_FREE instead of malloc,
+    calloc, realloc and free in memory operations, this for catching possible
+    memory leaks in debug builds.
+
+commit ab2bab524092455a98f187ee6188bb908e262bb3
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Oct 11 20:39:59 2005 +0000
+
+    New LiTE version, 0.6.1, see NEWS and ChangeLog for details.
+
+commit 4ea830e4450a6c6e8c5a4bfabfaf3f069bb19ad6
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Oct 11 20:26:02 2005 +0000
+
+    Convert D_ERROR to D_DEBUG_AT calls.
+
+commit 1b0a209582e11f6371f9458ff909c0f44d365f2a
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Oct 11 20:22:57 2005 +0000
+
+    More window testing for public APIs to make sure garbage is not passed
+    in.
+
+commit 29fa0181c2fe9d7899fed49ae9382acd4d6033ec
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Oct 11 20:19:59 2005 +0000
+
+    Use of LITE_WINDOW_PARAMETER_CHECK() to make sure the passed window
+    is a LiteWindow and not garbage.
+
+commit a6a7f8374c7cd49b036f166e3188dc54ddb255fc
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Oct 11 20:12:48 2005 +0000
+
+    Removed the non-window event loop handling, better do it another way.
+
+commit f82c659d8494da3cfbebb61410ed028e31c451a9
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Oct 11 18:27:10 2005 +0000
+
+    In preparation for a window-less event loop, test if lite_window_event_loop
+    has the passed in window as NULL, if so set a flag to tell that this
+    event loop will run as windowless.
+
+commit bc427f899dd815ad9ecd0323c624e0247c08b235
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Oct 11 18:12:21 2005 +0000
+
+    More NULL parameter checks in the public APIs.
+
+commit a684b53d28694711b6f12378a572c550608b06f7
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Oct 11 18:09:19 2005 +0000
+
+    More NULL parameter checks in the public APIs.
+
+commit 9b6df2ea14a7a4d102052a3972cfe1bdd9182776
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Oct 11 18:06:45 2005 +0000
+
+    NULL parameter check for the LiteWindow creator APIs.
+
+commit 84057b54ad5a7852b0413eb55a96eb435ff19970
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Oct 11 18:03:25 2005 +0000
+
+    Move the lite_exit_loop_idle() functionality from window.c into event.c.
+
+commit bb5c167cd7f55526d8c0a4948cdfd7c89a0c38f6
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Oct 11 17:57:10 2005 +0000
+
+    Isolate the exit_idle_loop_global access via a private function:
+    prvlite_get_exit_idle_loop_flag().
+
+commit 30d069fb5aca620cff2ab514c1f6e188ce98c8e4
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Oct 11 07:18:52 2005 +0000
+
+    Two other utility macros to test the validity of passed in parameters.
+    LITE_WINDOW_PARAMETER_CHECK to test if the passed in pointer is of type LITE_TYPE_WINDOW.
+    LITE_BOX_PARAMETER_CHECK to test if the passed in pointer is of type LITE_TYPE_BOX.
+
+commit f5c2502c2827c0303921cd7287d409caec31c937
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Oct 11 07:10:29 2005 +0000
+
+    Make the LiteBoxType enums more specific than 0 and 1 for box and window type
+    in order to avoid corrupt data used as the real thing, now LITE_TYPE_BOX is 0x1001 and
+    LITE_TYPE_WINDOW is 0x1002.
+
+commit 4707110593b8a52c71783a9933271535ebd9d99c
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Oct 11 06:50:41 2005 +0000
+
+    Guard public APIs in util.c using LITE_NULL_PARAMETER_CHECK.
+
+commit 63a19e791336efff96e86b2c80e05dd3bc43e7ef
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Oct 11 06:47:13 2005 +0000
+
+    Guard public APIs in textline.c using LITE_NULL_PARAMETER_CHECK.
+
+commit a0306269e9edb775b90ec9d87c0cb0ef56aad0c9
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Oct 11 06:45:22 2005 +0000
+
+    Guard public APIs in slider.c using LITE_NULL_PARAMETER_CHECK.
+
+commit c0416578b9053bb1da5b1a6a1434a9f9079b2152
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Oct 11 06:43:25 2005 +0000
+
+    Guard public APIs in label.c using LITE_NULL_PARAMETER_CHECK.
+
+commit f0dc28ab60590536bcde408f52488885209f758f
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Oct 11 06:39:56 2005 +0000
+
+    Guard public APIs in image.c using LITE_NULL_PARAMETER_CHECK.
+
+commit 4d5f7c0ee152f5004f62c6c95a376cb63b8ea24b
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Oct 11 06:38:24 2005 +0000
+
+    Guard public APIs in font.c using LITE_NULL_PARAMETER_CHECK.
+
+commit 7d2cebf7bf5dc98de2d4f9bd907213488e6b35c3
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Oct 11 06:33:02 2005 +0000
+
+    Guard public animation.c APIs for NULL pointers using LITE_NULL_PARAMETER_CHECK.
+
+commit 277d9b7a6423dfd9dec06a6a468b2a1639aa7dd7
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Oct 11 06:29:12 2005 +0000
+
+    Guard all public cursor.c APIs for NULL pointers using LITE_NULL_POINTER_CHECK.
+
+commit 5f07177350727ebcdfce4d8d3cdcca036d0db316
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Oct 11 06:26:12 2005 +0000
+
+    Guard all public button.c APIs for NULL pointers using LITE_NULL_PARAMETER_CHECK()
+
+commit a65f77f1014218410ae47f774484a04dbaf91066
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Oct 11 06:21:31 2005 +0000
+
+    Guard all public APIs in box.c for passed in NULL parameters using LITE_NULL_PARAMETER_CHECK().
+
+commit 4418edb1c09f72da86f5143bbc7021631998d8ea
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Oct 11 06:17:32 2005 +0000
+
+    LITE_NULL_PARAMETER_CHECK macro, returns DFB_INVARG on passed in NULL pointers, to be
+    used as preconditional in public APIs to catch passed in NULL pointers.
+
+commit f1199b08d6dd1759539b9f1e34e5901dd25e946e
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon Oct 10 21:23:30 2005 +0000
+
+    Changed name of lite_on_univeral_event() to lite_on_window_univeral_event() to reflect
+    that this callback is installed per window instance, and that there might be in future
+    a global universal event handler outside the window itself.
+
+commit ae2f437780c52ea7403b56ffe8c3f6ad6ae98857
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon Oct 10 21:21:03 2005 +0000
+
+    Changed lite_on_user_event() to lite_on_window_user_event() to reflect that the user event
+    callback is tied to a specific window instance, not globally, as there might soon be another
+    way to register for user events outside any window.
+
+commit b65d771f5d26fe8a0b0835423481876e50af61d8
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon Oct 10 21:14:51 2005 +0000
+
+    Temp solution to reroute lite_get_event_buffer to return the global event buffer
+    in case NEW_EVENT_BUFFER is set, otherwise it uses the old scheme. This to test out
+    the new global event buffer without fully committing (and causing immediate problems) while
+    testing it out.
+
+commit 87ff647c8fabc1bf46af2cf3de90b21f9c8de571
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon Oct 10 21:08:26 2005 +0000
+
+    Alternate path in lite_post_event_to_window() for getting the global event buffer
+    that will soon be enabled.
+
+commit 07ee9a8ec37d0c870ff6078b4bbb18d7efbd1ab8
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon Oct 10 20:57:57 2005 +0000
+
+    D_ASSERT when calling prvlite_attach_to_event_buffer() to make sure there's a valid window passed in.
+
+commit de138e05de21338f3b11a137ccc2acfcbd6a47f3
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon Oct 10 20:56:25 2005 +0000
+
+    D_DEBUG_AT message when exiting the event loop.
+
+commit 8804f6e38e85a00a9851fd3cbb65628c726b3362
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon Oct 10 20:51:43 2005 +0000
+
+    Move prvlite_set_event_loop_alive() and prvlite_set_event_loop_alive() from window.c
+    into event.c.
+
+commit 6788894fae778e3539be922ba76d9876f045627a
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon Oct 10 20:48:16 2005 +0000
+
+    Use prvlite_get_event_loop_alive() in all instances instead of using the global.
+
+commit d705b82ed00923ce98419c29935fbf26cd50c388
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon Oct 10 20:45:31 2005 +0000
+
+    New internal function, prvlite_get_event_loop_alive() to isolate, and soon,
+    move the event loop state info out from window.c.
+
+commit c2fe28b00c4fb8266b32760a800ed87576d07681
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon Oct 10 20:42:55 2005 +0000
+
+    Use prvlite_set_event_loop_alive() API in all cases.
+
+commit cc0c9117827c560681a31051932198ed748ee3a6
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon Oct 10 19:59:22 2005 +0000
+
+    Added Ed Wei to the constributor list.
+
+commit b9d9a3498bf30522b6f887b52ec845e2d1f30e7c
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Sun Oct 9 03:01:50 2005 +0000
+
+    Fix build error (wrong prototype).
+
+commit 107f9c0f837d07e197dbd72b65b347d36f03458d
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Oct 7 01:20:19 2005 +0000
+
+    New API, lite_get_window_size(), this as the LiteWindow internal window
+    size struct values are not reliable if someone changes the underlying IDirectFBWindow
+    directly. Now, one could always use the IDirectFBWindow::GetSize() directly, as this API
+    does, but just to adversize not to look at the LiteWindow size values (that should be
+    eventually phased out...).
+
+commit 072d1da06640cdbc82fdeb0ee967d64e9dee3647
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Oct 4 01:50:09 2005 +0000
+
+    Global event loop tested, run in parallel but not yet activated, to activate,
+    set NEW_EVENT_BUFFER in window.c
+
+commit 2c0a69b8ef56252c0cb28a3d757c33e6f0f6b6e8
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Oct 4 01:25:52 2005 +0000
+
+    Better name for creating the internal event buffer, prvlite_create_event_buffer().
+
+commit 0a4962636484bd605bd216d0e086e81201839f7c
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Oct 4 01:10:10 2005 +0000
+
+    No need to null out the window pointer struct members, calloc() sets 0 to
+    each and every entry...
+
+commit b2d3b06f9a77b2ab19d42f8ab33d0e3855dfd298
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Oct 4 01:03:15 2005 +0000
+
+    More error testing and asserts when creating the main event buffer.
+
+commit 6b0fe97ecf886ef889fb7dc61167de3e7fcc6d62
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Oct 4 00:57:01 2005 +0000
+
+    Implementation of prvlite_attach_to_event_buffer().
+
+commit 532b5283c7bbf7f1844965e9f27203fb9fe3cc2f
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Oct 4 00:55:51 2005 +0000
+
+    New internal function, prvlite_attach_to_event_buffer() so that newly
+    created windows could attache to the future global event queue.
+
+commit f81cc52c15cbf4a743b48062776efb96ddf934c2
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Oct 1 00:47:44 2005 +0000
+
+    Better names for the D_DEBUG_DOMAIN tokens, and also use D_DEBUG_AT instead
+    of D_DEBUG that were used in some cases.
+
+commit 9756b038f4936695d066f415df897d89c3490868
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Oct 1 00:34:31 2005 +0000
+
+    Create our new global event queue as part of lite_init(), not yet used by
+    the window handling...
+
+commit 783413a9d51340b573a83214a97880d0a33ec713
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Oct 1 00:27:56 2005 +0000
+
+    prva_create_main_event_loop() internal function.
+
+commit 3b2cf9570e8e66bde47acbff152db8596cb89cec
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Oct 1 00:19:35 2005 +0000
+
+    Code in preparation to move to a global main event loop independent of the
+    window created.
+
+commit a08e41dde845e500d0d007c151d513850e2fe6b1
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Sep 30 23:41:49 2005 +0000
+
+    Documentation notes in lite_util_load_image and lite_util_load_image_desc() that
+    they create DFBSurfaces each time they are called -- could be a case where
+    memory leaks could be introduced.
+
+commit f8ca61746faf899326e6c5c0a486b5c2e861f418
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Sep 27 05:00:05 2005 +0000
+
+    New LiTE version, 0.6.0, see ChangeLog and NEWS for details.
+
+commit 86f07f311ff651930dde2a3a33ce9a99bd567695
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Sep 27 04:54:49 2005 +0000
+
+    Patch from Ed Wei to fix a case where exit_idle_loop() didn't work properly
+    if there was a timeout value of 0 in the lite_window_event_loop().
+
+commit ee584ed2ca4d4fb5f644d9cc80b7795d11473d41
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Sep 27 04:51:54 2005 +0000
+
+    Patch from Damian Kowalewski, change the order of finding children in order
+    to fix various issues with window handling.
+
+commit b8201b9a7cecfb3bd346804dc596b83394216304
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Sep 27 04:42:51 2005 +0000
+
+    Patch from Damian Kowalevski to fix a bug where the main focus box was
+    not properly updated when a child array entry was deleted.
+
+commit 3f05fb0021359e5c270e7eb7a38ef4962bbda317
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Sep 27 04:38:05 2005 +0000
+
+    Added a @defgroup Doxygen documentation title.
+
+commit 9d61952031278a5c1c2c93c44f202971dbc7819d
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Sep 9 01:42:41 2005 +0000
+
+    Set all the callback and callback data slots in LiteWindow to NULL when
+    initializing LiteWindow, this to avoid any funny surprises later as we
+    test against NULL slots.
+
+commit 426f92683a704b3fac6cc39010890c0df059e518
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Sep 9 01:37:09 2005 +0000
+
+    New callback installer API, lite_on_universal_events() to install a callback
+    for receiving DFBUniversalEvents.
+
+commit ac7c64c44029efaa4d03c6e97ad79f46aa093980
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Sep 8 00:37:30 2005 +0000
+
+    New version of LiTE, 0.5.3, see NEWS and ChangeLog for details.
+
+commit 338bddb458c52516aad12ac46cb795ae30441bf6
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Sep 8 00:25:28 2005 +0000
+
+    New API, lite_window_set_creator() and lite_window_get_creator() that will
+    set and get from the LiteWindow structure a reference to a window that
+    originally created a specific window. This is used in modal window cases
+    so that some windows created from a modal window could receive all
+    events.
+
+commit 7f43b21f4bc7e53d3b8e2fe04b79634b94f2175d
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Sep 8 00:16:31 2005 +0000
+
+    When calling lite_resize_window(), also update the LiteWindow height
+    and width structure values.
+
+commit 186dae63e04c0f105c5f660fa748d865614a0184
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Sep 8 00:13:58 2005 +0000
+
+    Move the theme globals into .c files and use extern definitions in
+    the .h files so C++ compilers are happy.
+
+commit 24abb8b09698630de4b4a83c6d55b623b9e3c1d2
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Aug 27 02:08:47 2005 +0000
+
+    New LiTE version, 0.5.2, see NEWS and ChangeLog for all the details.
+
+commit 16b1602281e878880b4b8ea9f7ada7a27c6d5f0a
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Aug 27 02:01:59 2005 +0000
+
+    New global callback that can be installed via lite_on_window_event(),
+    this callback is triggered *before* the window handling is done in the
+    event loop, and it could be used for filtering or processing window
+    events before they go into the loop. If the WindowEventFunc callback
+    returns a value not DFB_OK, then the event is not forwarded to the
+    toolbox window event handling routines.
+
+commit b3c87243c51a0af8d5b04aebdd10d48f69d67b7d
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Aug 27 01:40:06 2005 +0000
+
+    Put extern "C" wrappers around all header files for C++ linking.
+
+commit 6fcfffcc35a16c7b0ee72927e4b8964f5871324d
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed Aug 24 00:34:09 2005 +0000
+
+    liteNoWindowOpacity should be 0x00
+
+commit 7225d5d41feb5974dc5b08b77c2e1e9def1e0614
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Aug 23 01:48:11 2005 +0000
+
+    Always set the window event_loop_alive_global to true when entering the event loop.
+
+commit 9c6d5da750427ec4d24fdba46231fe2e2a82d7a0
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Aug 19 02:11:08 2005 +0000
+
+    New LiTE version, 0.5.1, see NEWS and ChangeLog for more details.
+
+commit 2389aaceef02ad53494e331ff54650779f75b046
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Aug 19 02:03:35 2005 +0000
+
+    New internal flag that tells if the event loop should be kept alive or
+    not, by default it's enabled, but could be disabled via a private
+    API (prvlite_set_event_loop_alive()). This way the event loop could quit
+    from inside two of the loops.
+
+commit 2737cb86e5ffcd85efe7be5ed28486e53a2a66e2
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Aug 19 01:51:09 2005 +0000
+
+    New function, lite_set_exit_idle_loop(), if this sets
+    the idle loop exit to true, the event loop will exit
+    if there are no pending events in the event queue.
+
+commit b0edcd0da8d1e0c96bb3db6e9a3fce94778d7846
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Aug 16 03:03:20 2005 +0000
+
+    Guard all stack-defined pointer variables with NULL to avoid possible
+    uses of a pointer with for example testing if it's valid or not (for
+    example interfaces could be triggered).
+
+commit 127fe0419ab4bf2ed9688dff76e05dc3b2c7ce6f
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Aug 16 02:45:50 2005 +0000
+
+    Change timeout value from existing test program loops from 10 seconds
+    to 1 second.
+
+commit 2e9a64040e892e086c581a78df0ad0213dff10ec
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Aug 16 02:41:05 2005 +0000
+
+    Include testutils.h in the Makefile.am file so it's included in the
+    distribution (make dist).
+
+commit 5840865857980dafd34f65eddb4daf5847963fa7
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Aug 9 06:21:50 2005 +0000
+
+    Fixed the timeout values for lite_window_event_loop so that seconds
+    and milliseconds are passed to WaitForEventWithTimeout.
+
+commit d7385356a8308e5a2bbd2439228c38839e508d8d
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon Jul 11 01:15:47 2005 +0000
+
+    New LiTE release, 0.5.0. See NEWS for information and ChangeLog for
+    more details.
+
+commit 876142cbc2977bf084cf8ba3609b7f9dec1ac38a
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed Jul 6 07:34:22 2005 +0000
+
+    Set the cooperative level for the layer temporarily to DLSCL_ADMINISTRATIVE
+    before calling SetCursorOpacity.
+
+commit 8eccac68dd5ca5addb77a47da18efd5d5d3707d3
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed Jul 6 03:56:19 2005 +0000
+
+    Take down the timeout to show hidden cursor to 1 second.
+
+commit 000b5f0bec62f13af5a856ab24ef74912409fcf9
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed Jul 6 03:54:58 2005 +0000
+
+    Add utslider to unit tests run.
+
+commit b3b4bf8dd5c508e5c83946484b86f9df516ccf4c
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed Jul 6 03:51:33 2005 +0000
+
+    Basic slider tests.
+
+commit 1ef8ad7e82767e98c30f8b42832beb949fedb93e
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed Jul 6 03:42:53 2005 +0000
+
+    New unit test for LiteSlider widgets.
+
+commit 6f7aa5a76a2e6bd635be29d27ce96f42d68463e8
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed Jul 6 02:39:24 2005 +0000
+
+    C file template for quickly adding in new unit tests.
+
+commit 738d52c6ce722ac0ab0b4f38a7bd5b46269fa565
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed Jul 6 02:36:27 2005 +0000
+
+    Fix the iteration of num timestamps.
+
+commit 654579bce1f16476bfa8455c837a2b46804d5b2e
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed Jul 6 02:22:08 2005 +0000
+
+    More robust code in drawing the title, a valid font interface should
+    also be present.
+
+commit fe29f6b8f3591e84d40ed74cec1f72c35d8d9a8d
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed Jul 6 01:18:36 2005 +0000
+
+    New API, lite_get_layer_interface() that returns the current active
+    display layer from lite_open().
+
+commit de76733c1e430f1b1ef74b11294fb73c815a3b67
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed Jul 6 00:47:54 2005 +0000
+
+    Added utcursor to the run tests.
+
+commit 0d9929c411ab6e5e6a65cf451d01a68dfa8f163c
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed Jul 6 00:46:19 2005 +0000
+
+    Hide and show cursor API testing in the cursor unit test.
+
+commit 49e0356d43da5a38f3ac52b0bf9b2b2acfd1cde2
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed Jul 6 00:39:06 2005 +0000
+
+    New unit test for Lite cursor support.
+
+commit e7ffd448600d98f312e6556acf2ecde97dae1cf5
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed Jul 6 00:29:28 2005 +0000
+
+    Add utlabel unit test to the runtests script.
+
+commit 4306bdfef20bdc2fb121c3054b65099ef3885e88
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Jul 5 00:49:48 2005 +0000
+
+    Do performance tests in the unit test.
+
+commit fdefbfef3a0cf190bc352cfeca4e6387efd03af6
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Jul 5 00:14:36 2005 +0000
+
+    Basic LiteLabel unit tests in place.
+
+commit 217ac3a6ac3cb0a0a875689d0991564731483fee
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon Jul 4 23:57:05 2005 +0000
+
+    utlabel also using the timeout param for running automatic tests.
+
+commit b854eea4a819eb4675682edc0d755d209de75a82
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon Jul 4 23:52:49 2005 +0000
+
+    Test program accepts a timeout argument to run the test with a quick
+    timeout from the event loop, or with no timeout to run as a standalone
+    application terminated by the user.
+
+commit 8a26622d2759445d82c30c765f76f4352b7ad525
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon Jul 4 23:47:35 2005 +0000
+
+    New API, lite_exit_event_loop(), when called it will exit the current
+    event loop.
+
+commit 2afdefc1aab1f0e9cd2859d3eb0652f24025f4f3
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Jul 2 01:32:27 2005 +0000
+
+    New utility function, ltest_create_main_window() for creating the
+    main test window environment.
+
+commit b45c58c0072bc63989c163de345e411e38bf2995
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Jul 2 01:24:11 2005 +0000
+
+    New unit test for LiteLabel.
+
+commit 971379015c33feb4676d8a75b95cb32749afb893
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Jul 2 01:15:07 2005 +0000
+
+    Cleanup of unused code.
+
+commit 7400b49505dd2b18a2b9eee2fa7150e4da8996bb
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Jul 2 01:09:01 2005 +0000
+
+    Removed unneeded utility function.
+
+commit 0270e76f5b3febdd8632ac236ff5162b0666399c
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Jul 2 01:07:08 2005 +0000
+
+    Show timestamps in the timestamp window.
+
+commit 78798b3fa05618ed13bf8c808cef7224379406c2
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Jul 2 00:53:26 2005 +0000
+
+    Had to unroll all inlines and make them normal function leaf nodes
+    due to global name space issues, hopefully the compiler optimizes away
+    the functions so there's little overhead for the timer calls.
+
+commit 87b5d410469e4dbdad68975c870cba1f2e3c4a1d
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Jul 2 00:24:32 2005 +0000
+
+    Remove warnings. use inline ltest_get_num_timestamps rather than
+    global variable.
+
+commit 2efb33bdf153f6bfeb8b0f8aec7992424559ef4a
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Jul 2 00:17:39 2005 +0000
+
+    Place the unit test code under the MIT license, so anyone could have
+    fun with it.
+
+commit 2ef6885cdff59fc5cb37dda570eb45b4d80bfcc6
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Jul 2 00:06:53 2005 +0000
+
+    First rough take on opening up a window with timestamp info (timestamps
+    not yet shown).
+
+commit 1e646160dcd9ae4a1695ec9a3224ae1f0f75a63a
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Jul 1 23:18:42 2005 +0000
+
+    Make the inlines static so they could be used across multiple implementation
+    files. New file to place all test utility functions into.
+
+commit 17fe6225af3f8c6691bef183f4168cb3f33a450e
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Jul 1 22:27:02 2005 +0000
+
+    Changed the timer APIs to use a ltest_start_timer() and ltest_stop_timer()
+    for better handling the granularity of defining that time values are
+    measured.
+
+commit bc6ba91294dc9b5d877b8dd0d09b49d0abd3b5e8
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Jul 1 22:11:20 2005 +0000
+
+    New script to run all the official unit tests.
+
+commit f291c70a1a615c796465c915f1816b7cae9b4c1b
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Jul 1 21:52:03 2005 +0000
+
+    Lots of new test functions to create time stamps and show the results
+    for performance testing purposes.
+
+commit 406fa2d2bb9f1938b1c45c08f5de83bcaa531189
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Jul 1 21:16:26 2005 +0000
+
+    Unit test window opacity settings.
+
+commit f7189ec8859febf81dd81d963671f63047daf632
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Jul 1 21:12:51 2005 +0000
+
+    Renamed test macro to LTEST, now also taking a label for the output
+    to know what test was run.
+
+commit 8c064ba586a95b34254a126354641ce66801593d
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Jul 1 20:45:25 2005 +0000
+
+    LTEST_IF_FAILS unit test macro, window.c using it now.
+
+commit 4d2883630ca02853951f7c62dae6a78e99c8bd98
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Jul 1 20:10:29 2005 +0000
+
+    New test utils file for testing utility functions and so on.
+    ltest_number_to_label() implemented. window test program using it.
+
+commit ec448bd0c99e33e96287d93bf92074f32e649bbc
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Jul 1 19:39:50 2005 +0000
+
+    Move private function implementations below the public ones.
+
+commit 5dd99fc54ae741e950517763b52305f5ef1da19e
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Jul 1 19:35:00 2005 +0000
+
+    Take into account the theme colors when creating the LiteWindow and
+    settings its initial background colors.
+
+commit 228b816240fec41b03b5ce500a8016f4f3378b86
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Jul 1 19:28:21 2005 +0000
+
+    When building the default window theme, pick up the default background
+    colors and set them inside the LiteTheme struct.
+
+commit c15ac835a010428d8476349b03b117ed04b72d06
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Jul 1 19:24:29 2005 +0000
+
+    Rearranging header file dependencies.
+
+commit 8b558e5ef7b0dc83e1607f0a0f8487ce61aec9fe
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Jul 1 19:21:50 2005 +0000
+
+    LITE_THEME macro to convert generic themes into LiteTheme.
+
+commit c822ba935184884a4572df6d94b2063bb2f2bf8f
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Jul 1 19:08:26 2005 +0000
+
+    Moved the window theme structs and prototypes to window.h.
+
+commit a37c47e55e336befe532547474565b8bdde51144
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Jun 30 23:31:06 2005 +0000
+
+    LiteImageTheme now could include IDirectFBSurface including width and height
+    values.
+
+commit 3f9a30a7f3672e2f20db67926c4298ba867426e6
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Jun 30 23:28:11 2005 +0000
+
+    lite_new_image now actually takes a LiteImageTheme, as we could pass in
+    default images and so on directly to the image structure.
+
+commit cbda98b3ad590196329e337ba6435864d8ab61f2
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Jun 30 23:20:39 2005 +0000
+
+    lite_new_image now takes a DFBRectangle.
+
+commit 24c6fd7561d1369a1017ca96c09491a0b367d467
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Jun 30 23:11:22 2005 +0000
+
+    Now that we are always using ret_ names for handles, change the temp
+    variables to something more meaningful variable names.
+
+commit 8806bde7b1f7644be6bbe2620e3baf62b595405a
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Jun 30 23:00:45 2005 +0000
+
+    New API for lite_new_textline(), takes a DFBRectangle and a LiteTextLineTheme.
+
+commit e0aa6f3a3686ed9023d5acac111332da6b57d850
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Jun 30 22:51:38 2005 +0000
+
+    New LiteTextLineTheme including liteNoTextLineTheme and liteDefaultTextLineTheme constants.
+
+commit 9ee95f9b4a3296d90358394baf382d96a29db2f6
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Jun 30 22:46:36 2005 +0000
+
+    lite_new_slider() now takes a DFBRectangle and a LiteSliderTheme.
+
+commit cecaf4a3ec97213aa0072ed890ab7d53d0206046
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Jun 30 22:33:17 2005 +0000
+
+    lite_new_label() Doxygen documentation, fixed the internal label struct
+    so it uses a LiteLabelTheme.
+
+commit e90845189936a111fee1fa521da814d11efc3df5
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Jun 30 22:29:36 2005 +0000
+
+    lite_new_label() API changed, now takes a DFBRectangle and a LiteLabelTheme.
+    As a lot of test apps use labels, they all had to be changed.
+
+commit ed95703ee79a37829119fbd1b9362fd761fc9b5e
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Jun 30 22:08:22 2005 +0000
+
+    Added font color and size as new slots in LiteLabelTheme.
+
+commit 147cc03ccfe4c4d779fd057d2fb3657d6a05e7ac
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Jun 30 22:06:00 2005 +0000
+
+    *** empty log message ***
+
+commit 0696722c4427865ded44c5f7daa58af223e04879
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Jun 30 22:01:17 2005 +0000
+
+    Fixed the Doxygen documentation for lite_new_button().
+
+commit a53a08a8368082df04e29207b1f38a701c8834c6
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Jun 30 21:59:37 2005 +0000
+
+    lite_new_animation() API change, now takes a DFBRectangle and
+    a LiteAnimationTheme.
+
+commit b4bc1a1a0c0d9ff1b87b273805e3b351116cee43
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Jun 30 21:52:51 2005 +0000
+
+    New struct, LiteAnimationTheme, includes liteNoAnimationTheme and
+    liteDefaultAnimationTheme constants.
+
+commit 2544ec091c215a33aca0e6701e6678aff32c2a1a
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Jun 30 21:37:30 2005 +0000
+
+    lite_new_button() API changed, now takes a DFBRectangle and a LiteButtonTheme.
+
+commit fe154ffd887b1d3544c66416c2ace9d748673fed
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Jun 30 21:08:02 2005 +0000
+
+    New constants, liteNoButtonTheme, liteDefaultButtonTheme.
+
+commit 889e76258da35e23148a19e817b5be0afb2248a4
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Jun 30 21:05:26 2005 +0000
+
+    First cut on a LiteButtonTheme.
+
+commit f2f7df2567fdc1a47cd190d94dcf27d12664841c
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Jun 30 20:50:41 2005 +0000
+
+    Change the LiteWindowTheme surface names to top, bottom, left, right,
+    topright, topleft, bottomright, bottomleft.
+
+commit 36a41f556cd765c0a0dca14d26154bb06880f12b
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Jun 30 20:21:59 2005 +0000
+
+    LiteTheme now has bg_color (background color) and fb_color(foreground
+    color) slots for generic use.
+
+commit e8da6a2d4b19cd90aa1c2261e08b5774b5c7a19b
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Jun 30 19:57:28 2005 +0000
+
+    More name changes of globals so they end with _global.
+
+commit 9f85b69a96e154ad5c731bbd953567d6b7640fbe
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Jun 30 19:49:30 2005 +0000
+
+    current_cursor => current_cursor_global
+
+commit 1fe013f2409b93529801b9d30343b268e0f071e6
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Jun 30 19:46:56 2005 +0000
+
+    globals have now a _global postfix. Forces one to use less globals
+    as there's more typing involved...
+
+commit 6b2184142a447c5955884fa8bf8e90202aaa30be
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Jun 30 19:17:11 2005 +0000
+
+    Changed the name of ButtonState to LiteButtonState and the BS_* constants
+    now are LITE_BS_* constants (as per the DFB/LiTE coding standards).
+
+commit bd8c5b60f91efa5438a3a5bb9708773d2df79116
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Jun 30 19:08:29 2005 +0000
+
+    Two new window constants, liteFullWindowOpacity and liteNoWindowOpacity,
+    corresponding to the 0xff and 0x00 values. They both have Doxygen documentation.
+
+commit 4134ad55bbf353c055cba0a07c943a47c5ad69cb
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Jun 25 01:09:31 2005 +0000
+
+    Renamed lite_load_default_window_theme() to prvlite_load_default_window_theme(),
+    now all non-static internal functions have the prvlite prefix.
+
+commit b89c1c93936bf5de6c6d116415e95330d142aec3
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Jun 25 01:07:28 2005 +0000
+
+    renamed _lite_font_init() to prvlite_font_init().
+
+commit 17f7c77daa1e916f6a3c0fc1a985c6cb5caf6cd7
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Jun 25 01:05:50 2005 +0000
+
+    Changed SetCurrentKeyModifier to prvlite_set_current_key_modifier.
+    Now all private non-static functions have a prvlite prefix, maybe
+    _lite is still pushing the nerves of ANSI C purists...
+
+commit fc42395c310bedb45b1a7c5de2a39e7e3654ef86
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Jun 25 00:44:29 2005 +0000
+
+    README file has the formatting rules/style guide for LiTE.
+
+commit bcc43f56946ccadba248168e3bc1b15de85b4b93
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Jun 25 00:07:20 2005 +0000
+
+    New version, 0.4.3.  See NEWS for the changes and ChangeLog for
+    the change details.
+
+commit aa96f0350194852308db086127af18711429886b
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Jun 24 23:59:28 2005 +0000
+
+    Make render_title() more flexible, if there is no window title and no
+    font defined in the LiteWindowTheme, do still render the top frame.
+    This way we could have window themes with no title top bars (such as
+    dialog boxes with no titles).
+
+commit fe3d20f81fde368d1b7b75900de241601db27536
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Jun 24 23:50:13 2005 +0000
+
+    New configure constant, DEFAULT_WINDOW_MINIMIZE_SIZE.
+
+commit 068de5988aa35b9c9b4c9b50f15cf3b9b33f571c
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Jun 24 23:43:28 2005 +0000
+
+    Code formatting.
+
+commit 28f32c6cd874072bbaf857c3738ea779f996ee08
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Jun 24 23:39:31 2005 +0000
+
+    New implementation file, theme.c, or theme-based functionality.
+
+commit 9c8a75332c9d9d1939865e292726c6561de2e78f
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Jun 24 23:30:54 2005 +0000
+
+    Changed lite_free_default_window_theme() to lite_free_window_theme() so
+    this function could be used for any window theme installed.
+
+commit 5667d87e360cb68680a3020ef3baafd6a9a9a51d
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Jun 24 23:21:21 2005 +0000
+
+    Three new cursor APIs, lite_hide_cursor(), lite_show_cursor() and
+    lite_set_cursor_opacity(). Doxygen documentation for the APIs provided.
+
+commit 98a5743a610b61ecf70750a2ba646716d75124b1
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Jun 24 23:06:35 2005 +0000
+
+    Changed function name from lite_window_setmodal to lite_window_set_modal.
+
+commit 29cf98bd6ee1adcb11765c025c370cf93cb39dba
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Jun 24 23:04:45 2005 +0000
+
+    lite_init_window() API changed so it also takes a DFBRectangle and
+    a LiteWindowTheme.
+
+commit a5f184cdf259e79ab824ae652eddac07224d0b62
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon Jun 20 05:15:23 2005 +0000
+
+    Final style changes, everything should now look the same, phew.
+
+commit 43f4bd3da83e24ed6d50b0fa976520c297af0c96
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon Jun 20 05:09:41 2005 +0000
+
+    More style updates to use the 'tight' function calling style.
+
+commit 1688c38cee8c7f5915008ee499a8bbe6a7374bf2
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon Jun 20 04:46:08 2005 +0000
+
+    More code style changes to support the tight function call style.
+
+commit ac109b295e2b85bf79747624f256b6cde63ed482
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon Jun 20 04:36:41 2005 +0000
+
+    Formatted the code for the tight function calling style.
+
+commit 883b1f6abe159ab54c6f2f15a3e14f50753ac5c4
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon Jun 20 04:30:37 2005 +0000
+
+    Use the tight style format with function calls.
+
+commit e3fa571a0b2a569c052ac21b6209546db563b6f0
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon Jun 20 04:23:47 2005 +0000
+
+    Changed the file header function prototypes to use the 'tight standard'
+    format so they all look the same.
+
+commit da755f698e3b0e42e139bc86c73446bb3c58e5c2
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon Jun 20 03:42:02 2005 +0000
+
+    Further Doxygen documentation work so all header files have the same
+    style.
+
+commit e645ea16ccc59d2700eeeff93f0e647fad50ab0d
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon Jun 20 03:16:25 2005 +0000
+
+    Update the animation and box Doxygen documentation based on the final
+    style.
+
+commit bbf496462163d90572a2fed38f225c6e38af2ee4
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon Jun 20 03:02:07 2005 +0000
+
+    Doxygen documentation for the window APIs.
+
+commit 34bb1b1966a81f953d38a6582d8ebf723fd1f0c8
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon Jun 20 02:19:15 2005 +0000
+
+    Provide Doxygen documentation for LiteWindow structs, typedefs and constants.
+
+commit 9daf7209ad3d7742fddbe7755ff0d48a94acf882
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon Jun 20 02:14:01 2005 +0000
+
+    Remove the WindowIdleFunc callback prototype as this callback is
+    no longer supported.
+
+commit 51d1ba0197c7512e3c4846f7e7e61a83d9bc16d7
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sun Jun 19 22:30:11 2005 +0000
+
+    Doxygen documentation for the util functions.
+
+commit 6e0ad2d496486c4c6d1d7795f79bb6630a0ca0b8
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sun Jun 19 22:03:37 2005 +0000
+
+    LiteSlider Doxygen documentation.
+
+commit 4e8fbef54e0b0b1a60fa4a4c79134ccaef84783f
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sun Jun 19 21:53:33 2005 +0000
+
+    The lite internal APIs are not provided with Doxygen documentation
+    tags, however place comments for the functions so code maintainers
+    know what they functions stand for.
+
+commit 16a17eb77b52798424c07e37a7c234e1a2988afb
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sun Jun 19 21:50:33 2005 +0000
+
+    Doxygen documentaton for the configuration flags.
+
+commit 313f70993db2dabe22da09fae1726e352b0e3aeb
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sun Jun 19 21:42:35 2005 +0000
+
+    Doxygen documentation for the LiTE interface.
+
+commit a71ac2744d1e7e66f599dbc959ee02c880ed31bf
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sun Jun 19 21:23:30 2005 +0000
+
+    Doxygen documentation for LiteImage.
+
+commit 4a27883bcc336e4f2b0e24401fe3f62e8a861ad0
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sun Jun 19 21:18:09 2005 +0000
+
+    Doxygen documentation for LiteFont.
+
+commit b0497e591ad22594ef1a8abfa7825aac487b896f
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sun Jun 19 21:02:22 2005 +0000
+
+    Doxygen documentation for the LiTE event interfaces.
+
+commit 30b8d1eb9aa0ca73059631d8cf24fb3370a6e929
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sun Jun 19 21:00:01 2005 +0000
+
+    Doxygen documentation for LiteCursor.
+
+commit 8c0ad26a0e00d73d901b043b964cd37d866dd2bc
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sun Jun 19 20:47:52 2005 +0000
+
+    Doxygen documentation for LiteButton, fixed small things in the
+    LitAnimation Doxygen documentation.
+
+commit ff93a9c9d75b145243f688188046906a4cc5b9a3
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sun Jun 19 20:21:53 2005 +0000
+
+    Doxygen documentation for LiteBox.
+
+commit 88a1d923ede27afa5db4e1cf067520fefbbd9947
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sun Jun 19 19:59:39 2005 +0000
+
+    Doxygen documentation for the LiteAnimation interfaces.
+
+commit 9ef8a2e1a5b1efa062847e3aae8b5ba31e14cd31
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Jun 17 22:53:37 2005 +0000
+
+    New version, 0.4.2, see NEWS and ChangeLog for details.
+
+commit a2860bea8c969259d25d379fed6ce54a19ff0593
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Jun 17 22:37:41 2005 +0000
+
+    To be symmetrical, lite_on_raw_keyboard() provides a hook to intercept
+    keyboard messages before the modal test or the processing inside
+    various LiteBoxes has happened.
+
+commit 20f52dd9dbf6ade38d0f57b0ae0093f5d0868b00
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Jun 17 22:30:41 2005 +0000
+
+    New user callback that can be installed, lite_on_raw_mouse(), this
+    callback triggers before any processing is done on the mouse event
+    in the window's event handling. This makes it possible to for example
+    pick up mouse events in another window and close the window based
+    on mouse clicks in the parent window.
+
+commit 8bf1984034ddb3516ff697d250327f89b5519a48
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Jun 17 22:16:25 2005 +0000
+
+    The user-provided callback functions now all have a new prototype
+    returning DFBResult (was void). This because there will be cases
+    where the return value might stop something from happening...
+
+commit 55da2dda0c660cb094be1327dca05486519db821
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Jun 17 22:07:36 2005 +0000
+
+    Coding style convention is five spaces, not four.
+
+commit 758b252bbea169cd6a5be4434524fdc60e87c245
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Jun 17 22:04:14 2005 +0000
+
+    Removed unused variable.
+
+commit 597c2a17a741851540f893025d285745e50760e9
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Jun 17 22:03:14 2005 +0000
+
+    Code commenting and reformatting, this is a big file so it needs
+    comments in order for the reader not to get lost.
+
+commit 57a2b2be07399a40876ab95e8db61eb9d0216317
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Jun 17 21:40:39 2005 +0000
+
+    Remove the global LiteWindowTheme, only need the LiteWindow based
+    one now.
+
+commit 596bff4cd76b79ef59abfe84347beeb9b486adfb
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Jun 17 21:36:11 2005 +0000
+
+    New unit test, nothemewindow, to test windows with no themes.
+
+commit ed118ce0f88433f2951cad03d395c8791b326505
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Jun 16 23:52:27 2005 +0000
+
+    LiteWindow is now using the internal LiteWindowTheme struct for calculating
+    and placing the structs/images into the various locations.
+    
+    Fixed a bug in the definition of liteNoWindowTheme.
+
+commit cfafbb635a90e0dff98cedb3a69519b670029c15
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Jun 16 22:52:20 2005 +0000
+
+    Point at liteDefaultWindowTheme when freeing any theme memory, or when
+    checking if a default window theme has been installed.
+
+commit 930104de7d0d641ebb45bf235a819654dc693f0f
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Jun 16 22:13:39 2005 +0000
+
+    lite_new_window has a new API, now takes a DFBRectangle and a LiteWindowTheme.
+    Example and test code changed to reflect the API change.
+
+commit 8f710f719bfae2d25ad06864e53175013f367388
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Jun 16 21:07:48 2005 +0000
+
+    Load the default window theme into the global liteDefaultWindowTheme
+    pointer.
+
+commit 6b4a4c950dcfb9a992ee96bd75fa086d2e53775a
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Jun 16 21:03:16 2005 +0000
+
+    New global variable, liteDefaultWindowTheme, also added Doxygen documentation
+    about the various theme flags and structs.
+
+commit a175fb2a3539184ffaab60e6866586830574004a
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Jun 16 20:49:00 2005 +0000
+
+    New constant, liteNoWindowTheme
+
+commit c56885da3bd77d73e9b2a2e953777c32f7c4baba
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Jun 16 20:46:50 2005 +0000
+
+    Renamed WindowTheme to LiteWindowTheme.
+
+commit 9cce8e2f711661727ec1ed3f642515b9aa3a62cc
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Jun 16 01:35:12 2005 +0000
+
+    New unit test directory called tests, will have LiTE unit tests that
+    need to pass in order for the code to be checked in. First simple
+    case, plain window creation test.
+
+commit b24b5b444bb95aa8e500cee49765650cb43b3052
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Jun 16 01:18:27 2005 +0000
+
+    New lite_config.h flag, LOAD_DEFAULT_WINDOW_THEME, by default true,
+    if false the default window theme is not loaded. This works in combination
+    withthe LITE_NO_THEME env. variable that could override this setting.
+
+commit b9850e696ede892a71bbd938dd7b3528205b8a00
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Jun 16 01:03:56 2005 +0000
+
+    First steps towards Doxygen documentation. Each header file now
+    has a @brief statement telling what the file contains.
+
+commit 414875ce25fc3d2059cc3640b05830d8152e5bc9
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Jun 16 00:51:57 2005 +0000
+
+    LiteWindow has a new theme slot that will be used shortly.
+
+commit ec452c9340aaf8f2ed1044738a275376c10f407f
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Jun 16 00:19:45 2005 +0000
+
+    Renamed various theme() APIs to default_window_theme() API names, as
+    they are only used for loading the default window theme. From now LiteWindows
+    and other widgets will have a default theme that is set by the library, or NULL
+    (no theme), or a theme that could be passed in from the outside when creating
+    or using the widget.
+
+commit 09119d49f5bb903fecb5cc7dd6093f7419a28032
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed Jun 15 23:48:18 2005 +0000
+
+    lite_init_window() is getting big, broke out the event buffer creation
+    code into a separate function.
+
+commit 53c3e72332ac6de7af4c021fe42d653ebd832a48
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed Jun 15 23:35:28 2005 +0000
+
+    New base theme structs, LiteTheme, WindowTheme is inheriting from this,
+    same with future LiteButtonTheme and similar theme structs.
+
+commit 9ea4ba20e933dd25d08bdf2c2b63da3fe72a3abb
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Jun 11 01:38:40 2005 +0000
+
+    New LiTE release, 0.4.1.
+
+commit 7ecbd919cea4765549e049081e721672a08945d9
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Jun 11 01:31:07 2005 +0000
+
+    In case the LiteBox is_visible flag is disabled, then do not forward
+    any events to such cases (code from Damian Kowalewski)
+
+commit 49d0f17227cc0662c67263d12a4c9a2fc25923fd
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Jun 11 01:29:06 2005 +0000
+
+    New LiteBox flag, is_visible, controlling if the LiteBox should be
+    drawn or not (code from Damian Kowalewski).
+
+commit 44a2e2ac1d295079960a433f452f6e7ef2746b34
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Jun 11 01:26:02 2005 +0000
+
+    New API, lite_get_event_buffer() to return the DirectFB event buffer
+    for possible direct access for posting and peeking.
+
+commit 5c6506d19faf0c13c84ff463a94107662429b5b7
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Jun 3 01:41:12 2005 +0000
+
+    New LiTE version, 0.4.0 (stability release, new features forward)
+
+commit 70191523452221dcd5ee5ccf6406da286c625a78
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Jun 3 01:29:23 2005 +0000
+
+    If a LiteBox to be removed from the child array is also a focused_box,
+    then set the window focused_box to NULL in order to avoid possible
+    crash scenarios.
+
+commit d70dfcf1cd992c6d088701adfb7f377e814a7291
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue May 24 22:57:33 2005 +0000
+
+    Code formatting cleanup.
+
+commit f78931590ca57ca6a9841980dc38025d1c2c6033
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue May 24 22:52:36 2005 +0000
+
+    When removing a box from the window, if the box removed is a focused box
+    in window, default the window default focused box to the window box itself.
+
+commit c48c3dbf348958b088bdabb4b5bd88fe0503df00
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue May 24 22:44:23 2005 +0000
+
+    Remove the internal get_window_of_box(), use the exported lite_find_my_window()
+    instead.
+
+commit a64521a16e5354528fd55d6576345e06891467df
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue May 24 22:41:13 2005 +0000
+
+    Fixed bug in calling the wrong callback when the child box is removed.
+
+commit 6c7c6c5cbf32f995b9c63a2adb3856fd16d0312b
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu May 19 01:35:12 2005 +0000
+
+    New version, LiTE 0.3.2.
+
+commit 3702743d8b15b1127f4481538a2b09abda667c3b
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu May 19 01:13:01 2005 +0000
+
+    Code cleanup.
+
+commit 05900c52bc65ee1bb0c8ae2b891fbc1ef0d42bd0
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu May 19 01:07:12 2005 +0000
+
+    Test for NULL pointer args in the public APIs.
+
+commit 1d35438126a0b74a11adbecec742f5ad973d707c
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu May 19 00:49:34 2005 +0000
+
+    More cleanup, remove the old cursor calls that were implemented
+    in window.c
+
+commit 41057b35a03bb4eea8f9e6459323bd9912fdb064
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu May 19 00:36:16 2005 +0000
+
+    Removed old lite_free_cursor(), and renamed the tested lite_free_cursorx()
+    to lite_free_cursor().
+
+commit 1caad58ac248fdccd5aa58b649996d9f6ab49970
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu May 19 00:19:54 2005 +0000
+
+    Switch over to the new cursor handling when starting LiTE, i.e. use
+    the global cursor in cursor.c
+
+commit f64fa65197025606c8a10bce773a1195529919c5
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed May 18 23:22:38 2005 +0000
+
+    Ouch, wrong configure.in got checked in, rolling back to 1.20.
+
+commit fd0df467148803c43f450a6ad4a04220b614595e
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed May 18 23:18:43 2005 +0000
+
+    Redid the load cursor functions so they take a plain pointer instead
+    of a handle, no need to really use handles here as the LiteCursor is not
+    created, just the surface populated.
+
+commit 60d0051c2d1c49fa061ef1e6a84f10f74ef24bb7
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed May 18 22:14:52 2005 +0000
+
+    lite.c has a default cursor structure that is initially loaded.
+
+commit 512c411f2585ddcc7a7333a3adf415c5795fd9a8
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed May 18 21:57:41 2005 +0000
+
+    Better modal window handling (code from Damian).
+
+commit 2c7392fc71b7cdb7994b7c0f5191b7c9971b6e73
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Wed May 18 09:19:34 2005 +0000
+
+    Added lite_ref_font() as opposed to lite_release_font(),
+    e.g. for virtually cloning the font instance.
+
+commit 10ce4f3da6c39803b37ca5a76af8d34359e3b0c7
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Wed May 18 06:46:34 2005 +0000
+
+    Include <direct/types.h> for bool.
+
+commit 692434ba98e1a5621a28956d352cde664d7526e4
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed May 18 02:33:22 2005 +0000
+
+    Parallel code to load in the default cursor (and remove it, too) as
+    part of the lite init and shutdown processes.
+
+commit d0c32968a1b24de602a2a5e78a3be53e4631ac66
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed May 18 02:01:13 2005 +0000
+
+    Renaming of cursor functions in preparation for the migration to
+    the new cursor functions.
+
+commit 00ac07160c36c889c62cc44cbcb31a8a73f47beb
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed May 18 01:09:33 2005 +0000
+
+    Initial implementations of the following cursor functions:
+    lite_get_current_cursor()
+    lite_set_current_cursor()
+    lite_load_cursor_from_file()
+    lite_load_cursor_from_desc()
+    lite_free_cursor()
+    lite_set_window_cursor()
+
+commit d6f1078612f129be7b201aeb02ef9db49af301c9
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed May 18 00:24:19 2005 +0000
+
+    New implementation file, cursor.c, where the global cursor code
+    will migrate from window.c, including new APIs to get and set the
+    global cursor.
+
+commit 760cd2948f964c4b3b592cf911a7e1770072fb60
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed May 18 00:14:05 2005 +0000
+
+    Code from Damian Kowalewski to enable modal state in LiteWindows, when
+    the modal flag is set in the LiteWindow, it is the only one receiving
+    its events.
+
+commit 34296182464e5207d172a2d341ec58a8511fef46
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue May 17 00:32:27 2005 +0000
+
+    First steps of migrating the cursor handling out from window.c.
+    lite_get_current_cursor() returns the pointer to the current cursor.
+
+commit fc20055909af883c5d988806122c8b83a94018d3
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue May 17 00:01:59 2005 +0000
+
+    Document that  talks about the LiTE architecture.
+
+commit 12e320faa42f2168d647aa7546a1a298f850f193
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon May 16 23:48:41 2005 +0000
+
+    Patch from Damian and Kent
+    New LiteWindowFlag variable in LiteWindow, controls if the window
+    could be resized and minimized, and soon if it had modal behavior.
+    By default windows could be resized and minimized.
+
+commit c264a86901adfebc2ac1f2aac8b4329335889f8a
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon May 16 23:45:39 2005 +0000
+
+    In reinit_box_and_childen(), if the original box had a font, restore
+    it back to the new box.
+
+commit 9ea537172399f49a8e70c42386820fa72764b0e1
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon May 16 05:43:40 2005 +0000
+
+    Fixed get_window_of_box() so the compiler is not complaining about
+    no return of the recursive function, also fixed problems with the
+    pure recursive way of returning LiteWindow* entries.
+
+commit 92bd1050fd2f72bae979e3bb5c162e79fcb25072
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri May 13 00:47:42 2005 +0000
+
+    New LiTE Version, 0.3.1.
+
+commit 207f1d4bdc9bc74c2ae16e8ed31329e4f8deeac1
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri May 13 00:46:47 2005 +0000
+
+    *** empty log message ***
+
+commit ef0e6991593d6246d50bfdd15f881f1d480b0d99
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri May 13 00:35:50 2005 +0000
+
+    New contributors: Andy Stewart, Damian Kowalewski.
+
+commit 0620d7d6f7f9893e7bd8787cea62bef8ae6e7740
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri May 13 00:29:43 2005 +0000
+
+    New OnBoxAdded() and OnBoxToBeRemoved() function callbacks (not fully
+    tested yet). They should trigger when a box has been added to the
+    window, or if a box is removed from the window, providing a way
+    to intercept and do something with the LiteBox structures.
+
+commit 8d567b61b32ef381722da821bc661f0509c72cb1
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri May 13 00:08:51 2005 +0000
+
+    New internal function, get_window_of_box() returns a possible
+    LiteWindow* parent of a box installed, this will be used later
+    to signal to a window that a LiteBox has been added or removed.
+
+commit 5e499a83be0b7cd65b3a3023b0bc6cf39cde5188
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu May 12 23:49:04 2005 +0000
+
+    New function lite_get_current_key_modifier() to get the current
+    key modifiers. This function is implemented in event.c, more
+    globally related event code will be moved in future into this directory.
+
+commit aeef479a621eedfe30f80d6456c400b2a7170565
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu May 12 22:32:51 2005 +0000
+
+    LiteWindow now has a separate init call, this makes it possible to
+    subclass LiteWindows with a separate memory allocation part (compare this
+    with LiteBox and lite_box_init()).
+
+commit e47da74c0b3d3f7b82b6e0b6e6a6fbbf37761b14
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu May 12 22:25:42 2005 +0000
+
+    LiteBox now has an internal field, handle_keys, if it's disabled no
+    keyinput is handled inside the box, this is for optimization in case
+    no keyinput should be done in a field, or to disable keyhandling in
+    specific fields.
+
+commit 9ba4a5ffc24e53df19bc098147661f5c17694692
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu May 12 22:20:58 2005 +0000
+
+    Fixed a problem with the parent child slot not being updated when a child
+    is removed, also now compacting the parent children slot so there are no
+    empty gaps.
+
+commit c6639e087658ae8eaf8f7f05c308fa0e392dfd84
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu May 12 22:08:59 2005 +0000
+
+    New multi-window event loop, this makes it possible to create multiple
+    windows, where each window is using the first window's single EventBuffer.
+    This change has some additional functions such as going through each
+    active window's list of possible graphics updates.
+
+commit 5a00ab74b5e245ffeb6d8ca2e904597700bcbc02
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Wed Apr 6 20:54:26 2005 +0000
+
+    Follow API change.
+    
+    Require 0.9.23 now.
+
+commit 5d0dc592fa1daae1abe6d6c1720c1e8ff5ef5e00
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Mar 31 23:41:23 2005 +0000
+
+    Updated ChangeLog and NEWS with 0.3 release information.
+
+commit 893cd4018080da5c2bad9bccdc76bf36ce5141d0
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Mar 31 23:34:55 2005 +0000
+
+    Bumped up LiTE version to 0.3.0.
+
+commit a0a116c9e28dec98371c6843f8d552e94abb9a76
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Mar 31 23:26:30 2005 +0000
+
+    Removed lite_on_window_idle() callback installer, there's no guarantee
+    to get periodic idle events unless the underlying system provides them;
+    it's better to write a wrapper around lite_window_event_loop with a
+    timeout and let the event_loop come out, do processing, and go back into
+    the event loop.
+
+commit cbd353abca26e08d0ead86c20c7799edf8e2b758
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Mar 31 23:23:07 2005 +0000
+
+    lite_on* APIs now return DFBResult values.
+
+commit b29f6254a21b7bfb7b0196cc698baf91b72456ee
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Mar 31 23:13:20 2005 +0000
+
+    lite_on_window_wheel() in which global callbacks could be installed to catch
+    any possible wheel movements independently of the focused box.
+
+commit 27a838bbfe1366f3a5edcb136185c9477136d229
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Mar 31 22:54:30 2005 +0000
+
+    LiteBox has now a new handler, OnWheel() that could be used in widgets
+    for wheel window events, DWET_WHEEL.  There's a a corresponding on_wheel()
+    handler in windows.c that delegates the call to an existing or not existing
+    OnWheel function in the LiteBox implementation. This implementation is very
+    similar to OnKeyDown().
+
+commit cb9867cb4b03aefcda7514748b56fd358a7c8fd4
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Mar 31 04:57:14 2005 +0000
+
+    lite_release_window_resources(), just now it will UngrabPointer any
+    concurrent window that has the pointer grabbed. This is needed for special
+    cases such as when creating additional windows with a mouse-down event.
+
+commit 2d8417e85cc34de4aa93c6f28a2d0201de977635
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Mar 31 04:51:21 2005 +0000
+
+    Keep track of the pointer-grabbed IDirectFBWindow in an internal static variable.
+    This is needed in cases where we need to absolutely release a currently grabbed
+    window, such as when there's a mouse-down event that creates another window
+    (ungrabbing only happens with mouse-up events).
+
+commit 57b10db6a4923c3505115a3c1adc877314cb10a4
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Mar 31 04:42:47 2005 +0000
+
+    LiteBox Draw() now returns DFBResult. Updated all the internal draw_ methods
+    so they return DFBResult values.
+
+commit e91641f7f1c496ddba27ba0d7a533a0f5bf1f35b
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Mar 31 04:31:59 2005 +0000
+
+    Fixed compiler warnings.
+
+commit 71d287a56ff3da483ace0479a2a85e840ede10d9
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Mar 31 04:27:47 2005 +0000
+
+    Box Destroy() now returns DFBResult values. Any internal callbacks were
+    adjusted to return DFBResults from the underlying DFB calls.
+
+commit dd5842151f0a78cd0acb76b55b4b45ff0fefa2a3
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Wed Mar 30 07:48:28 2005 +0000
+
+    Fixed debug build.
+
+commit 49c01fc41345f44c6ed012ccade55fc2498c9299
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed Mar 30 06:47:15 2005 +0000
+
+    LiteCursor is now in the cursor.h header file in preparation for
+    finer granularity theme handling in future.
+
+commit b4ecb4ce28dbfeeeb5796ff15c3e85b797424a3d
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed Mar 30 06:34:45 2005 +0000
+
+    Important change: Switching from a per-window event buffer to a global
+    event buffer, this for easier handling of events concerning modal LiteWindows
+    so that only one window is serviced the event. The other model required
+    multiple threads running, in this model there's just one GUI thread that
+    handles the events from a single source.
+
+commit 6be79e5b41cc4d72f61418179b9145ebbda65e57
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Mar 29 10:20:48 2005 +0000
+
+    Cosmetical - make the APIs look like the DFB ones.
+
+commit ff6e668792cc039055ab24aac735cb750cfdb722
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Mar 29 10:05:45 2005 +0000
+
+    Cosmetical - make the APIs look like the DFB ones.
+
+commit ed490aed4919b44cebd99b38822e60485c7af61e
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Mar 29 10:00:42 2005 +0000
+
+    Cosmetical - make the APIs look like the DFB ones.
+
+commit 0699ce615df08d68983ae2fa7d6ab8f8796b7db3
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Mar 29 09:54:13 2005 +0000
+
+    Cosmetical - make the APIs look like the DFB ones.
+
+commit 8b673d4e3bc49d0c636787f0ae3a27e4e25f2f97
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Mar 29 09:50:14 2005 +0000
+
+    Cosmetical -- make the APIs look like the DFB ones.
+
+commit 6eca0807a572f5e9e460b148d1e739f73b4314f5
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Mar 29 09:47:19 2005 +0000
+
+    Cosmetical - make the APIs look like the DFB ones.
+
+commit 9f54869679ce8329dc2c2ab6b3a09168ac0ca9c1
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Mar 29 09:42:12 2005 +0000
+
+    Cosmetical - change the APIs so they look like the DFB ones.
+
+commit f8516ae457f30b324f0c330dd4865b88aaa402f3
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Mar 29 09:34:54 2005 +0000
+
+    Cosmetical -- make the APIs look like the DFB ones.
+
+commit 968b2c249e6e7ae595714982ddb94e8976d93d33
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Mar 29 09:27:23 2005 +0000
+
+    Fixed compiler warning about unused variable and made the APIs look
+    like DFB APIs formatting-wise.
+
+commit 7c1ad7522f9f9f65d3256e09bd95504cb8ac5113
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Mar 29 09:14:37 2005 +0000
+
+    Fixed a silly copy/paste bug that caused problems with lite_new_box().
+
+commit d83c0521d71ce5857cc625086a607742e0accd02
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon Mar 28 07:31:58 2005 +0000
+
+    LiTE 0.2.2 NEWS and ChangeLog updates.
+
+commit 0fc00af8e53fba5b62673cd532fe6ae0ae1d1590
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon Mar 28 07:22:19 2005 +0000
+
+    Bumping up LiTE version to 0.2.2.
+
+commit a88731edbe838e9e82e76f5af6223c71e4631e4e
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Mar 26 01:46:52 2005 +0000
+
+    lite_new_box() now returns DFBResult and takes LiteBox handles.
+
+commit 5aa752830d6c4aef08b67520a50048279e35860e
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Mar 26 01:37:20 2005 +0000
+
+    Moved static function to end of file.
+
+commit 6a3cf371ede93659e9abafcd575d8e30b5ba6601
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Mar 26 01:19:49 2005 +0000
+
+    lite_close() returns DFBResult.
+
+commit 5b9efcfa7e14ab3a629115e84dfc928f18756826
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Mar 26 01:13:52 2005 +0000
+
+    lite_destroy_box() returns DFBResult.
+
+commit 853816e6dd3fc7e2b011296edb3cb9dcdcac291e
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Mar 26 01:05:48 2005 +0000
+
+    Removed lite_redraw_box() as it was not implemented.
+
+commit c33536737d144070583c997bbcbd4bbacbdffb82
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Mar 26 00:25:02 2005 +0000
+
+    New lite_new_button() API, takes a LiteButton handle and returns
+    DFBResult.
+
+commit 8c63a39b136f0f596dd93c044657e4a2c612a532
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sat Mar 26 00:08:36 2005 +0000
+
+    lite_new_textline() has a new API, takes LiteTextLine** and returns
+    DFBResult.
+
+commit 3a3e98bc3105bad841cd5701c10c2cddbc218d4d
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Mar 25 23:48:14 2005 +0000
+
+    lite_new_label() API changed, returns DFBResult and takes a LiteLabel handle.
+
+commit c255f20dfeafcfdb8ab057d247665b14b7ba33b6
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Mar 25 23:22:41 2005 +0000
+
+    lite_new_slider() is now using the new API of returning a DFBResult and
+    passing in a LiteSlider handle.
+
+commit c51c9678d6b97a93fa71dc95369c61d3f9a87c64
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Mar 25 19:05:34 2005 +0000
+
+    lite_new_image() now comforms to the DFB API style, returns DFBResult and
+    takes LiteImage as a handle.
+
+commit 70693a6961fe4796a5bf95155e55dfa4ac7e8d7e
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Mar 25 18:56:04 2005 +0000
+
+    lite_new_animation is now also using the DFB API style, return DFBResult
+    and pass in a handle to create the actual LiteAnimation instance.
+
+commit f6e835090086ef71cd33735d9ec2526d22d6ee33
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Mar 25 01:27:47 2005 +0000
+
+    lite_new_window API changed, now returns a DFBResult and as a first param takes
+    a LiteWindow**. This is in line with the DFB APIs of always returning DFBResult
+    values, and also makes it possible to inline the LiteWindow structure and pass
+    in (later) an already allocated LiteWindow for subclassing purposes.
+
+commit 3e2be46869ae2f6bfaafd413b22be9d919e7874a
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Mar 24 23:59:30 2005 +0000
+
+    Use D_ASSERT statements in the internal functions to catch NULL pointers
+    and other odd cases.
+
+commit 9e8b119a8466ff664a92f8f7a6f1d37c2d126027
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Mar 24 23:22:41 2005 +0000
+
+    Broke out the theme structure from windows.c for future exploration into
+    building a pluggable theme engine into LiTE.
+
+commit 3aad1c5517a87c2ed9de3bd467bee31d53b80156
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Mar 24 22:52:35 2005 +0000
+
+    Fixed a case where a missing Ungrabpointer caused that the original window
+    still had its window grabbed when the new window was introduced.
+
+commit 9fe65717abe8f0e2b5835411a749c43b9ccc3920
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Mar 18 02:50:50 2005 +0000
+
+    Broke out the static struct so there's now a LiteCursor internal structure,
+    this in preparation for loading/switching cursors in future.
+
+commit 5e28565e9ca6bbaaff7c15ddd2160cc58adab13e
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Fri Mar 18 02:43:21 2005 +0000
+
+    lite_load_cursor_desc() is a new function that takes a DFBSurfaceDescription
+    for fast loads of cursor images.
+
+commit b61389f50c2ab1f18d881fa916ad48c06227f563
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Mar 17 02:16:13 2005 +0000
+
+    lite_post_event_to_window() should return DFBResult.
+
+commit 620a3c412c375e866084512b40aacfc498e7d9e8
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Mar 17 02:11:15 2005 +0000
+
+    Updated NEWS with the 0.2.1 checking information.
+
+commit 7e1cbfb3bc3a2fc01356ffd4fd72fd86f5104226
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Mar 17 01:46:59 2005 +0000
+
+    Updated ChangeLog with 0.2.1 checkin information.
+
+commit 22f9cc6c9f08678a44b6232e398aa7a1d68eff0b
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Mar 17 01:42:04 2005 +0000
+
+    New library version 0.2.1
+
+commit 8b1c926cca6691916608dd83232ec06393bd1280
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Mar 17 01:39:12 2005 +0000
+
+    * lite_on_user_event() to register for an incoming user event
+    * rearrangement of the lite_window_event_loop so now it handles
+      generic DFBEvents, and dispatches based on event type, DFBWindowEvent
+      and DFBUserEvent being the first two cases.
+
+commit 7a23c58da832f415eaa58075387f22643adb14b4
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Mar 17 00:39:41 2005 +0000
+
+    Internal DFB_USER_EVENT and DFB_WINDOW_EVENT macros.
+
+commit 9e03a541d0b58766e30e99a630d3af53c1408143
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Mar 17 00:35:27 2005 +0000
+
+    lite_post_event_to_window() posts an event to the existing LiteWindow
+    event queue. This could be used for posting window events, user events,
+    and so on...
+
+commit fc7769a613ff868537550e25ff1575ce22ad21f2
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Mar 17 00:23:21 2005 +0000
+
+    If the passed in spec is not a defined type, then it's assumed it's a font
+    name. This way any known font could be used.
+
+commit 48a34fae8240ad4e3a162dbc76c931b9bde4eea5
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Tue Mar 8 09:13:36 2005 +0000
+
+    Print error message instead of debug if font loading failed.
+
+commit c1f613172c164b52a1a699f32542663fcd2764a8
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Mar 1 20:09:31 2005 +0000
+
+    Change font spec "sans" to "proportional". There fonts named sans are
+    actually "sans serif". The specs now also conform to a classical browser
+    font selection specification.
+
+commit 6834b9060f30ba78a6e24d0bba90e36979d112d6
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Mar 1 20:03:04 2005 +0000
+
+    lite_get_font() now accepts a spec that is actually a font name, this way
+    any font could be specified.
+
+commit d18359e4bbafd185febab82d27f28852b42e9be8
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Mar 1 19:56:37 2005 +0000
+
+    New configure flag, --with-fontdir, that specifies the directory where
+    the fonts reside. By default the current datadir/fonts directory is honored.
+
+commit 2661a2c1fa659a62e4decaaeb7cc3bf20e75cabb
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Mon Feb 21 07:20:56 2005 +0000
+
+    Fixed a missing argument.
+
+commit 280f9f8bffc2ec87618ea4c928596caa95dd7c6e
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon Feb 21 06:37:44 2005 +0000
+
+    Removed the fprintf statements so they use D_DEBUG_AT now.
+
+commit edaa931a8587beae7b751119f1f172d574aa53d2
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Mon Feb 21 00:09:27 2005 +0000
+
+    Removed LITE_INFO and LITE_DEBUG, using D_DEBUG_AT now.
+
+commit 6a6a0617bd279abfb4080017b5349b31b8b7b314
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Sun Feb 20 23:54:57 2005 +0000
+
+    Main implementation files now have D_DEBUG_DOMAIN macros for defining
+    the domains for D_DEBUG_AT use.
+
+commit 46902900350722fd76bf96461876fd974287f57c
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Thu Feb 17 10:19:24 2005 +0000
+
+    Fixed warnings.
+
+commit 9985201b1bccdee36299c963c9019cbf25f262f1
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Feb 17 03:31:21 2005 +0000
+
+    lite_set_slider_pos now returns DFBResult values.
+
+commit 37d87b1bd5338f43caf24361b167d22ba3a734a3
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Feb 17 03:28:51 2005 +0000
+
+    lite_set_label_text, lite_set_label_alignment,
+    lite_set_label_font and lite_set_label_color now return
+    DFBResult values.
+
+commit d70896f5c163c32394f42291a6840e02a656bc99
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Feb 17 02:47:54 2005 +0000
+
+    lite_load_image now returns DFBResult values.
+
+commit 35efd1ab17c7fc2d968596c7b0d7d4e3e30c7bdc
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Feb 17 02:44:55 2005 +0000
+
+    lite_load_animation and lite_start_animation now returns DFBResult values.
+
+commit b5eb1e6b679241f1f915033acf7faea156c913d3
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Feb 17 02:36:08 2005 +0000
+
+    lite_textline_set_text now returns DFBResult.
+
+commit b91846bb67986b3054837eb180aa8518683a077e
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Feb 17 02:30:01 2005 +0000
+
+    lite_set_button_image_surface now returns DFBResult
+
+commit 86099bc2620e6306284421320a457794b530ea5d
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Feb 17 02:14:37 2005 +0000
+
+    lite_enable_button, lite_set_button_state, lite_set_button_image and
+    lite_set_button_image_desc now return DFBResult values.
+
+commit fd8d875a1623948b4a5e65ae6d452b2446d08f24
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Feb 17 02:03:20 2005 +0000
+
+    lite_init_box, lite_reinit_box_and_children, and lite_clear_box now return
+    DFBResult values.
+
+commit d976c99667128798e17282b07cd5b77699000518
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed Feb 16 08:47:31 2005 +0000
+
+    Fixed a case where lite_focus_box should return a DFBResult from inside
+    the function block.
+
+commit bc4cf48d963a08b8f4e52b77e64a2f82e56213ef
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed Feb 16 08:45:32 2005 +0000
+
+    lite_draw_box and lite_update_box return DFBResult
+
+commit 8ab81c5c4479d741453316cc35ccc9b1e270c5af
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed Feb 16 08:38:06 2005 +0000
+
+    The following functions now return DFBResult (before void)
+    	lite_window_event_loop, lite_update_window, lite_set_window_title,
+    	lite_set_window_opacity, lite_set_window_background,
+    	lite_set_window_background_color, lite_set_window_blend_mode,
+    	lite_resize_window, lite_minimize_window, lite_restore_window,
+    	lite_flush_window_events, lite_close_window, lite_destroy_window.
+
+commit e1c7290deca2f98d67f914234ee983b740588265
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed Feb 16 08:17:14 2005 +0000
+
+    use libtoolize --automake --copy --force to enforce that the needed
+    files for ltmain.sh are copied over.
+
+commit b0a49cb9a2cbf209dde9dc7c98d195c61650e765
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Feb 15 21:41:02 2005 +0000
+
+    Include lite_config.h in the sources listing so this file is included into
+    the make dist tarball.
+
+commit 13a4e06e0188062cc30ab4717a4ed832c2e270d7
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Feb 15 20:39:47 2005 +0000
+
+    Updated ChangeLog and NEWS with latest LiTE 0.2 checkin information.
+
+commit ada403454c1d37b3bae555da891017d5afdc653f
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Feb 15 20:25:17 2005 +0000
+
+    New function: lite_set_label_color() that takes a DFBColor and uses it
+    for the new pen color. dfbspy.c has an example how to turn the label
+    color as blue labels.
+
+commit 3bb8bd51818213cc7ff4ef14f324440e01d10305
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Feb 15 20:09:54 2005 +0000
+
+    LiteLabel now has a field for the text color, default black color with
+    no alpha blending.
+
+commit aa43c57f51352f2e39d78dec2b957a887b3144c1
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Feb 15 19:47:27 2005 +0000
+
+    Bouncing up the release level to 0.2 and 2:0:0 library builds as the
+    APIs from now will start changing quite a lot (converting them so they
+    conform to the DirectFB APIs, use of DFB macros, and so forth).
+
+commit 1794f72ae7e12b7393d77168ef9e389906f49a6f
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Feb 15 19:43:35 2005 +0000
+
+    Default window background colors are defined in lite_config.h
+
+commit eb53788ea436b4952df7c5b8b6b70f9d3378e271
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Feb 15 19:34:37 2005 +0000
+
+    Contributions from Andy Stewart (andy.andy.stewart@gmail.com)
+    
+    Add defined strings in lite_config.h for the default font names.
+    
+    Add a DFBFontAttributes argument to both lite_get_font and lite_get_font_from_file.
+    Add lite_set_active_font and lite_get_active_font functions.
+    
+    Follow the DirectFB convention of returning DFBResult from the public APIs,
+    and add the old return value as an additional argument.
+    
+    Use macros patterned after DirectFB's D_BREAK and D_INFO instead of fprintf
+    for error or status messages.  This will be an incremental conversion,
+    since at this point, only font.c uses this convention.
+    
+    Modify the callers to lite_get_font in label.c, textline.c, and window.c accordingly.
+
+commit 12328a2800d6adc7b442bccc43b79530fe6f1177
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Feb 15 18:48:50 2005 +0000
+
+    New internal configuration file where all the default configuration values
+    are defined -- if there's a need to change something globally, this file
+    could be patched or copied over. First case are the theme file names
+    defined in window.c tha are now defined in lite_config.h.
+
+commit 75688487ce57d36d82439fb8f17792be6dce7667
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Feb 15 18:44:39 2005 +0000
+
+    lite_get_dfb_interface() returns the current IDirectFB interface so it could
+    be used for other DFB calls from LiTE-based applications and toolkits.
+
+commit 7e79e050378d9e6ae6fae066472068b1c2b44d5a
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Feb 15 07:45:19 2005 +0000
+
+    Updated the NEWS section.
+
+commit e68956a36a328b279541b9efd37f4ec4daa9666a
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Feb 15 07:36:49 2005 +0000
+
+    New ChangeLog based on the changes up to version 0.1
+
+commit 1f2a278609a77562bb65342109da964409e5ab73
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Feb 15 07:23:14 2005 +0000
+
+    Information about the CVS rtag format.
+
+commit 47b963e236baaebe6d37bf77a4207f7126ba8068
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Feb 15 07:20:30 2005 +0000
+
+    Updated list of authors.
+
+commit 937f56483db33bd5bdebc20f2d31796faaec7e56
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Tue Feb 15 07:17:55 2005 +0000
+
+    Specified version-info information in configure.in that is passed to
+    Makefile.am. This current version is defined as 0.1 (1:0:0), as the
+    API will change from this point forward, so the numbers will be bumped
+    up.
+
+commit ad708c503ab5b6cd64661a157ef9f69084c7ad34
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Feb 3 07:22:36 2005 +0000
+
+    Three new global callbacks (inspired by GLUT):
+    
+    WindowMouseFunc/lite_on_window_mouse() could be used to install
+    a global mouse callback that receives DFBEvents after the LiTE
+    framework has processed the mouse events.
+    
+    WindowKeyboardFunc/lite_on_window_keyboard() could be used to
+    install a global keyevent callback to receive DFBEvents after
+    the LiTE framework has processed these.
+    
+    WindowIdleFunc/lite_on_window_idle could be used to install an
+    idle handler as part of the event handling. Note that this
+    handler is only triggered if there are events in the window event
+    queue. Some systems might not generate generic events (throttling), so
+    there's no guarantee that this idle handler runs all the time.
+
+commit 033ccdea1fa76693ff2149fd10c956d9fccc5c8a
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Feb 3 07:07:40 2005 +0000
+
+    New LiteButton call, lite_set_button_image_surface(). This makes it possible
+    to implement bi-state buttons (checkboxes, radiobuttons), tri-state
+    buttons... The image surface could be stored in a compound LiteBox, and
+    set in the underlying LiteButton based on a defined state.
+
+commit c43cabd33ee47d7fde90dfee13caae5269ef2bb7
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Thu Feb 3 06:59:39 2005 +0000
+
+    Extracted the default font string name into one global define: DEFAULT_FONT
+
+commit 38ddfaee6718d3e87949c9650c6704743578ecb9
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed Jan 26 08:09:06 2005 +0000
+
+    *** empty log message ***
+
+commit de2d77fdd06113c4b1614b4f3d02f2e7b2277834
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed Jan 26 06:59:02 2005 +0000
+
+    lite_new_window() now takes two params, x and y, for the initial positioning
+    of the window. This makes it possible to position a window at a specified
+    coordinate position.
+    
+    The old behavior of automatic centering is still preserved, by
+    specifying LITE_CENTER_HORIZONTALLY and LITE_CENTER_VERTICALLY the
+    window is centered. Updated the examples to use this modified API.
+
+commit bc0f91d5d90a8c014738b58af6fdbf7dec5ecb4e
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed Jan 26 06:35:59 2005 +0000
+
+    lite_util_load_image_desc() that takes an DFBImageDescription and loads
+    image resources directly from memory (using directfb-csource the tool).
+    button.h has a corresponding lite_set_button_image_desc() that uses
+    this utility function for loading button images from memory.
+
+commit 870a908d859a6d6c4da5319e53b1ff710bb1040d
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed Jan 26 05:38:54 2005 +0000
+
+    Changing the header files so they comform to the DirectFB header files,
+    and changing the license to LPGL as per discussions with Denis (same
+    license as DirectFB).
+
+commit ac0b6a10f84ec98e29becd482f966bdb3a9a820f
+Author: Kent Sandvik <kent@directfb.org>
+Date:   Wed Jan 26 05:09:32 2005 +0000
+
+    LITE_FONT typecast macro, similar to the other LiTE typecast macros.
+
+commit 940ba6b29a13340bb5e4a8ed849bb7a715e09bc9
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Sun Nov 14 10:02:57 2004 +0000
+
+    Don't open "/dev/fusion/0" by default.
+    Follow the environment variable "DIRECTFB_SESSION" if it's set.
+
+commit 7fa0e0ad1ca658c599c11ccf83891eee0d7427c1
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Sat Nov 13 01:02:41 2004 +0000
+
+    Added lite_theme_loaded().
+
+commit f4734477820e8f43f0778b1d4eb9b7df996daa3d
+Author: Claudio Ciccani <klan@directfb.org>
+Date:   Thu Nov 11 16:03:23 2004 +0000
+
+    Use the DWCAPS_NODECORATION flag only if LITE_NO_THEME is not set.
+
+commit 7ecef8cf18ea4708daff398027cc183c4ecea773
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Tue Nov 2 12:19:18 2004 +0000
+
+    Use DWCAPS_NODECORATION as long as LiTE is still providing own borders.
+
+commit f447b16a3dbc7f0dc8a946e9862e71d811bf0691
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Tue Jul 27 15:48:16 2004 +0000
+
+    Return DFB_DESTROYED after destroying it, i.e. don't wait for DWET_DESTROYED event.
+
+commit 9e7f1a104c8012d2ffa8b4672305e3724ae69b4e
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Tue Jul 27 15:39:30 2004 +0000
+
+    Allow negative timeout for lite_window_event_loop() causing the function to
+    exit after handling all events without waiting for such.
+
+commit f4931f387d29c70867df5d026ae79bdc8d97dfca
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Tue May 18 22:22:36 2004 +0000
+
+    Implemented queuing and compression of repaints.
+    
+    Added new example dfbspy showing the Fusion load from /proc/fusion/0/stat.
+
+commit c5e4daea396066edcb03470026569515bb2438da
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Sun May 9 19:20:33 2004 +0000
+
+    Added LGPL license.
+
+commit f4a9887bf3031dc371f46d8bfb0202363235c40c
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Wed May 5 08:27:21 2004 +0000
+
+    Handle empty text lines.
+
+commit 9ec19bf2e88aaed8123fbab9d5986430003d36f9
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Thu Feb 19 13:13:40 2004 +0000
+
+    Resize sliders upon window resizing.
+
+commit 842708b79a9749e292a2a7d1393a497490561956
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Thu Feb 19 13:13:16 2004 +0000
+
+    Call custom resize handler earlier.
+
+commit 198c52e4c74c8a853e5f5dbfded71d7dafd2d6c4
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Mon Jul 28 22:08:31 2003 +0000
+
+    Use DWOP_SHAPE.
+
+commit b70ca9359efdfbc46394fb71c1f48015ee2097a9
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Mon Jul 7 12:55:25 2003 +0000
+
+    Default event loop function can be called in a loop with an optional timeout.
+
+commit e71948a08cd3fd96257e9030e15323ae33394ebf
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Fri Jun 27 20:41:39 2003 +0000
+
+    Added lite_minimize_window() and lite_restore_window() that does the same as
+    double clicking on the title bar.
+
+commit 0a2a432c2111961161158f646cdf9ae52e8c4d9d
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Fri Jun 27 20:08:53 2003 +0000
+
+    Horizontally center align minimized and full size.
+
+commit ae4ac0aa79904811b8af509c0169fd6ab106d3aa
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Fri Jun 27 19:41:57 2003 +0000
+
+    Double click on the title bar now shades/unshades the window
+    (set minimum width/height or restore).
+
+commit 96daf55b25cdf112f61a7d7676375379c7da2bf6
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Fri Jun 27 18:41:42 2003 +0000
+
+    Reget sub surfaces on resize, fixes components rendering to the border.
+
+commit 31a598107dbf0ea2ae48220ada4cc5df90ae8b56
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Fri Jun 27 16:07:45 2003 +0000
+
+    Implemented bottom-right-corner-resizing with a fancy look.
+    
+    Implemented minimum size which is automatically calculated based on
+    the borders and the title string width ;)
+    
+    Implemented aligned resizing (x/y steps), e.g. for a terminal ;)
+
+commit bf1ab673a2bf23421b13ae1e5f5838b0e9b4fb0d
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Fri Jun 27 12:36:59 2003 +0000
+
+    Fixed -Werror-implicit-function-declaration[s] <- removed this character
+
+commit 7449226c8fca480854300f2f81444d1b74f26bf8
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Tue Jun 17 13:57:07 2003 +0000
+
+    Position indicator is darker now.
+
+commit 9b93538cfbb26f8209792b58db1cece6ab64a6d8
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Thu Jun 12 17:53:11 2003 +0000
+
+    Changed default background for slider example.
+    
+    Fixed label width in simple example.
+
+commit 208d82127d8cfff7e5ce47569c7b92234efbc1cf
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Thu Jun 12 17:49:24 2003 +0000
+
+    Added a simple slider with a nice example.
+
+commit 33d649c7bb117e1898cfd1faaaee4768c5ffb3f9
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Mon May 26 20:12:26 2003 +0000
+
+    Added "abort" feature to textline input via escape key.
+    
+    Added "Run program..." example.
+
+commit 0b96279ea753d0e7cafb6400864b199cbd0130fe
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Mon May 19 13:52:56 2003 +0000
+
+    Added more "table drawing" characters.
+
+commit 35d694d4f7a5adad97c9a36950bba2b57e4b2cfd
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Mon May 19 13:22:38 2003 +0000
+
+    Added modified font source code (post script).
+
+commit f17311564b083cb3c6ffeca294f8c049abd54fa4
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Mon May 19 13:15:47 2003 +0000
+
+    Implemented some of the special characters used for e.g. 'mc'.
+
+commit 788075c399870122fc75caf1fa7c1fb3693bb918
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Wed May 7 15:35:48 2003 +0000
+
+    Added lite_set_window_blend_mode() which gets two arguments. The first
+    specifies the content blend mode, the second specifies the opacity blend
+    mode.
+    
+    The blend mode is a hint to enable/disable blending of the content or
+    window opacity values between 0 and 255. Blend mode can be "always", "never"
+    or "auto" (choosing via hardware capabilities).
+
+commit a7082f538417090b6415e4ce8345f478466454e4
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Fri Apr 18 18:24:11 2003 +0000
+
+    Added "-Werror-implicit-function-declarations".
+
+commit 4e9575555a0fba9d252475161a316d2c7a8d92a8
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Thu Apr 17 11:30:47 2003 +0000
+
+    CFLAGS and Makefile cleanup, fixed a warning.
+
+commit 15446f4c32a4ca31922cf4d3a369cb1e5e6488d1
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Wed Apr 16 15:19:38 2003 +0000
+
+    Added quotes.
+
+commit 5658d9e29a2c44e385ddf13ae03ef7f4dbe31776
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Wed Apr 16 14:24:35 2003 +0000
+
+    Fixed all warnings.
+
+commit f9957bf47a2d6f043fffd5b7821a630480e87170
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Wed Feb 26 15:14:55 2003 +0000
+
+    Removed sprintf usage.
+
+commit 46f3cd4827c42abdc4aeead7f200cf9557c489d0
+Author: Sven Neumann <neo@directfb.org>
+Date:   Sun Jan 19 11:53:24 2003 +0000
+
+    shut up CVS
+
+commit 44d388e1252e2f5088aeff561004a83aa76130d1
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Thu Jan 16 16:12:55 2003 +0000
+
+    Raise window to top if left button is pressed on the window border.
+    Lower to bottom in case of the right button.
+
+commit b2e8dc038e3e9633510306786c6ba5a0778cda2a
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Wed Jan 15 19:21:59 2003 +0000
+
+    Minor fix.
+
+commit 2044c75e465a7b68d4c965868437d492db3dc97c
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Wed Jan 15 14:57:51 2003 +0000
+
+    Load cursor even if themes are disabled.
+
+commit 3bfe9b4225ca927828984b4ba1b26b9d39b2d886
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Wed Dec 18 20:46:39 2002 +0000
+
+    Removed unneeded stuff, added comments. Example has 70 lines now.
+
+commit 7bf311190a53abe46e4a809a11ef63023b10b672
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Wed Dec 18 20:39:53 2002 +0000
+
+    Center windows by default.
+
+commit 3ad53c74911683f8240cdc657ee7a7a628b9b22d
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Thu Dec 12 18:44:16 2002 +0000
+
+    Added lite_set_window_background() which takes a DFBColor*.
+    If NULL is passed clearing of the window is disabled.
+
+commit 77d5ed3023392475460cd9b94a86acab91ba2075
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Wed Dec 11 16:21:16 2002 +0000
+
+    Some fixes and some redraw related functions added, two test applications.
+
+commit 885a2d67de4caeed7a44068c9fa5576107023dca
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Wed Dec 11 16:10:19 2002 +0000
+
+    Added optional pixelformat parameter to lite_util_load_image().
+
+commit 5f119cd9bd67799608f2dcf1534e20ba1ac0da25
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Thu Dec 5 17:56:51 2002 +0000
+
+    Added a yet simple label implementation.
+
+commit f5cfbdf76948da067c21207e1407d236cca281ba
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Mon Dec 2 18:19:58 2002 +0000
+
+    Reset font cache during (re)initialization.
+
+commit 5db3de859a9bb4daab6d7e002f41422297193496
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Mon Dec 2 17:05:41 2002 +0000
+
+    Fixed segfault with theme disabled.
+
+commit 1bce17ff1ef0d70a2e4d2b8fb9fbd41f166ff376
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Wed Nov 20 20:31:05 2002 +0000
+
+    Added lite_get_font_from_file() and did some name changes.
+
+commit d2902149bc7f9df3d7d3af0fee1ae8230496e9b1
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Wed Nov 20 19:07:23 2002 +0000
+
+    Bigger with a stronger shadow.
+
+commit 0e3c58ff6b9faada03b5fe2e2a8f6d4a508debdc
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Mon Nov 18 22:47:33 2002 +0000
+
+    Added cursor shape.
+
+commit e50aae91ef00f667b52589932a8c46d4a0bce50d
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Tue Nov 12 22:46:01 2002 +0000
+
+    Added note about theme surfaces to be a single one.
+
+commit 773076d77c760f58dae113f950ce2921cad2e0bc
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Tue Nov 12 01:27:47 2002 +0000
+
+    Fixed fixed font descender (now '[{}]' are correct again).
+    
+    Removed unnecessary stuff.
+
+commit 5dc87de4b92b8c017aa6858cca3c6e74345a0cb0
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Mon Nov 4 18:25:16 2002 +0000
+
+    Fixed font height.
+
+commit 9d02115300fdd5ec97c63c6e668e3e263daf4fd2
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Mon Nov 4 18:12:12 2002 +0000
+
+    The best fixed font I've ever seen.
+
+commit ca031046b74861ba8a2f6cee4d21f4fc479dab59
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Sat Nov 2 05:01:30 2002 +0000
+
+    Removed resizing item.
+
+commit 0d2f555439ee4a1d0037026f77501bf413e14ff3
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Sat Nov 2 04:55:30 2002 +0000
+
+    Added resize handling and motion/resize event compression.
+
+commit f419335fc4e6174aaaeffd274d051eb1c0277480
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Sat Nov 2 03:45:08 2002 +0000
+
+    Use white rabbit for title, too.
+
+commit ee1c1563d08fa5886a40bf77cd8ebdbabcc37a47
+Author: Sven Neumann <neo@directfb.org>
+Date:   Tue Oct 29 14:07:23 2002 +0000
+
+    Require DirectFB >= 0.9.14.
+
+commit ce11354e17830d46265da014dc8c1d8f91ec677d
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Tue Oct 29 13:41:08 2002 +0000
+
+    Font attributes can be specified for lite_get_font().
+
+commit f40a21fe22562b03de9123cd90f83ff793ae38a5
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Fri Oct 25 19:46:57 2002 +0000
+
+    Cool terminal font.
+
+commit 69da8421a891ef3e62e4225ceb2e4c24acdffa95
+Author: Andreas Hundt <andi@directfb.org>
+Date:   Wed Oct 23 22:19:50 2002 +0000
+
+    - do not include malloc.h , use stdlib instead.
+      (now compiles on darwin)
+
+commit 52c9c9fe2bf7e4618725df4c73ad20368cf1f9a5
+Author: Andreas Hundt <andi@directfb.org>
+Date:   Wed Oct 23 22:17:18 2002 +0000
+
+    added AC_CANONICAL_TARGET. fixes configure on darwin
+
+commit 80551b4bb6ae802a5f2f35ffa4700124c61b3785
+Author: Denis Oliver Kropp <dok@directfb.org>
+Date:   Wed Oct 23 12:35:45 2002 +0000
+
+    LiTE is a toolkit engine. First checkin of a library
+    that has been sleeping on my disk for almost a year now.

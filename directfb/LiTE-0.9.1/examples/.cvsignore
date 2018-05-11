@@ -1,0 +1,13 @@
+*.la
+*.lo
+.deps
+.libs
+Makefile
+Makefile.in
+simple
+slider
+msgbox
+literun
+dfbspy
+bench
+bench.log

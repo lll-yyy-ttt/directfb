@@ -1,0 +1,12 @@
+prefix=@prefix@
+datarootdir=@datarootdir@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: lite
+Description: "LiTE" is a Toolkit Engine
+Requires: directfb >= @DFB_REQUIRED_VERSION@ @FUSION_DALE_DEP@
+Version: @VERSION@
+Libs: -L${libdir} -llite
+Cflags: -I${includedir} -DLITEFONTDIR=\"@LITEFONTDIR@\"

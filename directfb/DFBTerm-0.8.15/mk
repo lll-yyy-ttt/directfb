@@ -1,0 +1,10 @@
+#! /bin/bash
+
+export DFB_ROOT=/usr/core/dfb-core
+export LITE_ROOT=/usr/core/dfb-lite
+export LIBS_ROOT=/usr/core
+
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$DFB_ROOT/lib/pkgconfig:$LITE_ROOT/lib/pkgconfig:$LIBS_ROOT/zlib/lib/pkgconfig
+
+./configure --prefix=/usr/core/dfb-term CFLAGS="-I$LIBS_ROOT/zlib/include" LDFLAGS="-L$LIBS_ROOT/zlib/lib -lm -lz"
+

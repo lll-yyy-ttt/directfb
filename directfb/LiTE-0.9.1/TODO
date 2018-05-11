@@ -1,0 +1,14 @@
+- use one theme surface instead of several small ones
+- add a theme without alphachannel
+- D_ASSERTS in most important internal functions.
+- lite_open() has some issues with the return value, should return last DFBResult, not a default
+  one...
+- Rewrite LITE_BOX_PARAMETER_CHECK so it automatically typecasts an entry to a LiteBox.
+- Use LITE_BOX_PARAMETER_CHECK in public LiteBox APIs...
+- More public parameter testing in window.c.
+
+
+optimizations
+- discard updates while window is invisible, just update once right before showing
+- don't recreate the subsurface in lite_reinit_box_and_children(), use (in)validation (lazy recreation)
+- apply the same methodology to other things, having a generic validation/invalidation framework

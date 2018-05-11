@@ -1,0 +1,537 @@
+0.8.10 (September 19, 2008)
+------
+
+LiTE | Box
+- Use MakeSubSurface() instead of GetSubSurface() and lots of other calls with DirectFB >= 1.2.1
+  Replaces GetSubSurface(), GetFont(), SetFont(), Release(), Release() !
+  lite_bench resizing went from 768ms to 230ms (for 6000x resize)!
+- Added DrawAfter() for painting after children did.
+- Allow init without parent for later adding.
+- Added lite_set_box_visible().
+
+LiTE | Theme
+- Rewrote hardcoded loading/handling of frame images for the window theme
+  and made it easily reusable as a convenient utility for such appliances.
+
+LiTE | Util
+- Added lite_get_layer_size() for convenience.
+
+LiTE | Window
+- Don't use DWOP_SHAPED by default.
+- Use DWOP_OPAQUE_REGION by default.
+
+Leck | Image
+- Thanks to Keith Mok for fixing leaking the previous image when loading another.
+- Added reflection function to image widget.
+
+Examples | List Test
+- Create window without theme and without alpha if screen is smaller, make window fit.
+
+
+0.8.9 (July 1, 2008)
+-----
+
+Box
+- Set clipping region and clear if requested before Draw() callback is done.
+- Added DFBColor pointer to LiteBox which if non-NULL causes the LiteBox
+  to be cleared before the Draw() callback is done.
+
+TextLine
+- Added lite_get_textline_text() returning a copy of the text. Needs to be freed using D_FREE().
+
+Benchmark
+- Initialize label height, cleaned up code a bit.
+
+Misc
+- Added missing scrollbar.png to EXTRA_DIST.
+
+
+0.8.8 (June 21, 2008)
+-----
+
+Big restructuring! Keep LiTE lightweight and move actual widgets
+into new library called "LeCK" - LiTE's extended Component Kit.
+
+Install examples (adding a prefix to the executable names) and their data files.
+
+Fixed warnings, minor cleanups.
+
+
+0.8.7 (June 9, 2008)
+-----
+
+Great thanks to Daniel Mack and "Ahn, Sung Ho and other people from ETRI"!
+
+Button
+- Allow different types of buttons: Push and Toggle.
+
+Checkbox
+- New check box widget with two images and text.
+
+List
+- New list box widget.
+
+Progressbar
+- New progress bar implementation using two images (fg/bg).
+
+Scrollbar
+- New scroll bar widget.
+
+Textbutton
+- New text button widget.
+
+Textline
+- Scrollable by text cursor.
+
+
+0.8.6 (December 21, 2007)
+-----
+
+Cursor
+- Don't load default cursor if LITE_NO_CURSOR is exported.
+
+Utilities
+- Fixed bug in image loading routine for non-ARGB images and no explicit format passed.
+  Show errors in image loading routine.
+
+bench tool
+- Disable alpha channel and window theme.
+
+
+0.8.5 (December 14, 2007)
+-----
+
+- Fix bounds checking for LiteButtons to correctly handle negative
+  coordinates, like those generated when you move to the left or above
+  the button.
+- Correctly generate enter/leave events when the LiteBox hierarchy changes.
+- Release a LiteBox's drag_box when containing window is left.  Since mouse
+  is grabbed during drag, this only happens when other parts of the system
+  adjust the window hierarchy
+- Fixed width/height mixup in lite_get_window_size().
+- Fixed signed/unsigned types and warnings.
+- Check for event_buffer != NULL in prvlite_wakeup_event_loop().
+- Added missing call to prvlite_wakeup_event_loop() in lite_update_window().
+
+0.8.4 (March 1, 2007)
+-----
+
+- Fixed issue with timing of window update and window resizing leading
+  to graphics glitches
+- Reworked window destruction again to make sure that windows aren't
+  completely destroyed until they are no longer used by the event loop
+  mechanism
+- fixes to ensure that a window's drag box won't be incorrectly set
+- change order of event loop so window refresh during event queue
+  processing occurs without also triggering timeouts
+- validation checks added to some LiteCursor calls on debug build
+- window validation added to many LiteWindow calls on debug build
+
+0.8.3 (December 13, 2006)
+-----
+
+- New API: lite_destroy_all_windows - calls lite_destroy_window
+  on all windows in system from newest to oldest
+- New API: lite_rebase_window_timeouts - used to adjust all window
+  timeouts when the system time changes
+- New API: lite_window_event_available - returns true if any
+  events are queued up or any timeouts are ready.
+- New API: lite_set_window_bounds - used to move and resize a
+  window in one on-screen operation
+- Const correctness parameter changes for lite_get_font_filename(),
+  lite_set_window_background()
+- lite_update_box() and internal find_child() rewritten to be
+  non-recursive for speed purposes
+- more fixes around window destruction and properly releasing
+  interfaces and freeing memory
+- lite_init_box now disallows boxes with negative height or width
+- modified update code to use memmove instead of memcpy to fix overlap
+  problem
+- lite_window_event_loop will force an update at least once every 200
+  milliseconds if one is needed and hasn't happened yet
+
+0.8.2 (October 14, 2006)
+-----
+
+- expanded the LiteBoxType enumeration to have different items for
+  each LiteBox and LiteWindow type defined in the library, with
+  special ranges for expanding the number of types for client
+  libraries
+- updated code to fix stdbool.h warnings (Ville Syrjala)
+- patch to support vertical sliders (Pierre-Hugues Husson)
+- changed window update loop to be more efficient
+- fixed bugs with new window destruction code
+- fixed bug with routing of resize events to not-yet-displayed windows
+- fixed a memory leak with freeing window memory on DWET_DESTROYED
+- fixed a IDirectFBLayer reference leak in lite_change_cursor_opacity
+- changed lite_enqueue_window_timeout and lite_enqueue_idle_callback
+  to never return the value 0 as the ID
+- fixed bad return value for lite_remove_window_timeout
+
+0.8.1 (September 20, 2006)
+-----
+
+- new API: lite_set_window_enabled - this function will tell a window
+  if it should handle events that are sent to it.  DESTROYED events
+  will always be handled.
+- fix to handle_wheel to ignore wheel events for a box if it ignores 
+  keyboard events
+- optimized shared library lookup tables by using -Wl,-O1 option for gnu ld
+- optimized lite_set_active_font call by having it avoid a cache lookup
+  just to validate that a font has been loaded
+- reworked window destruction extensively to work correctly with DFB's
+  window destruction model.  You should use the window's box->Destroy
+  callback for cleanup code, while window->OnDestroy is just used to
+  catch the DWET_DESTROYED message that will get sent later
+- removed the nesting level concept from window timeouts, as it led to
+  hard to fix cases.  If you want a timeout to not be called, make sure
+  to remove it before opening a new window.
+
+0.8.0 (August 30, 2006)
+-----
+
+- new API: lite_destoy_box_contents - destroy a LiteBox and its children, but
+  don't free the LiteBox pointer.  Used by LiteWindow to destroy children while
+  delaying deallocating LiteWindow until the DFB_DESTROYED event.
+- LiTE now honors the OnDestroy method of LiteWindow objects.  This will be
+  called when DirectFB sends the DFB_DESTROYED event for a window.  The
+  LiteWindow is then freed.
+- Fixes to modal window handling to better handle destruction of the modal
+  window and restoring the correct modal window when a window is non-modal.
+- Lite window themes now include settings for the a color and position
+  of the window's title
+- When a window has been resized but the resize hasn't taken effect,
+  updates to the window will be discarded until the resize occurs,
+  since the resize will force a redraw of the whole window.
+- Lots of minor bug fixes and cleanups.
+- This version requires DirectFB 0.9.26 (currently in development)
+
+0.7.2 (May 5 2006)
+-----
+- New maintainer, Ben Combee <ben.combee@gmail.com>
+- Window updates are now collected into up to four different regions
+  which should make updates faster by reducing the total area updated
+  when distant LiteBoxes are all updated
+- fix to correctly restore modal windows and to deal with windows created
+  while we're tracking a mouse event
+- fix to not update boxes when they are invisible
+- fix for drawing windows with correct opacity
+- New API, lite_get_font_filename, to get the filename associated 
+  with a font
+- rewrote lite_event_loop to add support for idle callbacks and to fix
+  problems with timeout callbacks
+
+0.7.1 (Feb 2 2006)
+-----
+- New API, lite_on_raw_window_mouse_moved(), this installs a callback for any mouse moved
+  events before LiTE processes these events.
+- Fixed bug with the drag box not always properly updated.
+- Avoid using fixed DFBSurfaceBlittingFlags, instead record them into the LiteImage object
+  and have DSBLIT_BLEND_ALPHACHANNEL as default.
+- New function, lite_set_image_blitting_flags() to set the blitting flags for the automatic
+  image updates in LiteImage.
+ 
+
+0.7.0 (Jan 22 2006)
+---- 
+- Make sure window drag boxes are set to NULL in case it's a child that's been removed.
+- Return from the event loop in case the window that is used in the event loop is destroyed.
+- Make sure to flush updates in the event queue in case items have been updated by
+  timeout callbacks.
+- New API, lite_on_raw_window_wheel() API to install callbacks that will intercept
+  raw wheel events before they are processed.
+
+
+0.6.5 (Dec 20 2005)
+-----
+- Defer opacity change of a window (making it visible) until it has just been
+  updated once. 
+- Remove clear of the window context during creation, instead just enqueue an update.
+- Lock the mutex while updating a font ref count.
+- If a null region is passed for an update window call, update the whole window.
+- Focus bug fixes for focused boxes.
+- Modal state is now handled outside the actual modal window, i.e. pick up events 
+  outside the modal window region.
+- Cursor hotspot control in the LiteCursor structure.
+- lite_set_cursor_hotspot() for setting the hotspot for specific cursors.
+- Default hotspot values for system cursor defined in lite_config.h
+- New feature to add LiteTimeoutFunc callbacks into the LiTE event loop with
+  lite_enqueue_window_timeout() and lite_remove_window_timeout().
+
+
+0.6.4 (Nov 18 2005)
+-----
+- Bug fixes
+- Lite Doxygen documentation structure changes
+- Better control of LiteBox is_visible flag so groups of child hierarchies 
+  could be shown or hidden.
+- New LiteWindow flag, LITE_WINDOW_FIXED, used for making sure a LiteWindow
+  can't be moved, resized, or hidden by left or right-mouse clicks.
+- Renaming of callback functions so they have a Lite prefix.  
+
+
+0.6.3 (Nov 7 2005)
+-----
+- Fixed bugs related to D_MALLOC use.
+- Removed too aggressive testing of LiteBox* objects in litebox.c APIs.
+- Patch from Ben Combee making it possible to hide groups of LiteBoxes.
+
+
+0.6.2 (Oct 28 2005)
+-----
+- Use D_MALLOC et friends from direct/mem.h for tracking down memory leaks and so forth.
+- Test for NULL pointers and valid/invalid LiteWindow structs in the public LiteWindow APIs.
+- Test for NULL pointers and valid/invalid LiteBox structs in the public APIs.
+- Use of D_ASSERT in internal functions.
+- New API, lite_get_cursor_opacity() for returning the current opacity value for the cursor.
+- New LiteBox flag, is_active, if inactive any LiteBox callbacks will not trigger.
+- Bug fix, when creating a box, make sure that the entered box entry is properly updated.
+- New internal APIs exported, lite_append_child() and lite_remove_child() for parent
+  child array manipulations.
+- Documentation updates and fixes.
+- New LiteWindowFlags, LITE_WINDOW_HANDLING_EVENTS for indicating that events are happening
+  and LITE_WINDOW_DESTROYED for delayed window destruction.
+- Delayed window destruction function so windows are destroyed later, not immediately in the
+  event loop.
+- Extensive use of D_DEBUG_AT inside various components for stating the internal changes.
+- Fixed on_button_up so the callback is only triggered if the mouse event happens inside
+  the targeted LiteBox.
+- Bug fix, use of D_STRDUP in all cases the string has been  created with
+  D_* macros, and other similar fixes.
+- And even more bug fixes.
+
+
+0.6.1 (Oct 11 2005)
+-----
+- Documentation fixes.
+- Alternate way to make a true global event loop independent of a created window. Enable with
+  the NEW_EVENT_BUFFER in window.c. An alternate event queue is now created as part of lite_init().
+- private functions supporting attachment to a global event queue.
+- Moved event handling code from window.c to event.c.
+- New API, lite_get_window_size() that returns the true window size from IDirectFBWindow interface
+  function.
+- API name change, lite_on_user_event() is now called lite_on_window_user_event() to reflect that it's tied
+  to a specific window.
+- API name change, lite_on_universal_event() is now called lite_on_window_universal_event() to reflect
+  that it's tied to a specific window.
+- New macro, LITE_NULL_PARAMETER_CHECK, to check for NULL pointers and return DFB_INVARG.
+- This macro is now used in most public APIs to check for possible passed in NULL parameters.
+- Changed enum values for LiteBoxTypes from 0 and 1 to 0x1001 and 0x1002 for better patterns for testing.
+- New macro, LITE_WINDOW_PARAMETER_CHECK, to check if a passed in LiteWindow is a valid struct or not.
+- New macro, LITE_BOX_PARAMETER_CHECK, to check if a passed in LiteBox is a valid struct or not.
+- Most window public APIs now use LITE_WINDOW_PARAMETER_CHECK.
+
+
+0.6.0 (Sept 26 2005)
+-----
+- Various bug fixes related to the event handling, and window child handling.
+- Fixes in code base to make sure various pointer variables are initialized to NULL.
+- New window callback, lite_on_universal_event() to catch DFBUniversalEvents.
+
+
+0.5.3 (Sept 7 2005)
+-----
+- New APIs, lite_window_set_creator() and lite_window_get_creator(), from Damian
+  and Kent, to save information about the window who created a specific LiteWindow.
+  This is then used in the modal window loop to forward all input events to a window
+  that was created by a modal window, making it possible to have child windows that
+  are bigger in size than the actual modal window.
+- Updates of LiteWindow's height and width values when calling lite_resize_window().
+- Move the default theme global variables into .c files and place extern definitions
+  in the .h files, this to make C++ compilations work without errors.
+
+
+0.5.2 (Aug 26 2005)
+-----
+- Bug fixes.
+- Added extern "C" wrappers around all header files for C++ use.
+- New global callback for window event handling installed with
+  lite_on_window_event(). See documentation for details.
+
+
+0.5.1 (Aug 18 2005)t
+
+-----
+- New internal event alive flag that could be disabled/enabled via internal
+  APIs, this to better control when to exit an event loop.
+- New function, lite_set_exit_idle_loop(), when this is enabled the event
+  loop will exit if there are no pending events present.
+- Guard all stack-based pointers with NULLs to avoid strange problems later
+  when any of such pointers are tested.
+- Fixed the timeout values for lite_window_event_loopso that seconds and
+  milliseconds are passed to WaitForEventWithTimeout.
+- Other minor bug fixes.
+
+
+0.5.0 (July 10 2005)
+-----
+- Many internal function and variable name changes to conform to coding style.
+- New constants liteFUllWindowOpacity and liteNoWindowOpacity.
+- LiteTheme extensions, all widgets now have a specific theme they could use,
+  or use the default theme (not all widget have specialized themes yet).
+- Public APIs for widgets now take a DFBRectangle and a LiteTheme.
+- LiteWindow is taking into account the LiteTheme background colors when initializing.
+- New unit test framework inside tests to test out various parts of LiTE each time
+  it is changed. This includes performance timing tests.
+- More unit tests for various widgets and LiTE functions in place.
+- New API, lite_exit_event_loop(), when called will exit the current event loop.
+- New API, lite_get_layer_interface(), returns the opened display layer.
+- Fixes to make sure titles in windows could be drawn even if the Theme does not
+  include a font specification.
+- Fixed the lite_hide_cursor() and lite_show_cursor() APIs by temporarily setting
+  the layer to DLSCL_ADMINISTRATIVE.
+
+
+0.4.3 (June 24 2005)
+-----
+- All of the public headers have now Doxygen documentation.
+- Reformatted source code so the same look and feel is across all files.
+- lite_init_window() now also takes a DFBRectangle and a LiteWindowTheme.
+- lite_window_setmodal() renamed to lite_window_set_modal().
+- Three new cursor APIs, lite_hide_cursor(), lite_show_cursor() and
+  lite_set_cursor_opacity().
+- New function lite_free_window_theme() to release window theme resources.
+- New configuration constant, DEFAULT_WINDOW_MINIMIZE_SIZE.
+- render_title() is now more flexible and allows window themes with no
+  fonts as well as no title set for the window so that the top level
+  frame could be rendered.
+
+0.4.2 (June 17 2005)
+-----
+- The window theme handling is now broken out so that a LiteWindowTheme
+  could be passed into lite_new_window(). There's a liteDefaultTheme,
+  liteNoTheme, or a custom theme could be passed in. As part of this
+  the lite_new_window() API changed, in addition to the LiteWindowTheme
+  it now uses DFBRectangle to pass in the window size, this way we
+  avoid functions with too many parameters.
+- The theme handling has a new base structure, LiteTheme.
+- All header file top parts have Doxygen @brief statements.
+- New compile time lite_config.h flag, LOAD_DEFAULT_THEME, on by default,
+  if disabled, no default themes are built. The environment variable
+  LITE_NO_THEME is also still operational.
+- New directory called tests where LiTE unit tests are placed, two
+  new unit tests, window and nothemewindow.
+- All user-provided callbacks now return DFBResult, this so we could
+  test or a value not being DFB_OK and stop event flows and so on.
+- New callback hook that is installed with lite_on_raw_mouse(), this 
+  callback triggers with mouse event information before the modal state
+  and LiteBox mouse handling has happened. This makes it possible to
+  find out if a parent window has a mouse click in order for the child
+  window to close itself (for example with popups.)
+- New callback hook that is installed with lite_on_raw_keyboard(), this
+  callback triggers with mouse event information before the modal state
+  and LiteBox keyboard handling has happened. 
+
+
+0.4.1 (June 10 2005)
+-----
+- New API, lite_get_event_buffer() to return the DFB event buffer pointer
+- New LiteBox flags, is_visible, for disabling/enabling drawing, as well
+  as for event control (no events passed to a disabled LiteBox).
+
+
+0.4.0 (June 2 2005)
+-----
+- Various bug fixes (see ChangeLog for details), mostly related to fixing
+  issues when multiple LiteBox entries are dynamically created and destroyed.
+
+
+0.3.2 (May 18 2005)
+-----
+- New LIteWindow structure flag, LiteWindowFlag, for setting various flags for the window.
+- Modal support for Windows by enabling the modal window flag, this changes the event
+  loop so that only the frontmost modal window will receive events.
+- Other LiteWindowFlags for indicating if the window could be minimized or resized.
+- In lite_reinit_box_and_children(), maintain the font information when cloning the boxes.
+- New global cursor that is by default set to a default cursor, but could be set to
+  any valid LiteCursor during runtime. This makes it possible to have dynamic cursors in
+  the LiTE environment.
+- New cursor APIs: lite_get_current_cursor(), lite_set_current_cursor(), lite_load_cursor_from_file(),
+  lite_load_cursor_from_desc(), lite_free_cursor(), lite_set_window_cursor().
+- New font API, lite_ref_font() for virtually cloning font instances. 
+
+
+0.3.1 (May 12 2005)
+-----
+- New multi-window event loop where multiple windows share the same event buffer.
+  This will make it possible to write modal and modeless LiTE applications.
+- Fixed a problem with the box-parent's child array slot not updated and compacted when
+  children are removed from a box.
+- New LiteBox field, handle_keys, used to disable and enable key handling in LiteBox instances.
+- LiteWindow has a separate init call, makes it possible to subclass LiteWindow (similar
+  to subclassing LiteBox)
+- New lite_get_current_key_modifier() API to return the current key modifier.
+- Work on two new LiteWindow function callbacks, OnBoxAdded() and OnBoxToBeRemoved(), triggered
+  when a box is added to an underlying box hierarchy, or to be removed.
+- Code contributed by Andy Stewart and Damian Kowalewski.
+
+
+0.3.0 (Mar 31 2005)
+-----
+- Lite's event loop is now based on a single event buffer shared across multiple window instances.
+- LiteCursor structure outside LiteWindow.c, inside cursor.h
+- Many more functions now also return DFBResult values.
+- Test of keeping the grabbedpointer window pointer around for possible release of this window in odd cases.
+- Wheel support, LiteBox OnWheel where widgets could make use of wheel events, lite_on_window_wheel to
+  install a global event handler for the window where wheel events are generated.
+- Removed lite_on_idle() callback installer as there are better and more reliable ways to generate
+  idle time handlers.
+
+
+0.2.2 (Mar 27 2005)
+-----
+- window.c event loop rearrangement so it handles any DirectFB events
+- lite_on_user_event() to register a callback for arbitrary events
+- lite_post_event_to_window() API to post events to the event queue
+- Many more APIs now return DFBResult values, and pass in a handle for the returned structure
+- Internal structure changes, LiteCursor and LiteTheme, for extending these later
+- Fixed a cas where a missing UngrabPointer caused a case where an original window
+  still hadthe window grabbed when a new window was created
+- Use of D_ASSERT statements for internal functions params passed in
+
+
+0.2.1 (March 15 2005)
+-----
+- lite_on_user_event() to register user event callbacks
+- lite_post_event_to_window() posts events to the current LiteWindow event queue
+- better naming of the font specs, proportional, sans_serif, default and monospace
+- lite_get_font() accepts a file name as a spec
+- with-fontdir configure flag for specifying font directory, default same as existing default dir
+- D_DEBUG_DOMAIN and D_DEBUG_AT macros for error handling
+- More APIs now return DFBResult
+
+
+0.2.0 (Feb 15 2005)
+-----
+- LiteLabel has a field for the text color, as well as lite_set_label_color,
+  dfbspy.c has an example how this is used 
+- Default window background colors are defined in lite_config.h
+- From Andy Stewart:
+    - define default font names in lite_config.h
+    - Add a DFBFontAttribute argument to lite_get_font() and lite_get_font_from_file()
+    - New functions, lite_set_active_font() and lite_get_active_font()
+    - Use macros based on DirectFB's D_BREAK and D_INFO instead of fprintf calls
+- Window theme bitmap definitions placed in lite_config.h
+- All internal configurations are centralized into lite_config.h
+- lite_get_dfb_interface() will return the current IDirectFB interface
+
+
+0.1.0 (Feb 3 2005)
+-----
+See ChangeLog for all the details.
+
+- LiteWindow has global callbacks for catching keyboard and mouse events, as
+  well as for doing idle handling
+- LiteButton has now lite_set_button_image_surface() to set individual
+  surfaces for bi-state and tri-state buttons
+- lite_new_window takes() two params, x,y, for window positioning
+- util.h has now lite_util_load_imagE_desc() that takes an DFBIMageDescription
+  for loading images directly from shared library (memory) produced by
+  the directfb-csource tool
+
+
+0.0.0 (Oct 2002 to Oct 2004)
+-----
+- Original code by Denis Knopp. See ChangeLog for all the features and details.
+
+

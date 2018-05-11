@@ -1,0 +1,633 @@
+CoreLayerContext_real.lo: CoreLayerContext_real.cpp ../../config.h \
+ CoreLayerContext.h ../../src/core/CoreLayerContext_includes.h \
+ ../../src/core/CoreDFB_includes.h ../../lib/direct/Types++.h \
+ ../../lib/direct/types.h ../../lib/direct/os/types.h \
+ ../../lib/direct/build.h ../../lib/direct/os/linux/glibc/types.h \
+ /usr/lib/gcc/i686-linux-gnu/4.6/include/stdarg.h \
+ /usr/lib/gcc/i686-linux-gnu/4.6/include/stddef.h /usr/include/stdio.h \
+ /usr/include/features.h /usr/include/i386-linux-gnu/bits/predefs.h \
+ /usr/include/i386-linux-gnu/sys/cdefs.h \
+ /usr/include/i386-linux-gnu/bits/wordsize.h \
+ /usr/include/i386-linux-gnu/gnu/stubs.h \
+ /usr/include/i386-linux-gnu/gnu/stubs-32.h \
+ /usr/include/i386-linux-gnu/bits/types.h \
+ /usr/include/i386-linux-gnu/bits/typesizes.h /usr/include/libio.h \
+ /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/include/i386-linux-gnu/bits/stdio_lim.h \
+ /usr/include/i386-linux-gnu/bits/sys_errlist.h \
+ /usr/include/i386-linux-gnu/bits/stdio.h \
+ /usr/include/i386-linux-gnu/bits/stdio2.h \
+ /usr/lib/gcc/i686-linux-gnu/4.6/include/stdint.h /usr/include/stdint.h \
+ /usr/include/i386-linux-gnu/bits/wchar.h /usr/include/stdlib.h \
+ /usr/include/i386-linux-gnu/bits/waitflags.h \
+ /usr/include/i386-linux-gnu/bits/waitstatus.h /usr/include/endian.h \
+ /usr/include/i386-linux-gnu/bits/endian.h \
+ /usr/include/i386-linux-gnu/bits/byteswap.h /usr/include/xlocale.h \
+ /usr/include/i386-linux-gnu/sys/types.h /usr/include/time.h \
+ /usr/include/i386-linux-gnu/sys/select.h \
+ /usr/include/i386-linux-gnu/bits/select.h \
+ /usr/include/i386-linux-gnu/bits/sigset.h \
+ /usr/include/i386-linux-gnu/bits/time.h \
+ /usr/include/i386-linux-gnu/bits/select2.h \
+ /usr/include/i386-linux-gnu/sys/sysmacros.h \
+ /usr/include/i386-linux-gnu/bits/pthreadtypes.h /usr/include/alloca.h \
+ /usr/include/i386-linux-gnu/bits/stdlib.h /usr/include/string.h \
+ /usr/include/i386-linux-gnu/bits/string3.h /usr/include/unistd.h \
+ /usr/include/i386-linux-gnu/bits/posix_opt.h \
+ /usr/include/i386-linux-gnu/bits/environments.h \
+ /usr/include/i386-linux-gnu/bits/confname.h /usr/include/getopt.h \
+ /usr/include/i386-linux-gnu/bits/unistd.h /usr/include/ctype.h \
+ /usr/include/dirent.h /usr/include/i386-linux-gnu/bits/dirent.h \
+ /usr/include/i386-linux-gnu/bits/posix1_lim.h \
+ /usr/include/i386-linux-gnu/bits/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/errno.h /usr/include/i386-linux-gnu/bits/errno.h \
+ /usr/include/linux/errno.h /usr/include/i386-linux-gnu/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/fcntl.h /usr/include/i386-linux-gnu/bits/fcntl.h \
+ /usr/include/i386-linux-gnu/bits/uio.h \
+ /usr/include/i386-linux-gnu/bits/stat.h \
+ /usr/include/i386-linux-gnu/bits/fcntl2.h \
+ /usr/lib/gcc/i686-linux-gnu/4.6/include-fixed/limits.h \
+ /usr/lib/gcc/i686-linux-gnu/4.6/include-fixed/syslimits.h \
+ /usr/include/limits.h /usr/include/i386-linux-gnu/bits/posix2_lim.h \
+ /usr/include/i386-linux-gnu/bits/xopen_lim.h /usr/include/sched.h \
+ /usr/include/i386-linux-gnu/bits/sched.h /usr/include/signal.h \
+ /usr/include/i386-linux-gnu/bits/signum.h \
+ /usr/include/i386-linux-gnu/bits/siginfo.h \
+ /usr/include/i386-linux-gnu/bits/sigaction.h \
+ /usr/include/i386-linux-gnu/bits/sigcontext.h \
+ /usr/include/i386-linux-gnu/asm/sigcontext.h /usr/include/linux/types.h \
+ /usr/include/i386-linux-gnu/asm/types.h /usr/include/asm-generic/types.h \
+ /usr/include/asm-generic/int-ll64.h \
+ /usr/include/i386-linux-gnu/asm/bitsperlong.h \
+ /usr/include/asm-generic/bitsperlong.h /usr/include/linux/posix_types.h \
+ /usr/include/linux/stddef.h \
+ /usr/include/i386-linux-gnu/asm/posix_types.h \
+ /usr/include/i386-linux-gnu/asm/posix_types_32.h \
+ /usr/include/i386-linux-gnu/bits/sigstack.h \
+ /usr/include/i386-linux-gnu/sys/ucontext.h \
+ /usr/include/i386-linux-gnu/bits/sigthread.h /usr/include/netinet/in.h \
+ /usr/include/i386-linux-gnu/sys/socket.h \
+ /usr/include/i386-linux-gnu/sys/uio.h \
+ /usr/include/i386-linux-gnu/bits/socket.h \
+ /usr/include/i386-linux-gnu/bits/sockaddr.h \
+ /usr/include/i386-linux-gnu/asm/socket.h \
+ /usr/include/asm-generic/socket.h \
+ /usr/include/i386-linux-gnu/asm/sockios.h \
+ /usr/include/asm-generic/sockios.h \
+ /usr/include/i386-linux-gnu/bits/socket2.h \
+ /usr/include/i386-linux-gnu/bits/in.h \
+ /usr/include/i386-linux-gnu/sys/mman.h \
+ /usr/include/i386-linux-gnu/bits/mman.h \
+ /usr/include/i386-linux-gnu/sys/param.h /usr/include/linux/param.h \
+ /usr/include/i386-linux-gnu/asm/param.h /usr/include/asm-generic/param.h \
+ /usr/include/i386-linux-gnu/sys/resource.h \
+ /usr/include/i386-linux-gnu/bits/resource.h \
+ /usr/include/i386-linux-gnu/sys/stat.h \
+ /usr/include/i386-linux-gnu/sys/time.h \
+ /usr/lib/gcc/i686-linux-gnu/4.6/include/stdbool.h /usr/include/dlfcn.h \
+ /usr/include/i386-linux-gnu/bits/dlfcn.h ../../lib/direct/result.h \
+ /usr/include/c++/4.6/map /usr/include/c++/4.6/bits/stl_tree.h \
+ /usr/include/c++/4.6/bits/stl_algobase.h \
+ /usr/include/c++/4.6/i686-linux-gnu/./bits/c++config.h \
+ /usr/include/c++/4.6/i686-linux-gnu/./bits/os_defines.h \
+ /usr/include/c++/4.6/i686-linux-gnu/./bits/cpu_defines.h \
+ /usr/include/c++/4.6/bits/functexcept.h \
+ /usr/include/c++/4.6/bits/exception_defines.h \
+ /usr/include/c++/4.6/bits/cpp_type_traits.h \
+ /usr/include/c++/4.6/ext/type_traits.h \
+ /usr/include/c++/4.6/ext/numeric_traits.h \
+ /usr/include/c++/4.6/bits/stl_pair.h /usr/include/c++/4.6/bits/move.h \
+ /usr/include/c++/4.6/bits/concept_check.h \
+ /usr/include/c++/4.6/type_traits \
+ /usr/include/c++/4.6/bits/stl_iterator_base_types.h \
+ /usr/include/c++/4.6/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/4.6/bits/stl_iterator.h \
+ /usr/include/c++/4.6/debug/debug.h /usr/include/c++/4.6/bits/allocator.h \
+ /usr/include/c++/4.6/i686-linux-gnu/./bits/c++allocator.h \
+ /usr/include/c++/4.6/ext/new_allocator.h /usr/include/c++/4.6/new \
+ /usr/include/c++/4.6/exception /usr/include/c++/4.6/bits/exception_ptr.h \
+ /usr/include/c++/4.6/bits/nested_exception.h \
+ /usr/include/c++/4.6/bits/stl_function.h \
+ /usr/include/c++/4.6/backward/binders.h \
+ /usr/include/c++/4.6/bits/stl_map.h \
+ /usr/include/c++/4.6/initializer_list \
+ /usr/include/c++/4.6/bits/stl_multimap.h \
+ /usr/include/c++/4.6/bits/range_access.h ../../lib/fusion/types.h \
+ ../../lib/fusion/build.h \
+ /home/my-linux/directfb/modules/usr/include/linux/fusion.h \
+ /usr/include/i386-linux-gnu/asm/ioctl.h /usr/include/asm-generic/ioctl.h \
+ ../../lib/fusion/lock.h ../../lib/direct/messages.h \
+ ../../lib/direct/compiler.h ../../lib/direct/conf.h \
+ ../../lib/direct/log_domain.h ../../lib/direct/thread.h \
+ ../../lib/direct/os/mutex.h ../../lib/direct/os/linux/glibc/mutex.h \
+ /usr/include/pthread.h /usr/include/i386-linux-gnu/bits/timex.h \
+ /usr/include/i386-linux-gnu/bits/setjmp.h ../../lib/direct/util.h \
+ ../../lib/direct/clock.h ../../lib/direct/os/clock.h \
+ ../../lib/direct/print.h ../../lib/direct/os/thread.h \
+ ../../lib/direct/os/linux/glibc/thread.h ../../lib/direct/os/waitqueue.h \
+ ../../lib/direct/os/linux/glibc/waitqueue.h \
+ ../../lib/direct/os/linux/glibc/mutex.h ../../lib/fusion/object.h \
+ ../../lib/fusion/vector.h ../../lib/direct/debug.h \
+ ../../lib/direct/log.h ../../lib/direct/os/log.h \
+ ../../lib/direct/system.h ../../lib/direct/os/system.h \
+ ../../lib/direct/trace.h ../../lib/direct/list.h ../../lib/fusion/ref.h \
+ ../../lib/fusion/call.h ../../lib/fusion/reactor.h \
+ ../../include/directfb.h ../../include/directfb++.h \
+ ../../include/dfb_types.h ../../include/directfb_build.h \
+ ../../include/directfb_keyboard.h ../../lib/direct/interface.h \
+ ../../lib/direct/mem.h ../../lib/direct/os/mem.h \
+ ../../include/directfb_util.h ../../include/directfb_strings.h \
+ ../../include/directfb_keynames.h ../../src/core/core.h \
+ ../../src/core/coretypes.h ../../src/core/coredefs.h \
+ ../../src/core/CoreSlave_includes.h ../../src/core/coretypes.h \
+ ../../src/misc/conf.h ../../src/core/coredefs.h ../../src/core/surface.h \
+ ../../lib/direct/serial.h ../../lib/direct/atomic.h \
+ ../../src/core/graphics_state.h ../../src/core/state.h \
+ ../../src/core/gfxcard.h ../../lib/direct/modules.h \
+ ../../src/core/surface_buffer.h ../../src/core/surface_allocation.h \
+ ../../src/core/surface_pool.h ../../src/gfx/generic/generic.h \
+ ../../src/misc/util.h ../../src/core/layer_context.h \
+ ../../src/core/layer_control.h ../../src/core/layers_internal.h \
+ ../../lib/fusion/property.h ../../src/core/layers.h \
+ ../../src/core/layer_region.h ../../src/core/palette.h \
+ ../../src/core/screens.h ../../src/core/surface_client.h \
+ ../../src/core/windows.h ../../include/directfb_windows.h \
+ ../../src/core/windows_internal.h ../../lib/fusion/fusion.h \
+ ../../src/core/Interface.h ../../src/core/wm.h
+
+../../config.h:
+
+CoreLayerContext.h:
+
+../../src/core/CoreLayerContext_includes.h:
+
+../../src/core/CoreDFB_includes.h:
+
+../../lib/direct/Types++.h:
+
+../../lib/direct/types.h:
+
+../../lib/direct/os/types.h:
+
+../../lib/direct/build.h:
+
+../../lib/direct/os/linux/glibc/types.h:
+
+/usr/lib/gcc/i686-linux-gnu/4.6/include/stdarg.h:
+
+/usr/lib/gcc/i686-linux-gnu/4.6/include/stddef.h:
+
+/usr/include/stdio.h:
+
+/usr/include/features.h:
+
+/usr/include/i386-linux-gnu/bits/predefs.h:
+
+/usr/include/i386-linux-gnu/sys/cdefs.h:
+
+/usr/include/i386-linux-gnu/bits/wordsize.h:
+
+/usr/include/i386-linux-gnu/gnu/stubs.h:
+
+/usr/include/i386-linux-gnu/gnu/stubs-32.h:
+
+/usr/include/i386-linux-gnu/bits/types.h:
+
+/usr/include/i386-linux-gnu/bits/typesizes.h:
+
+/usr/include/libio.h:
+
+/usr/include/_G_config.h:
+
+/usr/include/wchar.h:
+
+/usr/include/i386-linux-gnu/bits/stdio_lim.h:
+
+/usr/include/i386-linux-gnu/bits/sys_errlist.h:
+
+/usr/include/i386-linux-gnu/bits/stdio.h:
+
+/usr/include/i386-linux-gnu/bits/stdio2.h:
+
+/usr/lib/gcc/i686-linux-gnu/4.6/include/stdint.h:
+
+/usr/include/stdint.h:
+
+/usr/include/i386-linux-gnu/bits/wchar.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/i386-linux-gnu/bits/waitflags.h:
+
+/usr/include/i386-linux-gnu/bits/waitstatus.h:
+
+/usr/include/endian.h:
+
+/usr/include/i386-linux-gnu/bits/endian.h:
+
+/usr/include/i386-linux-gnu/bits/byteswap.h:
+
+/usr/include/xlocale.h:
+
+/usr/include/i386-linux-gnu/sys/types.h:
+
+/usr/include/time.h:
+
+/usr/include/i386-linux-gnu/sys/select.h:
+
+/usr/include/i386-linux-gnu/bits/select.h:
+
+/usr/include/i386-linux-gnu/bits/sigset.h:
+
+/usr/include/i386-linux-gnu/bits/time.h:
+
+/usr/include/i386-linux-gnu/bits/select2.h:
+
+/usr/include/i386-linux-gnu/sys/sysmacros.h:
+
+/usr/include/i386-linux-gnu/bits/pthreadtypes.h:
+
+/usr/include/alloca.h:
+
+/usr/include/i386-linux-gnu/bits/stdlib.h:
+
+/usr/include/string.h:
+
+/usr/include/i386-linux-gnu/bits/string3.h:
+
+/usr/include/unistd.h:
+
+/usr/include/i386-linux-gnu/bits/posix_opt.h:
+
+/usr/include/i386-linux-gnu/bits/environments.h:
+
+/usr/include/i386-linux-gnu/bits/confname.h:
+
+/usr/include/getopt.h:
+
+/usr/include/i386-linux-gnu/bits/unistd.h:
+
+/usr/include/ctype.h:
+
+/usr/include/dirent.h:
+
+/usr/include/i386-linux-gnu/bits/dirent.h:
+
+/usr/include/i386-linux-gnu/bits/posix1_lim.h:
+
+/usr/include/i386-linux-gnu/bits/local_lim.h:
+
+/usr/include/linux/limits.h:
+
+/usr/include/errno.h:
+
+/usr/include/i386-linux-gnu/bits/errno.h:
+
+/usr/include/linux/errno.h:
+
+/usr/include/i386-linux-gnu/asm/errno.h:
+
+/usr/include/asm-generic/errno.h:
+
+/usr/include/asm-generic/errno-base.h:
+
+/usr/include/fcntl.h:
+
+/usr/include/i386-linux-gnu/bits/fcntl.h:
+
+/usr/include/i386-linux-gnu/bits/uio.h:
+
+/usr/include/i386-linux-gnu/bits/stat.h:
+
+/usr/include/i386-linux-gnu/bits/fcntl2.h:
+
+/usr/lib/gcc/i686-linux-gnu/4.6/include-fixed/limits.h:
+
+/usr/lib/gcc/i686-linux-gnu/4.6/include-fixed/syslimits.h:
+
+/usr/include/limits.h:
+
+/usr/include/i386-linux-gnu/bits/posix2_lim.h:
+
+/usr/include/i386-linux-gnu/bits/xopen_lim.h:
+
+/usr/include/sched.h:
+
+/usr/include/i386-linux-gnu/bits/sched.h:
+
+/usr/include/signal.h:
+
+/usr/include/i386-linux-gnu/bits/signum.h:
+
+/usr/include/i386-linux-gnu/bits/siginfo.h:
+
+/usr/include/i386-linux-gnu/bits/sigaction.h:
+
+/usr/include/i386-linux-gnu/bits/sigcontext.h:
+
+/usr/include/i386-linux-gnu/asm/sigcontext.h:
+
+/usr/include/linux/types.h:
+
+/usr/include/i386-linux-gnu/asm/types.h:
+
+/usr/include/asm-generic/types.h:
+
+/usr/include/asm-generic/int-ll64.h:
+
+/usr/include/i386-linux-gnu/asm/bitsperlong.h:
+
+/usr/include/asm-generic/bitsperlong.h:
+
+/usr/include/linux/posix_types.h:
+
+/usr/include/linux/stddef.h:
+
+/usr/include/i386-linux-gnu/asm/posix_types.h:
+
+/usr/include/i386-linux-gnu/asm/posix_types_32.h:
+
+/usr/include/i386-linux-gnu/bits/sigstack.h:
+
+/usr/include/i386-linux-gnu/sys/ucontext.h:
+
+/usr/include/i386-linux-gnu/bits/sigthread.h:
+
+/usr/include/netinet/in.h:
+
+/usr/include/i386-linux-gnu/sys/socket.h:
+
+/usr/include/i386-linux-gnu/sys/uio.h:
+
+/usr/include/i386-linux-gnu/bits/socket.h:
+
+/usr/include/i386-linux-gnu/bits/sockaddr.h:
+
+/usr/include/i386-linux-gnu/asm/socket.h:
+
+/usr/include/asm-generic/socket.h:
+
+/usr/include/i386-linux-gnu/asm/sockios.h:
+
+/usr/include/asm-generic/sockios.h:
+
+/usr/include/i386-linux-gnu/bits/socket2.h:
+
+/usr/include/i386-linux-gnu/bits/in.h:
+
+/usr/include/i386-linux-gnu/sys/mman.h:
+
+/usr/include/i386-linux-gnu/bits/mman.h:
+
+/usr/include/i386-linux-gnu/sys/param.h:
+
+/usr/include/linux/param.h:
+
+/usr/include/i386-linux-gnu/asm/param.h:
+
+/usr/include/asm-generic/param.h:
+
+/usr/include/i386-linux-gnu/sys/resource.h:
+
+/usr/include/i386-linux-gnu/bits/resource.h:
+
+/usr/include/i386-linux-gnu/sys/stat.h:
+
+/usr/include/i386-linux-gnu/sys/time.h:
+
+/usr/lib/gcc/i686-linux-gnu/4.6/include/stdbool.h:
+
+/usr/include/dlfcn.h:
+
+/usr/include/i386-linux-gnu/bits/dlfcn.h:
+
+../../lib/direct/result.h:
+
+/usr/include/c++/4.6/map:
+
+/usr/include/c++/4.6/bits/stl_tree.h:
+
+/usr/include/c++/4.6/bits/stl_algobase.h:
+
+/usr/include/c++/4.6/i686-linux-gnu/./bits/c++config.h:
+
+/usr/include/c++/4.6/i686-linux-gnu/./bits/os_defines.h:
+
+/usr/include/c++/4.6/i686-linux-gnu/./bits/cpu_defines.h:
+
+/usr/include/c++/4.6/bits/functexcept.h:
+
+/usr/include/c++/4.6/bits/exception_defines.h:
+
+/usr/include/c++/4.6/bits/cpp_type_traits.h:
+
+/usr/include/c++/4.6/ext/type_traits.h:
+
+/usr/include/c++/4.6/ext/numeric_traits.h:
+
+/usr/include/c++/4.6/bits/stl_pair.h:
+
+/usr/include/c++/4.6/bits/move.h:
+
+/usr/include/c++/4.6/bits/concept_check.h:
+
+/usr/include/c++/4.6/type_traits:
+
+/usr/include/c++/4.6/bits/stl_iterator_base_types.h:
+
+/usr/include/c++/4.6/bits/stl_iterator_base_funcs.h:
+
+/usr/include/c++/4.6/bits/stl_iterator.h:
+
+/usr/include/c++/4.6/debug/debug.h:
+
+/usr/include/c++/4.6/bits/allocator.h:
+
+/usr/include/c++/4.6/i686-linux-gnu/./bits/c++allocator.h:
+
+/usr/include/c++/4.6/ext/new_allocator.h:
+
+/usr/include/c++/4.6/new:
+
+/usr/include/c++/4.6/exception:
+
+/usr/include/c++/4.6/bits/exception_ptr.h:
+
+/usr/include/c++/4.6/bits/nested_exception.h:
+
+/usr/include/c++/4.6/bits/stl_function.h:
+
+/usr/include/c++/4.6/backward/binders.h:
+
+/usr/include/c++/4.6/bits/stl_map.h:
+
+/usr/include/c++/4.6/initializer_list:
+
+/usr/include/c++/4.6/bits/stl_multimap.h:
+
+/usr/include/c++/4.6/bits/range_access.h:
+
+../../lib/fusion/types.h:
+
+../../lib/fusion/build.h:
+
+/home/my-linux/directfb/modules/usr/include/linux/fusion.h:
+
+/usr/include/i386-linux-gnu/asm/ioctl.h:
+
+/usr/include/asm-generic/ioctl.h:
+
+../../lib/fusion/lock.h:
+
+../../lib/direct/messages.h:
+
+../../lib/direct/compiler.h:
+
+../../lib/direct/conf.h:
+
+../../lib/direct/log_domain.h:
+
+../../lib/direct/thread.h:
+
+../../lib/direct/os/mutex.h:
+
+../../lib/direct/os/linux/glibc/mutex.h:
+
+/usr/include/pthread.h:
+
+/usr/include/i386-linux-gnu/bits/timex.h:
+
+/usr/include/i386-linux-gnu/bits/setjmp.h:
+
+../../lib/direct/util.h:
+
+../../lib/direct/clock.h:
+
+../../lib/direct/os/clock.h:
+
+../../lib/direct/print.h:
+
+../../lib/direct/os/thread.h:
+
+../../lib/direct/os/linux/glibc/thread.h:
+
+../../lib/direct/os/waitqueue.h:
+
+../../lib/direct/os/linux/glibc/waitqueue.h:
+
+../../lib/direct/os/linux/glibc/mutex.h:
+
+../../lib/fusion/object.h:
+
+../../lib/fusion/vector.h:
+
+../../lib/direct/debug.h:
+
+../../lib/direct/log.h:
+
+../../lib/direct/os/log.h:
+
+../../lib/direct/system.h:
+
+../../lib/direct/os/system.h:
+
+../../lib/direct/trace.h:
+
+../../lib/direct/list.h:
+
+../../lib/fusion/ref.h:
+
+../../lib/fusion/call.h:
+
+../../lib/fusion/reactor.h:
+
+../../include/directfb.h:
+
+../../include/directfb++.h:
+
+../../include/dfb_types.h:
+
+../../include/directfb_build.h:
+
+../../include/directfb_keyboard.h:
+
+../../lib/direct/interface.h:
+
+../../lib/direct/mem.h:
+
+../../lib/direct/os/mem.h:
+
+../../include/directfb_util.h:
+
+../../include/directfb_strings.h:
+
+../../include/directfb_keynames.h:
+
+../../src/core/core.h:
+
+../../src/core/coretypes.h:
+
+../../src/core/coredefs.h:
+
+../../src/core/CoreSlave_includes.h:
+
+../../src/core/coretypes.h:
+
+../../src/misc/conf.h:
+
+../../src/core/coredefs.h:
+
+../../src/core/surface.h:
+
+../../lib/direct/serial.h:
+
+../../lib/direct/atomic.h:
+
+../../src/core/graphics_state.h:
+
+../../src/core/state.h:
+
+../../src/core/gfxcard.h:
+
+../../lib/direct/modules.h:
+
+../../src/core/surface_buffer.h:
+
+../../src/core/surface_allocation.h:
+
+../../src/core/surface_pool.h:
+
+../../src/gfx/generic/generic.h:
+
+../../src/misc/util.h:
+
+../../src/core/layer_context.h:
+
+../../src/core/layer_control.h:
+
+../../src/core/layers_internal.h:
+
+../../lib/fusion/property.h:
+
+../../src/core/layers.h:
+
+../../src/core/layer_region.h:
+
+../../src/core/palette.h:
+
+../../src/core/screens.h:
+
+../../src/core/surface_client.h:
+
+../../src/core/windows.h:
+
+../../include/directfb_windows.h:
+
+../../src/core/windows_internal.h:
+
+../../lib/fusion/fusion.h:
+
+../../src/core/Interface.h:
+
+../../src/core/wm.h:

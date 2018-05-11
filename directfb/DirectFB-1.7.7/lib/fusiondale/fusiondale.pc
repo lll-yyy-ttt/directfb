@@ -1,0 +1,11 @@
+prefix=/usr/core/dfb-core
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: FusionDale
+Requires: fusion
+Description: Inter Process Communication - Applied Fusion
+Version: 1.7.7
+Libs: -L${libdir} -lfusiondale
+Cflags: -I${prefix}/include/fusiondale

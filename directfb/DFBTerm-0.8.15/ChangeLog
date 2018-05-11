@@ -1,0 +1,659 @@
+2007-02-02   dok	22:47:25	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	configure.in (1.12) (+2 -1;)
+		src/term.c (1.72) (+62 -58;)
+	
+	Selection and scrolling updates.
+	
+2007-01-24   syrjala	23:14:23	Ville Syrjala <syrjala@sci.fi>
+
+	Files:	autogen.sh (1.3) (+24 -12;)
+	
+	Fix version check for automake-1.10.
+	
+2006-10-16   dok	13:29:57	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/subshell.c (1.4) (+7 -7;)
+		src/term.c (1.71) (+4 -4;)
+	
+	Fix types.
+	
+2006-10-10   syrjala	00:16:40	Ville Syrjala <syrjala@sci.fi>
+
+	Files:	configure.in (1.11) (+2 -0;)
+		src/term.c (1.70) (+2 -0;)
+	
+	Fix stdbool.h warnings.
+	
+2006-03-26   dok	18:56:04	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	autogen.sh (1.2) (+1 -1;)
+	
+	Fix autoconf version detection.
+	
+2006-01-16   klan	10:02:33	
+
+	Files:	src/term.c (1.69) (+2 -1;)
+	
+	Allow to paste using the right button.
+	
+2005-12-19   dok	21:41:28	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.68) (+26 -24;)
+	
+	Manually validate the window content for initial visibility.
+	
+2005-10-09   dok	03:01:04	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.67) (+1 -2;)
+	
+	Fix memory leak by removing the custom event buffer and using lite's buffer,
+	which wasn't emptied before because of the custom event loop in DFBTerm.
+	
+2005-07-17   dok	00:45:31	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.66) (+19 -1;)
+	
+	Holding Control and scrolling the mouse wheel results in Cursor Up / Down events.
+	
+	Useful for browsing through the shell history or scrolling through lists
+	and texts etc.
+	
+2005-06-17   kent	23:38:44	
+
+	Files:	configure.in (1.10) (+2 -2;)
+	
+	
+	Now testing for LiTE => 0.4.2 as dfbterm APIs depend on new
+	LiTE APIs. Bumped up the release level of dfbterm to 0.8.2
+	
+2005-06-17   kent	23:36:18	
+
+	Files:	src/term.c (1.65) (+14 -7;)
+	
+	
+	lite_new_window() and lite_theme_loaded() APIs changed.
+	
+2005-06-02   dok	18:23:32	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.64) (+4 -1;)
+	
+	Shift+Wheel scrolls one line per step.
+	
+2005-03-28   kent	07:35:49	
+
+	Files:	configure.in (1.9) (+1 -1;)
+	
+	
+	Bumped up version to 0.8.1 due to API changes in the LiTE dir.
+	
+2005-03-25   kent	01:29:40	
+
+	Files:	src/term.c (1.63) (+1 -1;)
+	
+	
+	lite_new_window() API changed.
+	
+2005-03-08   dok	08:38:46	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.62) (+5 -5;)
+	
+	Fixed Ctrl-Z and Ctrl-Y on qwertz layouts when linux_input is used,
+	i.e. don't use the key identifier but the key symbol.
+	
+	The linux_input driver does it right by sending DIKI_Y for DIKS_SMALL_Z.
+	This should be fixed in the keyboard driver which does it wrong.
+	
+2005-02-28   dok	02:41:32	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	configure.in (1.8) (+1 -1;)
+	
+	0.8.0
+	
+2005-01-26   kent	07:15:04	
+
+	Files:	src/term.c (1.61) (+4 -1;)
+	
+	
+	The lite_new_window() API changed (now takes x, y position), but
+	DFBTerm is still centering the window.
+	
+2004-11-21   dok	01:28:35	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.60) (+6 -1;)
+	
+	Be careful with pthread_cancel().
+	
+2004-11-13   dok	01:04:00	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.59) (+9 -5;)
+	
+	Subtract border coordinates only if lite_theme_loaded() returns true.
+	
+2004-10-28   syrjala	09:19:56	Ville Syrjala <syrjala@sci.fi>
+
+	Files:	src/term.c (1.58) (+29 -2;)
+	
+	Try to handle more control sequences.
+	
+2004-06-07   klan	10:37:31	
+
+	Files:	src/term.c (1.57) (+17 -2;)
+	
+	Added a -c bash-like option.
+	
+2004-05-18   dok	22:24:15	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.56) (+34 -34;)
+	
+	Follow lite_open() parameter change.
+	
+2004-01-27   count	15:42:40	Andreas Kotes <count@convergence.de>
+
+	Files:	src/term.c (1.55) (+1 -1;)
+	
+	reverted stray commit
+	
+2004-01-27   count	15:40:42	Andreas Kotes <count@convergence.de>
+
+	Files:	src/term.c (1.54) (+1 -1;)
+	
+	(you can use "cvs -z3 -d anoncvs@anoncvs.xfree86.org:/cvs" with CVS_RSH=ssh)
+	
+2003-09-05   dok	12:37:15	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.53) (+20 -8;)
+	
+	Scroll line-by-line when Shift-CursorUp/Down is pressed.
+	
+2003-08-12   dok	21:48:55	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.52) (+2 -0;)
+	
+	Request focus.
+	
+2003-08-11   dok	19:04:55	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/vt.c (1.4) (+4 -0;)
+	
+	Clear highlight in cleared lines.
+	
+2003-08-07   dok	10:35:12	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.51) (+1 -1;)
+	
+	Highlight was a bit too dark for a sunny day ;)
+	
+2003-08-07   dok	09:52:25	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.50) (+102 -48;)
+		src/vt.h (1.3) (+92 -91;)
+		src/vt.c (1.3) (+61 -24;)
+		src/update.c (1.5) (+107 -51;)
+	
+	Implemented Wrapped Line Highlighting (tm) which is a great aid,
+	e.g. while looking at "make" output. If a line is wrapped (or broken)
+	all parts (sub lines) are drawn with a slightly blueish-dark-gray background.
+	Multiple wrapped lines (wrap groups ;) are seperated by a one-pixel line
+	in a slightly blueish-mid-gray color.
+	
+	Don't chop existing lines during resize, one can make the terminal smaller
+	and bigger again without discarding old output ;)
+	
+	Maintain an extending flipping region that is flushed after all updates
+	are done. "bb" causes a lot of small updates and got a major boost.
+	
+	Don't clear the exposed area when scrolling, instead use complete text lines.
+	This removes flickering and increases performance noticably.
+	
+	Repaint scrollbar only if needed.
+	
+	Slightly increased brightness of default text color.
+	
+2003-06-30   dok	17:15:57	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.49) (+3 -1;)
+	
+	Fixed selection via simple double click.
+	
+2003-06-30   dok	17:09:07	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/update.c (1.4) (+10 -9;)
+		src/vtx.h (1.4) (+2 -2;)
+	
+	Consider all characters except white space (< 33 ascii) for word selection.
+	
+2003-06-27   dok	20:46:46	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.48) (+32 -1;)
+	
+	Added live hot key <Ctrl>-<Enter> which, when pressed in a terminal window,
+	grabs this key combination and minimizes the terminal, giving focus to the
+	window under the cursor (e.g. my IDE).
+	As soon as <Ctrl>-<Enter> is pressed again (with any or no window having focus),
+	the terminal is restored to its original size, the focus is requested and the
+	key combination is ungrabbed.
+	
+2003-06-27   dok	19:55:00	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.47) (+14 -1;)
+	
+	Avoid all terminal rendering while being minimized.
+	
+	Minimize/restore doesn't affect the scroll back buffer ;)
+	
+2003-06-27   dok	19:26:29	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.46) (+3 -2;)
+	
+	Fixed first click always being a double click (needed long long for time diff).
+	
+2003-06-27   dok	17:20:26	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.45) (+17 -2;)
+	
+	Added word-by-word selection started with double click or pressed control key.
+	
+2003-06-27   dok	16:16:51	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.44) (+15 -3;)
+	
+	Use aligned resizing feature instead of awful reresizing.
+	
+	Each resize results in one complete painting of the terminal window
+	without filling any space twice and only doing one flip at the end.
+	
+	Resizing DFBTerm looks really cool, is fast and has no repainting artifacts.
+	
+2003-06-27   dok	14:40:00	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.43) (+20 -0;)
+	
+	Thread safe now, can resize window without random crash sooner or later ;)
+	
+2003-06-27   dok	14:39:59	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	TODO (1.3) (+0 -1;)
+	
+	Thread safe now, can resize window without random crash sooner or later ;)
+	
+2003-06-27   dok	12:36:41	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	configure.in (1.7) (+1 -1;)
+	
+	Fixed -Werror-implicit-function-declaration[s] <- removed this character
+	
+2003-05-28   dok	20:07:17	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.42) (+1 -1;)
+	
+	Follow API change.
+	
+2003-05-19   dok	16:40:01	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.41) (+2 -2;)
+	
+	Swapped X/Y.
+	
+2003-05-19   dok	15:36:34	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.40) (+27 -4;)
+	
+	Added "--position=X,Y".
+	
+2003-05-19   dok	13:17:13	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.39) (+2 -0;)
+	
+	Decrease font height by one to fix vertical lines via special character.
+	
+2003-05-07   dok	15:37:07	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.38) (+7 -5;)
+	
+	Set both content and opacity to auto blend.
+	If DFBTerm is started without hardware alpha blending the content is
+	opaque and the opacity is not changed if focus is lost.
+	
+	Changed default size from 100x40 to 100x30.
+	
+2003-04-18   dok	18:23:23	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	configure.in (1.6) (+1 -0;)
+	
+	Added "-Werror-implicit-function-declarations".
+	
+2003-04-17   dok	11:33:50	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	configure.in (1.5) (+18 -8;)
+	
+	CFLAGS, autoconf 2.52.
+	
+2003-04-16   dok	15:20:54	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	configure.in (1.4) (+4 -8;)
+	
+	Be able to configure even if CFLAGS is exported containing "-Werror".
+	
+2003-04-16   dok	14:25:15	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/dfbterm-pty-helper.c (1.3) (+2 -2;)
+		src/vtx.h (1.3) (+1 -1;)
+		src/update.c (1.3) (+3 -3;)
+		src/subshell.c (1.3) (+1 -1;)
+		src/dfbterm-utmp.c (1.3) (+2 -8;)
+	
+	Fixed signed/unsigned and other warnings.
+	
+2003-03-14   dok	10:59:09	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.37) (+2 -2;)
+	
+	Set unfocused opacity to 0xd0 instead of 0xc0.
+	
+2003-02-28   dok	18:24:30	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.36) (+7 -4;)
+	
+	Don't convert '\n' to '\r' before setting the clipboard content.
+	Convert '\n' to '\r' after getting the clipboard content.
+	
+2003-02-27   dok	15:56:01	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.35) (+4 -2;)
+	
+	Latin-1 input works, too.
+	
+2003-02-26   dok	20:00:37	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.34) (+5 -1;)
+	
+	Added support for underscore control character (<Ctrl>+'_').
+	Undo on the command line and in joe works now.
+	
+2003-02-26   dok	13:57:05	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.33) (+75 -20;)
+	
+	Added support for Latin-1 characters.
+	
+2003-02-10   dok	14:21:13	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.32) (+1 -1;)
+	
+	Fixed interactive resizing.
+	
+2003-02-03   dok	19:35:29	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	TODO (1.2) (+1 -2;)
+	
+	Updated TODO file.
+	
+2003-02-03   dok	19:32:55	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.31) (+7 -7;)
+	
+	Scroll indicator is two lines thick now.
+	
+2003-02-03   dok	15:33:21	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.30) (+2 -2;)
+	
+	Fixed scrollbar drawing bug.
+	
+2003-02-02   dok	23:43:24	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.29) (+6 -0;)
+	
+	Added scrolling via mouse wheel.
+	
+2003-01-29   dok	16:59:56	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.28) (+27 -18;)
+	
+	Argh, xterm again, didn't realize that vt.c is xterm specific.
+	
+2003-01-29   dok	15:17:16	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/dfbterm-login-support.c (1.2) (+219 -226;)
+		src/vtx.h (1.2) (+105 -106;)
+		src/vt.h (1.2) (+109 -108;)
+		src/vt.c (1.2) (+1442 -1445;)
+		src/update.c (1.2) (+1412 -1413;)
+		src/term.c (1.27) (+156 -162;)
+		src/subshell.c (1.2) (+307 -309;)
+		src/subshell-includes.h (1.2) (+15 -15;)
+		src/lists.h (1.2) (+5 -5;)
+		src/lists.c (1.2) (+83 -90;)
+		src/dfbtermslist.h (1.2) (+4 -5;)
+		src/dfbtermslist.c (1.2) (+237 -267;)
+		src/dfbterm-utmp.c (1.2) (+188 -189;)
+		src/dfbterm-pty-helper.c (1.2) (+469 -466;)
+		src/dfbterm-login-support.h (1.2) (+11 -10;)
+	
+	Switched to TERM=linux instead of TERM=xterm.
+	
+2003-01-28   dok	21:03:55	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.26) (+4 -0;)
+	
+	Fixed backspace (it didn't work during e.g. password input).
+	
+2003-01-20   dok	17:06:26	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.25) (+172 -166;)
+	
+	Execute the shell specified in the passwd file.
+	
+2003-01-16   dok	18:13:00	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.24) (+12 -11;)
+	
+	Init graphics after parsing the commandline.
+	
+2003-01-16   dok	16:44:01	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.23) (+3 -3;)
+	
+	Default font size is 13 again (looks much cleaner).
+	Adjusted default size.
+	
+2003-01-16   dok	16:39:28	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.22) (+76 -25;)
+	
+	Marek Pikarski <mass@convergence.de> added "--geometry" and "--fontsize"
+	parameters.
+	
+2003-01-16   dok	15:23:38	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.21) (+35 -12;)
+	
+	Added consistent copy'n'paste between all processes (terminals).
+	
+2003-01-15   dok	17:45:42	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.20) (+6 -0;)
+	
+	Grab pointer during selection dragging. Fix cursor after clearing selection.
+	
+2003-01-15   dok	17:38:11	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.19) (+2 -2;)
+	
+	Include character under cursor for the selection.
+	
+2003-01-15   dok	17:25:22	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.18) (+659 -589;)
+	
+	First working selection support.
+	
+2002-12-15   neo	22:03:44	Sven Neumann <sven@convergence.de>
+
+	Files:	src/Makefile.am (1.2) (+1 -1;)
+	
+	Updated configure.in and acinclude.m4 to work properly with newer versions
+	of automake.
+	Removed acconfig.h which is not needed any longer.
+	Removed check for dlfcn.h which was wrong and unneeded.
+	
+2002-12-15   neo	22:03:43	Sven Neumann <sven@convergence.de>
+
+	Files:	.cvsignore (1.2) (+12 -10;)
+		configure.in (1.3) (+6 -6;)
+		acinclude.m4 (1.2) (+12 -12;)
+		acconfig.h (1.2) (+0 -0;)
+		ChangeLog (1.2) (+74 -0;)
+	
+	Updated configure.in and acinclude.m4 to work properly with newer versions
+	of automake.
+	Removed acconfig.h which is not needed any longer.
+	Removed check for dlfcn.h which was wrong and unneeded.
+	
+2002-12-12   dok	18:45:33	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.17) (+2 -0;)
+	
+	No more flashing during resize by disabling the window background.
+	
+2002-11-21   dok	22:30:45	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.16) (+6 -3;)
+	
+	Better use "xterm" as TERM, also fixed <insert> key.
+	
+2002-11-21   dok	21:27:41	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.15) (+1 -0;)
+	
+	TERM= 'xterm-color' seems to be working much better than 'linux'.
+	
+2002-11-04   dok	18:25:34	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.14) (+1 -1;)
+	
+	Removed font height hack.
+	
+2002-11-04   dok	18:12:34	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.13) (+7 -11;)
+	
+	Use Misc-Fixed font.
+	
+2002-11-04   dok	13:20:54	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.12) (+2 -2;)
+	
+	Fixed HOME/END keys (didn't work in joe, but on the command line).
+	
+2002-11-02   dok	04:55:54	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.11) (+92 -5;)
+	
+	Added resizing support (still a bit ugly).
+	
+2002-11-02   dok	04:02:11	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.10) (+1 -1;)
+	
+	40 columns, still fitting 800x600.
+	
+2002-11-02   dok	03:52:07	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.9) (+1 -1;)
+	
+	96 columns now, fits on 800x600.
+	
+2002-11-02   dok	03:48:28	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.8) (+26 -17;)
+	
+	Code cleanup, disabled hinting, changed terminal size.
+	
+2002-10-29   neo	14:04:48	Sven Neumann <sven@convergence.de>
+
+	Files:	configure.in (1.2) (+1 -1;)
+	
+	Require DirectFB >= 0.9.14.
+	
+2002-10-29   dok	13:43:16	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.7) (+39 -22;)
+	
+	Use DrawString() now (faster).
+	
+2002-10-28   dok	16:03:03	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.6) (+6 -6;)
+	
+	Accidently committed change.
+	
+2002-10-28   dok	16:01:27	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.5) (+6 -6;)
+	
+	Fixed fusion_object_destroy() for calls outside the object destructor.
+	
+2002-10-25   dok	19:55:29	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.4) (+6 -8;)
+	
+	Use new fixed font "White Rabbit" from www.dafont.com,
+	use DrawGlyph without centering (faster).
+	
+2002-10-23   dok	16:11:22	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/.cvsignore (1.2) (+2 -0;)
+	
+	Updated cvsignore files for automake 1.6.
+	
+2002-10-23   dok	13:57:50	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.3) (+6 -6;)
+	
+	slightly brightened gray text color
+	
+2002-10-23   dok	13:50:05	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	src/term.c (1.2) (+1 -1;)
+	
+	Changed background alpha from 0xf0 to 0xe0.
+	
+2002-10-23   dok	12:36:55	Denis Oliver Kropp <dok@directfb.org>
+
+	Files:	.cvsignore (1.1) ( )
+		src/vtx.h (1.1) ( )
+		src/vt.h (1.1) ( )
+		src/vt.c (1.1) ( )
+		src/update.c (1.1) ( )
+		src/term.c (1.1) ( )
+		src/subshell.h (1.1) ( )
+		src/subshell.c (1.1) ( )
+		src/subshell-includes.h (1.1) ( )
+		src/lists.h (1.1) ( )
+		src/lists.c (1.1) ( )
+		src/dfbtermslist.h (1.1) ( )
+		src/dfbtermslist.c (1.1) ( )
+		src/dfbterm-utmp.c (1.1) ( )
+		src/dfbterm-pty.h (1.1) ( )
+		src/dfbterm-pty-helper.c (1.1) ( )
+		src/dfbterm-login-support.h (1.1) ( )
+		src/dfbterm-login-support.c (1.1) ( )
+		src/Makefile.am (1.1) ( )
+		src/.cvsignore (1.1) ( )
+		configure.in (1.1) ( )
+		autogen.sh (1.1) ( )
+		acinclude.m4 (1.1) ( )
+		acconfig.h (1.1) ( )
+		TODO (1.1) ( )
+		README (1.1) ( )
+		NEWS (1.1) ( )
+		Makefile.am (1.1) ( )
+		ChangeLog (1.1) ( )
+		COPYING (1.1) ( )
+		AUTHORS (1.1) ( )
+	
+	A terminal emulation running natively on DirectFB,
+	ported over from gnome-terminal's libzvt.
+	

@@ -1,0 +1,11 @@
+prefix=/usr/core/dfb-core
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: FusionSound
+Requires: fusion direct
+Description: Multi application sound streaming and mixing
+Version: 1.7.7
+Libs: -L${libdir} -lfusionsound
+Cflags: -I${prefix}/include/fusionsound

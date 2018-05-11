@@ -1,0 +1,10 @@
+prefix=/usr/core/dfb-core
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: DiVine
+Description: DirectFB Virtual Input
+Version: 1.7.7
+Libs: -L${libdir} -ldivine
+Cflags: -I${prefix}/include/divine

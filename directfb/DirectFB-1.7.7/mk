@@ -1,0 +1,16 @@
+#! /bin/bash
+
+export LIBS_ROOT=/usr/core
+
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$LIBS_ROOT/zlib/lib/pkgconfig:$LIBS_ROOT/libpng/lib/pkgconfig:$LIBS_ROOT/freetype/lib/pkgconfig
+
+export FUSION_INCLUDE=$(cd "$(dirname "../modules/usr/include/linux")"; pwd);
+
+
+# single application
+#./configure --prefix=/usr/core/dfb-core -disable-multi-kernel -disable-drmkms -enable-sawman --disable-x11 --with-gfxdrivers=none --with-inputdrivers=linuxinput --enable-fbdev --disable-sdl --disable-vnc --disable-osx --disable-video4linux --enable-zlib --enable-jpeg --enable-png --enable-gif --enable-freetype CFLAGS="-I$LIBS_ROOT/zlib/include -I$LIBS_ROOT/libpng/include -I$LIBS_ROOT/freetype/include -I$LIBS_ROOT/libjpeg/include -I$LIBS_ROOT/libgif/include" LDFLAGS="-L$LIBS_ROOT/zlib/lib -L$LIBS_ROOT/libpng/lib -L$LIBS_ROOT/freetype/lib -L$LIBS_ROOT/libjpeg/lib -L$LIBS_ROOT/libgif/lib -lm -lz"
+
+# multi application
+./configure --prefix=/usr/core/dfb-core -enable-sawman -disable-drmkms -enable-multi -enable-one --disable-x11 --with-gfxdrivers=none --with-inputdrivers=linuxinput --enable-fbdev --disable-sdl --disable-vnc --disable-osx --disable-video4linux --enable-zlib --enable-jpeg --enable-png --enable-gif --enable-freetype CPPFLAGS="-I$FUSION_INCLUDE -I$LIBS_ROOT/zlib/include -I$LIBS_ROOT/libpng/include -I$LIBS_ROOT/freetype/include -I$LIBS_ROOT/freetype/include/freetype2 -I$LIBS_ROOT/libjpeg/include -I$LIBS_ROOT/libgif/include" LDFLAGS="-L$LIBS_ROOT/zlib/lib -L$LIBS_ROOT/libpng/lib -L$LIBS_ROOT/freetype/lib -L$LIBS_ROOT/libjpeg/lib -L$LIBS_ROOT/libgif/lib -lstdc++ -lm -lz -lfreetype"
+
+

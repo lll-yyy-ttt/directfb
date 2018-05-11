@@ -1,0 +1,8 @@
+usr/include/lite/*.h
+usr/include/leck/*.h
+usr/lib/liblite.so
+usr/lib/liblite.a
+usr/lib/libleck.so
+usr/lib/libleck.a
+usr/lib/pkgconfig/lite.pc
+usr/lib/pkgconfig/leck.pc

@@ -1,0 +1,14 @@
+#! /bin/bash
+
+export DFB_ROOT=/usr/core/dfb-core
+export LIBS_ROOT=/usr/core
+
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$DFB_ROOT/lib/pkgconfig:$LIBS_ROOT/zlib/lib/pkgconfig
+
+export FUSION_INCLUDE=$(cd "$(dirname "../modules/usr/include/linux")"; pwd);
+
+
+gcc -I$FUSION_INCLUDE -Wl,--no-as-needed `pkg-config --cflags --libs directfb sawman zlib` -o desktop main.c
+
+#gcc -I/home/my-linux/src/install/directfb/include/directfb -I/home/my-linux/dfb-lite/include -L/home/my-linux/src/install/directfb/lib -L/home/my-linux/dfb-lite/lib -Wl,--no-as-needed -ldirectfb -llite -lpthread -lm -ldl -lz -o desktop main.c
+

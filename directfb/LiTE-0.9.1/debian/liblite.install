@@ -1,0 +1,4 @@
+usr/lib/liblite-*.so.*
+usr/lib/libleck-*.so.*
+usr/share/LiTE/*.png
+usr/share/fonts/truetype/*.ttf

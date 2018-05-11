@@ -1,0 +1,10 @@
+#! /bin/bash
+
+export DFB_ROOT=/usr/core/dfb-core
+export LIBS_ROOT=/usr/core
+
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$DFB_ROOT/lib/pkgconfig:$LIBS_ROOT/zlib/lib/pkgconfig
+
+
+gcc -Wl,--no-as-needed `pkg-config --cflags --libs directfb zlib` -o window df_window.c
+

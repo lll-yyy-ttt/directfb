@@ -1,0 +1,12 @@
+prefix=@prefix@
+datarootdir=@datarootdir@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: leck
+Description: "LeCK" - LiTE's extended Component Kit
+Requires: lite >= @VERSION@
+Version: @VERSION@
+Libs: -L${libdir} -lleck
+Cflags: -I${includedir}

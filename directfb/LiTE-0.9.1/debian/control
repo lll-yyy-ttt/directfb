@@ -1,0 +1,30 @@
+Source: lite
+Priority: optional
+Maintainer: Andreas Shimokawa <andi@directfb.org>
+Uploaders: Andreas Shimokawa <andi@directfb.org>, Denis Oliver Kropp <dok@directfb.org>
+Build-Depends: debhelper (>= 7.4.15), autoconf, automake,
+ libtool, pkg-config, libdirectfb-dev
+Standards-Version: 3.9.0
+Section: libs
+Homepage: http://www.directfb.org/
+
+Package: liblite
+Architecture: any
+Depends: libdirectfb-1.5,
+ ${shlibs:Depends}, ${misc:Depends}
+Description: LiTE - toolkit engine for DirectFB
+  Toolkit engine for DirectFB
+
+Package: liblite-dev
+Architecture: any
+Depends: liblite
+ ${shlibs:Depends}, ${misc:Depends}
+Description: LiTE - toolkit engine for DirectFB (development package)
+  Toolkit engine for DirectFB
+
+Package: lite-examples
+Architecture: any
+Depends: liblite,
+ ${shlibs:Depends}, ${misc:Depends}
+Description: LiTE - toolkit engine for DirectFB (examples)
+  Toolkit engine for DirectFB
